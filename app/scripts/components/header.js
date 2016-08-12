@@ -9,8 +9,9 @@ export default React.createClass({
     return (
       <header>
         <ul className="header-menu">
+          <li><Link to="/main">Check Messages</Link></li>
+          <li><Link to="/selectfriend">New Message</Link></li>
           <li><Link to={selfProfile}>Profile</Link></li>
-          <li><Link to="/newmessage/overlay">New Message</Link></li>
           <li><Link to="/login">Login</Link></li>
           <li><Link to="/about">About</Link></li>
         </ul>

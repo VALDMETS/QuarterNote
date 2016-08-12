@@ -12,7 +12,6 @@ export default React.createClass({
     )
   },
   friendClick: function() {
-    store.currentFriend.set({_id: this.props.data._id});
     hashHistory.push(`/profile/${this.props.data._id}`)
   }
 });

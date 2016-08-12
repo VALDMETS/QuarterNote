@@ -26,11 +26,17 @@ export default React.createClass({
     friendPics = this.state.friends.map( (friend,i) => {
       return <FriendWidget data={friend} key={i}/>
     });
+    let messageButton;
+    if (store.session.get('friend_id') !== this.props.params.id) {
+      let buttonVal = `Send a message to ${this.state.user.username}!`;
+      messageButton = <input type="button" value={buttonVal} onClick={this.newMessage}/>
+    }
     return (
       <div className="profile-page">
         <Header/>
         <h2>{this.state.user.username}</h2>
         <div className="profile-pic">{profilePic}</div>
+        {messageButton}
         <section className="friend-list">
           <h5>Friends</h5>
           {friendPics}
@@ -39,24 +45,28 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    store.currentFriend.set({_id: this.props.params.id});
-    console.log(store.currentFriend);
-    this.profileListener();
-    store.currentFriend.on('change', this.profileListener);
-
+    this.profileUpdater(this.props.params.id);
     store.friendList.fetch({
       success: () => {
         this.setState({friends: store.friendList.toJSON()})
-        console.log(this.state);
       }
     });
   },
-  profileListener: function() {
-    store.currentFriend.fetch({
+  componentWillReceiveProps: function(nextProps) {
+    if(this.props.params.id !== nextProps.params.id) {
+      this.profileUpdater(nextProps.params.id)
+    }
+  },
+  profileUpdater: function(id) {
+    let currentProfile = new Friend({_id: id})
+    currentProfile.fetch({
       success: (resp) => {
-        this.setState({user: store.currentFriend.toJSON()});
-        console.log(this.state);
+        this.setState({user: currentProfile.toJSON()});
       }
     });
+  },
+  newMessage: function() {
+    let messageUrl = '/newmessage/' + this.props.params.id;
+    hashHistory.push(messageUrl);
   }
 });
