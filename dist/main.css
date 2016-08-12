@@ -1,25 +1,4 @@
 body {
   background: gray; }
 
-span {
-  font-style: italic;
-  text-transform: uppercase;
-  font-size: 50px;
-  color: white;
-  animation: letterfade 1.2s;
-  opacity: .4; }
-@keyframes letterfade {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: .4; } }
-#message-container {
-  display: block;
-  margin: 0 auto;
-  height: 80vh;
-  width: 80vw;
-  background-image: url("https://images.alphacoders.com/450/45061.jpg");
-  border: 3px solid black;
-  text-align: center; }
-
 /*# sourceMappingURL=main.css.map */
