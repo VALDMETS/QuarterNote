@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 import store from '../store';
 
 export default React.createClass({
@@ -19,6 +20,16 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
-    console.log('wow weeeee');
+    store.session.save({username: this.refs.loginname.value, password: this.refs.loginpass.value}, {
+      success: (user, resp) => {
+        store.session.unset('password');
+        store.session.set({authtoken: resp._kmd.authtoken, friend_id: resp.friend_id});
+        console.log(store.session.get('authtoken'));
+        hashHistory.push('/main');
+      },
+      error: () => {
+        console.log('sorry, something went wrong');
+      }
+    })
   }
 });

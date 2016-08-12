@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 
+import store from './store';
+import settings from './settings';
 import router from './components/router';
 
 $(document).ajaxSend(function(e, xhr, jqueryAjax){
