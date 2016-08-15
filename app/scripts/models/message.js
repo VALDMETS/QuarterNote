@@ -22,9 +22,7 @@ export default Bb.Model.extend({
       let vowelIndex = [];
       let wordArr = word.split('');
       wordArr.forEach(function(letter, i){
-        if (letter==='a' || letter==='e' || letter==='i' || letter==='o' || letter === 'u') {
-          vowelIndex.push(i);
-        } else if (letter==='y' && i === word.length-2) {
+        if (letter==='a' || letter==='e' || letter==='i' || letter==='o' || letter === 'u' || letter === 'y') {
           vowelIndex.push(i);
         }
       });
@@ -57,7 +55,7 @@ export default Bb.Model.extend({
         vowelClusters.pop();
       }
       if (vowelIndex[vowelIndex.length-1] === word.length-2) {
-        if(vowelClusters[vowelClusters.length-1] === 'e') {
+        if(vowelClusters[vowelClusters.length-1] === 'e' && wordArr[wordArr.length-3] !== 'l') {
           vowelClusters.pop();
           vowelIndex.pop();
         }

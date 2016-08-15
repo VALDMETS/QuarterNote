@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 import Friend from '../models/friend';
 import Message from '../models/message';
@@ -35,15 +36,16 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
-    let content = store.currentMessage.syllabizer(this.refs.message.value);
-    store.currentMessage.set({
+    let content = store.messageToBeSent.syllabizer(this.refs.message.value);
+    store.messageToBeSent.set({
       sender: store.session.get('username'),
       recipient_id: this.props.params.id,
       content: content,
       theme: 'speak'
     });
 
-    console.log(store.currentMessage);
+    console.log(store.messageToBeSent);
+    hashHistory.push(`/newmessage/preview`);
 
     // Call this on confirmation page, actually
     // message.save().then(() => {console.log('wow!!');});

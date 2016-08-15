@@ -17,7 +17,7 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
 
 ReactDOM.render(router, document.getElementById('container'));
 
-let string = "yogi beary is my favorite kyrgyzstan";
+let string = "some people said";
 
 console.log(syllablizer(string));
 
@@ -67,7 +67,7 @@ function syllablizer (string) {
       vowelClusters.pop();
     }
     if (vowelIndex[vowelIndex.length-1] === word.length-2) {
-      if(vowelClusters[vowelClusters.length-1] === 'e') {
+      if(vowelClusters[vowelClusters.length-1] === 'e' && wordArr[wordArr.length-3] !== 'l') {
         vowelClusters.pop();
         vowelIndex.pop();
       }

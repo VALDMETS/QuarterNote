@@ -5,5 +5,5 @@ import Message from './models/message';
 export default {
   session: new Session(),
   friendList: new FriendList(),
-  currentMessage: new Message()
+  messageToBeSent: new Message()
 };

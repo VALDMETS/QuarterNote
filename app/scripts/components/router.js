@@ -16,9 +16,8 @@ const router = (
     <Route path="/login" component={Login}/>
     <Route path="/profile/:id" component={Profile}/>
     <Route path="/selectfriend" component={NewMessageSelect}/>
-    <Route path="/newmessage/:id" component={NewMessage}>
-      <Route path="confirm" component={Preview}/>
-    </Route>
+    <Route path="/newmessage/preview" component={Preview}/>
+    <Route path="/newmessage/:id" component={NewMessage}/>
     <Route path="/message/:id" component={Message}/>
     <Route path="/about" component={About}/>
 
