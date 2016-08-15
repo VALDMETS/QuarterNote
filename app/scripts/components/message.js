@@ -9,14 +9,14 @@ import Theme from '../models/theme';
 export default React.createClass({
   getInitialState: function() {
     return {
-      currentMessage: [
-        {theme: ''}
-      ],
+      currentMessage: store.newMessages.get(this.props.params.id).toJSON(),
       syllableDisplay: [''],
     }
   },
   render: function() {
-    let themeClass = this.state.currentMessage[0].theme;
+    // let themeClass = this.state.currentMessage[0].theme;
+    console.log(this.state.currentMessage.theme);
+    let themeClass = this.state.currentMessage.theme;
     let syllableAnimation = this.state.syllableDisplay.map((syllable, i) => {
       // console.log('wow');
       return <span key={i}>{syllable}</span>
@@ -33,36 +33,25 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    let currentMessage = new Message();
-    currentMessage.fetch({
-      data: {
-        query: JSON.stringify({_id: this.props.params.id})
-      },
-      success: () => {
-        console.log(currentMessage.toJSON());
-        this.setState({currentMessage: currentMessage.toJSON()});
-        let currentTheme = new Theme();
-        currentTheme.fetch().then( () => {
-          console.log(currentMessage.attributes[0].content);
-          let sound = new Howl({src: currentTheme.attributes[0].timingArr[(currentMessage.attributes[0].content.length - 1)].sound_url});
-          sound.play();
-          sound.on('load', () => {
-            let animationTiming = currentTheme.attributes[0].timingArr[(currentMessage.attributes[0].content.length - 1)].timing;
-            animationTiming.forEach( (timer, i) => {
-              setTimeout( () => {
-                let newState = this.state.syllableDisplay;
-                newState.push(currentMessage.attributes[0].content[i]);
-                this.setState({
-                  syllableDisplay: newState
-                })
-              }, timer)
-            });
-          });
+
+    let currentTheme = new Theme();
+    currentTheme.fetch().then( () => {
+      console.log(this.state.currentMessage.content);
+      let sound = new Howl({src: currentTheme.attributes[0].timingArr[(this.state.currentMessage.content.length - 1)].sound_url});
+      sound.play();
+      sound.on('load', () => {
+        let animationTiming = currentTheme.attributes[0].timingArr[(this.state.currentMessage.content.length - 1)].timing;
+        animationTiming.forEach( (timer, i) => {
+          setTimeout( () => {
+            let newState = this.state.syllableDisplay;
+            newState.push(this.state.currentMessage.content[i]);
+            this.setState({
+              syllableDisplay: newState
+            })
+          }, timer)
         });
-      }
+      });
     });
-
-
   },
   goBackFunction: function() {
     //delete message option?

@@ -26,14 +26,13 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    let newMessages = new NewMessages();
-    newMessages.fetch({
+    store.newMessages.fetch({
       data: {
         query: JSON.stringify({recipient_id: store.session.get('friend_id')})
       }
     }).then( () => {
-      console.log(newMessages.toJSON());
-      this.setState({messages: newMessages.toJSON()});
+      console.log(store.newMessages.toJSON());
+      this.setState({messages: store.newMessages.toJSON()});
     });
 
   },
