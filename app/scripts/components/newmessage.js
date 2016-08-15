@@ -35,12 +35,14 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
+
     let message = new Message({
       sender: store.session.get('username'),
       recipient_id: this.props.params.id,
-      content: this.refs.message.value,
+      content: content,
       theme: 'speak'
     });
-    message.save({}).then(() => {console.log('wow!!');});
+    console.log(content);
+    // message.save({}).then(() => {console.log('wow!!');});
   }
 });

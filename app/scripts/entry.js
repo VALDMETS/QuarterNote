@@ -17,7 +17,7 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
 
 ReactDOM.render(router, document.getElementById('container'));
 
-let string = "everything is peachy";
+let string = "syllable works poorly which is ironic";
 
 console.log(syllablizer(string));
 
