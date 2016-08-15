@@ -21,6 +21,7 @@ export default React.createClass({
         <Header/>
         <h2>Welcome, {store.session.get('username')}</h2>
         {newMessages}
+        {this.props.children}
       </div>
     )
   },

@@ -1,12 +1,17 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 export default React.createClass({
   render: function() {
     return (
-      <div className="new-message">
+      <div onClick={this.clickFunction} className="new-message">
         <span>New message from {this.props.info.sender}!</span>
         <span>{this.props.info.timestamp}</span>
       </div>
     )
+  },
+  clickFunction: function() {
+    console.log(this.props.info._id);
+    hashHistory.push(`/main/message/${this.props.info._id}`)
   }
 });

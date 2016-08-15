@@ -23,6 +23,7 @@ export default React.createClass({
           <input type="text" ref="message" placeholder="Your New Quarter Note"/>
           <input type="submit" value="Send it!"/>
         </form>
+        {this.props.children}
       </div>
     )
   },
@@ -44,6 +45,6 @@ export default React.createClass({
       theme: 'speak'
     });
     console.log(store.messageToBeSent);
-    hashHistory.push(`/newmessage/preview`);
+    hashHistory.push(`/newmessage/${this.props.params.id}/preview`);
   }
 });

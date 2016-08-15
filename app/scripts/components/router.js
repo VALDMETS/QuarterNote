@@ -12,13 +12,15 @@ import About from './about';
 
 const router = (
   <Router history={hashHistory}>
-    <Route path="/main" component={Main}/>
+    <Route path="/main" component={Main}>
+      <Route path="message/:id" component={Message}/>
+    </Route>
     <Route path="/login" component={Login}/>
     <Route path="/profile/:id" component={Profile}/>
     <Route path="/selectfriend" component={NewMessageSelect}/>
-    <Route path="/newmessage/preview" component={Preview}/>
-    <Route path="/newmessage/:id" component={NewMessage}/>
-    <Route path="/message/:id" component={Message}/>
+    <Route path="/newmessage/:id" component={NewMessage}>
+      <Route path="preview" component={Preview}/>
+    </Route>
     <Route path="/about" component={About}/>
 
   </Router>
