@@ -35,14 +35,18 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
-
-    let message = new Message({
+    let content = store.currentMessage.syllabizer(this.refs.message.value);
+    store.currentMessage.set({
       sender: store.session.get('username'),
       recipient_id: this.props.params.id,
       content: content,
       theme: 'speak'
     });
-    console.log(content);
-    // message.save({}).then(() => {console.log('wow!!');});
+
+    console.log(store.currentMessage);
+
+    // Call this on confirmation page, actually
+    // message.save().then(() => {console.log('wow!!');});
+
   }
 });

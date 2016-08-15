@@ -1,4 +1,5 @@
 import Bb from 'backbone';
+import _ from 'underscore';
 import settings from '../settings';
 
 export default Bb.Model.extend({
@@ -11,8 +12,8 @@ export default Bb.Model.extend({
   },
   urlRoot: `https://baas.kinvey.com/appdata/${settings.appKey}/messages`,
   idAttribute: '_id',
-  initialize: function() {
-    string = this.options.toLowerCase();
+  syllabizer: function(string) {
+    string = string.toLowerCase();
     let arr = string.split(' ');
     arr = arr.map(function(word){
       return word + ' ';

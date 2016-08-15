@@ -17,7 +17,7 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
 
 ReactDOM.render(router, document.getElementById('container'));
 
-let string = "syllable works poorly which is ironic";
+let string = "yogi beary is my favorite kyrgyzstan";
 
 console.log(syllablizer(string));
 
@@ -31,11 +31,12 @@ function syllablizer (string) {
     let vowelIndex = [];
     let wordArr = word.split('');
     wordArr.forEach(function(letter, i){
-      if (letter==='a' || letter==='e' || letter==='i' || letter==='o' || letter === 'u') {
-        vowelIndex.push(i);
-      } else if (letter==='y' && i === word.length-2) {
+      if (letter==='a' || letter==='e' || letter==='i' || letter==='o' || letter === 'u' || letter === 'y') {
         vowelIndex.push(i);
       }
+      // if (letter==='y' && i === word.length-2) {
+      //   vowelIndex.push(i);
+      // } else if (letter==='y' )
     });
     let vowelClusters = vowelIndex.map(function(vowelSpot, i) {
       return wordArr[vowelSpot];

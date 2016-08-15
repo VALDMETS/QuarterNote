@@ -1,8 +1,9 @@
 import Session from './models/session';
 import FriendList from './collections/friendlist';
-import Friend from './models/friend';
+import Message from './models/message';
 
 export default {
   session: new Session(),
   friendList: new FriendList(),
+  currentMessage: new Message()
 };
