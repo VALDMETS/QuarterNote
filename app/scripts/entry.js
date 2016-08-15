@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import _ from 'underscore';
 
 import store from './store';
 import settings from './settings';

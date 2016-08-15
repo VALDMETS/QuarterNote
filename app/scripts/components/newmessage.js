@@ -42,7 +42,8 @@ export default React.createClass({
       sender: store.session.get('username'),
       recipient_id: this.props.params.id,
       content: content,
-      theme: 'speak'
+      theme: 'speak',
+      theme_id: '57b1e44e616900c708e8400c'
     });
     console.log(store.messageToBeSent);
     hashHistory.push(`/newmessage/${this.props.params.id}/preview`);

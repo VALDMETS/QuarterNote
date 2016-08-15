@@ -8,6 +8,7 @@ export default Bb.Model.extend({
     recipient_id: '',
     content: '',
     theme: '',
+    theme_id: 0,
     timestamp: new Date(),
   },
   urlRoot: `https://baas.kinvey.com/appdata/${settings.appKey}/messages`,

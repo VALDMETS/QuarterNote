@@ -29,12 +29,12 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    let currentTheme = new Theme();
-    currentTheme.fetch().then( () => {
-      let sound = new Howl({src: currentTheme.attributes[0].timingArr[(store.messageToBeSent.get('content').length - 1)].sound_url});
+    store.themeList.fetch().then( () => {
+      let currentTheme = store.themeList.get('57b1e44e616900c708e8400c')
+      let sound = new Howl({src: currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url});
       sound.play();
       sound.on('load', () => {
-        let animationTiming = currentTheme.attributes[0].timingArr[(store.messageToBeSent.get('content').length - 1)].timing;
+        let animationTiming = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].timing;
         animationTiming.forEach( (timer, i) => {
           setTimeout( () => {
             let newState = this.state.syllableDisplay;

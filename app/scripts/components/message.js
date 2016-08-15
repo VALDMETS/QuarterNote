@@ -14,11 +14,8 @@ export default React.createClass({
     }
   },
   render: function() {
-    // let themeClass = this.state.currentMessage[0].theme;
-    console.log(this.state.currentMessage.theme);
     let themeClass = this.state.currentMessage.theme;
     let syllableAnimation = this.state.syllableDisplay.map((syllable, i) => {
-      // console.log('wow');
       return <span key={i}>{syllable}</span>
     });
     return (
@@ -33,14 +30,14 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-
-    let currentTheme = new Theme();
-    currentTheme.fetch().then( () => {
+    store.themeList.fetch().then( () => {
+      let themeId = this.state.currentMessage.theme_id;
+      let currentTheme = store.themeList.get(themeId);
       console.log(this.state.currentMessage.content);
-      let sound = new Howl({src: currentTheme.attributes[0].timingArr[(this.state.currentMessage.content.length - 1)].sound_url});
+      let sound = new Howl({src: currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].sound_url});
       sound.play();
       sound.on('load', () => {
-        let animationTiming = currentTheme.attributes[0].timingArr[(this.state.currentMessage.content.length - 1)].timing;
+        let animationTiming = currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].timing;
         animationTiming.forEach( (timer, i) => {
           setTimeout( () => {
             let newState = this.state.syllableDisplay;

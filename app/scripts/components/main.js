@@ -31,7 +31,6 @@ export default React.createClass({
         query: JSON.stringify({recipient_id: store.session.get('friend_id')})
       }
     }).then( () => {
-      console.log(store.newMessages.toJSON());
       this.setState({messages: store.newMessages.toJSON()});
     });
 
