@@ -43,12 +43,7 @@ export default React.createClass({
       content: content,
       theme: 'speak'
     });
-
     console.log(store.messageToBeSent);
     hashHistory.push(`/newmessage/preview`);
-
-    // Call this on confirmation page, actually
-    // message.save().then(() => {console.log('wow!!');});
-
   }
 });

@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 import {Howl} from 'howler';
 import store from '../store';
 
@@ -22,6 +23,8 @@ export default React.createClass({
             {syllableAnimation}
           </div>
         </div>
+        <input type="button" value="Confirm Message" onClick={this.confirmFunction}/>
+        <input type="button" value="Go Back" onClick={this.goBackFunction}/>
       </div>
     )
   },
@@ -43,5 +46,11 @@ export default React.createClass({
         });
       });
     });
+  },
+  confirmFunction: function() {
+    store.messageToBeSent.save().then(() => {console.log('wow!!');});
+  },
+  goBackFunction: function() {
+    hashHistory.push(`/newmessage/${store.messageToBeSent.get('recipient_id')}`);
   }
 });

@@ -15,6 +15,7 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
   }
 });
 
+console.log({});
 ReactDOM.render(router, document.getElementById('container'));
 
 let string = "some people said";
@@ -22,6 +23,7 @@ let string = "some people said";
 console.log(syllablizer(string));
 
 function syllablizer (string) {
+  string = string.trim();
   string = string.toLowerCase();
   let arr = string.split(' ');
   arr = arr.map(function(word){

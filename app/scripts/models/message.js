@@ -13,6 +13,7 @@ export default Bb.Model.extend({
   urlRoot: `https://baas.kinvey.com/appdata/${settings.appKey}/messages`,
   idAttribute: '_id',
   syllabizer: function(string) {
+    string = string.trim();
     string = string.toLowerCase();
     let arr = string.split(' ');
     arr = arr.map(function(word){
@@ -92,7 +93,7 @@ export default Bb.Model.extend({
       }
     });
     arr = _.flatten(arr)
-    console.log(arr);
+    // console.log(arr);
     return arr;
   }
 });
