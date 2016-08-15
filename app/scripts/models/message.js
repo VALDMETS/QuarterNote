@@ -92,6 +92,7 @@ export default Bb.Model.extend({
       }
     });
     arr = _.flatten(arr)
+    console.log(arr);
     return arr;
   }
 });

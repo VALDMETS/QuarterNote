@@ -1,3 +1,6 @@
+@font-face {
+  font-family: 'Speak';
+  src: url("assets/speak.ttf") format("truetype"); }
 body {
   margin: 0;
   font-family: sans-serif;
@@ -22,5 +25,33 @@ header {
     position: absolute;
     right: 10px;
     top: 30px; }
+
+.message-placemat {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+  .message-placemat .message-window {
+    display: block;
+    position: absolute;
+    background: gray;
+    width: 80%;
+    left: 10%;
+    height: 60%;
+    top: 20%; }
+
+.speak {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 100px 100px 0 100px;
+  border: 5px solid green;
+  background-color: black;
+  color: green;
+  font-family: 'Speak', 'monospace';
+  font-size: 50px; }
 
 /*# sourceMappingURL=main.css.map */
