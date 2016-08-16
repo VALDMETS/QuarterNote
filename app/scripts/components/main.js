@@ -9,7 +9,7 @@ import MessageAlert from './messagealert';
 export default React.createClass({
   getInitialState: function() {
     return {
-      messages: []
+      messages: store.newMessages.toJSON()
     }
   },
   render: function() {
@@ -26,13 +26,19 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    store.newMessages.fetch({
-      data: {
-        query: JSON.stringify({recipient_id: store.session.get('friend_id')})
-      }
-    }).then( () => {
-      this.setState({messages: store.newMessages.toJSON()});
-    });
-
+    if(!store.newMessages.length) {
+      store.newMessages.fetch({
+        data: {
+          query: JSON.stringify({recipient_id: store.session.get('friend_id')})
+        }
+      });
+    }
+    store.newMessages.on('update', this.messageListener);
   },
+  componentWillDismount: function() {
+    store.newMessage.off('update', this.messageListener);
+  },
+  messageListener: function() {
+    this.setState({messages: store.newMessages.toJSON()});
+  }
 });

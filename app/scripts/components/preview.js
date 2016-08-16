@@ -49,6 +49,7 @@ export default React.createClass({
   },
   confirmFunction: function() {
     store.messageToBeSent.save().then(() => {console.log('wow!!');});
+    hashHistory.push(`/main`);
   },
   goBackFunction: function() {
     hashHistory.push(`/newmessage/${store.messageToBeSent.get('recipient_id')}`);

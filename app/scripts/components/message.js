@@ -51,7 +51,10 @@ export default React.createClass({
     });
   },
   goBackFunction: function() {
-    //delete message option?
+    console.log(store.newMessages.get(this.props.params.id));
+    store.newMessages.get(this.props.params.id).destroy();
+    store.newMessages.remove(this.props.params.id);
+    store.newMessages.trigger('update');
     hashHistory.push('/main');
   }
 });
