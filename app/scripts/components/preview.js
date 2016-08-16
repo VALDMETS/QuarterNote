@@ -53,7 +53,7 @@ export default React.createClass({
     store.messageToBeSent.save().
     then(() => {
       store.messageToBeSent = new Message();
-      console.log(store.messageToBeSent);
+      // console.log(store.messageToBeSent);
       store.messageSentConfirmation = true;
       hashHistory.push(`/main`);
     });

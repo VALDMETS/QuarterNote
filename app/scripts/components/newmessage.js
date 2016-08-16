@@ -16,7 +16,7 @@ export default React.createClass({
   render: function() {
     let messageTitle = <h4>New Quarter Note to {this.state.name}</h4>
     return (
-      <div>
+      <div className="new-message">
         <Header/>
         {messageTitle}
         <form onSubmit={this.submitFunction}>

@@ -36,7 +36,6 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    console.log(store.messageSentConfirmation);
     if(!store.newMessages.length) {
       store.newMessages.fetch({
         data: {

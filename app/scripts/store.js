@@ -13,6 +13,7 @@ export default {
 
   messageSentConfirmation: false,
   themeMetaInfo: [{
+    key: 0,
     theme: 'speak',
     theme_id: '57b1e44e616900c708e8400c'
   }, {

@@ -11,7 +11,6 @@ export default React.createClass({
     )
   },
   clickFunction: function() {
-    console.log(this.props.info._id);
     hashHistory.push(`/main/message/${this.props.info._id}`)
   }
 });
