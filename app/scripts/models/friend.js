@@ -8,6 +8,6 @@ export default Bb.Model.extend({
     img_url: '',
     _id: ''
   },
-  urlRoot: `https://baas.kinvey.com/appdata/${settings.appKey}/friends`,
+  urlRoot: `https://baas.kinvey.com/user/${settings.appKey}`,
   idAttribute: '_id'
 });

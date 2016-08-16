@@ -5,7 +5,7 @@ import store from '../store';
 
 export default React.createClass({
   render: function() {
-    let selfProfile = `/profile/${store.session.get('friend_id')}`;
+    let selfProfile = `/profile/${store.session.get('_id')}`;
     return (
       <header>
         <ul className="header-menu">

@@ -27,7 +27,7 @@ export default React.createClass({
       return <FriendWidget data={friend} key={i}/>
     });
     let messageButton;
-    if (store.session.get('friend_id') !== this.props.params.id) {
+    if (store.session.get('_id') !== this.props.params.id) {
       let buttonVal = `Send a message to ${this.state.user.username}!`;
       messageButton = <input type="button" value={buttonVal} onClick={this.newMessage}/>
     }

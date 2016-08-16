@@ -44,7 +44,7 @@ export default React.createClass({
       recipient_id: this.props.params.id,
       content: content,
       theme: store.themeMetaInfo[0].theme,
-      theme_id: store.themeMetaInfo.theme_id
+      theme_id: store.themeMetaInfo[0].theme_id
     });
     console.log(store.messageToBeSent);
     hashHistory.push(`/newmessage/${this.props.params.id}/preview`);

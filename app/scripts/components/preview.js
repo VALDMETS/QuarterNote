@@ -4,6 +4,7 @@ import {Howl} from 'howler';
 import store from '../store';
 
 import Theme from '../models/theme';
+import Message from '../models/message';
 
 export default React.createClass({
   getInitialState: function() {
@@ -30,7 +31,8 @@ export default React.createClass({
   },
   componentDidMount: function() {
     store.themeList.fetch().then( () => {
-      let currentTheme = store.themeList.get('57b1e44e616900c708e8400c')
+      let theme_id = store.messageToBeSent.get('theme_id');
+      let currentTheme = store.themeList.get(theme_id)
       let sound = new Howl({src: currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url});
       sound.play();
       sound.on('load', () => {
@@ -50,10 +52,9 @@ export default React.createClass({
   confirmFunction: function() {
     store.messageToBeSent.save().
     then(() => {
-      console.log('before switch', store.messageSentConfirmation);
+      store.messageToBeSent = new Message();
+      console.log(store.messageToBeSent);
       store.messageSentConfirmation = true;
-      console.log('after switch', store.messageSentConfirmation);
-      console.log('wow!!');
       hashHistory.push(`/main`);
     });
   },

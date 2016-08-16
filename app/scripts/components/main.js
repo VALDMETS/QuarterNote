@@ -40,7 +40,7 @@ export default React.createClass({
     if(!store.newMessages.length) {
       store.newMessages.fetch({
         data: {
-          query: JSON.stringify({recipient_id: store.session.get('friend_id')})
+          query: JSON.stringify({recipient_id: store.session.get('_id')})
         }
       });
     }
