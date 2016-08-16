@@ -26,6 +26,7 @@ export default React.createClass({
           </div>
         </div>
         <input type="button" value="Go Back" onClick={this.goBackFunction}/>
+        <input type="button" value="Reply" onClick={this.replyFunction}/>
       </div>
     )
   },
@@ -51,10 +52,17 @@ export default React.createClass({
     });
   },
   goBackFunction: function() {
-    console.log(store.newMessages.get(this.props.params.id));
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
     hashHistory.push('/main');
+  },
+  replyFunction: function() {
+    let replyTarget = store.friendList.where({username: this.state.currentMessage.sender});
+    replyTarget = replyTarget[0].toJSON();
+    store.newMessages.get(this.props.params.id).destroy();
+    store.newMessages.remove(this.props.params.id);
+    store.newMessages.trigger('update');
+    hashHistory.push(`/newmessage/${replyTarget._id}`);
   }
 });

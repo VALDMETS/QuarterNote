@@ -58,6 +58,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
-    "howler": "^2.0.0"
+    "howler": "^2.0.0",
+    "moment": "^2.14.1"
   }
 }

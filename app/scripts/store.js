@@ -9,5 +9,13 @@ export default {
   friendList: new FriendList(),
   messageToBeSent: new Message(),
   newMessages: new NewMessages(),
-  themeList: new ThemeList()
+  themeList: new ThemeList(),
+
+  messageSentConfirmation: false,
+  themeMetaInfo: [{
+    theme: 'speak',
+    theme_id: '57b1e44e616900c708e8400c'
+  }, {
+
+  }],
 };

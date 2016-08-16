@@ -48,8 +48,14 @@ export default React.createClass({
     });
   },
   confirmFunction: function() {
-    store.messageToBeSent.save().then(() => {console.log('wow!!');});
-    hashHistory.push(`/main`);
+    store.messageToBeSent.save().
+    then(() => {
+      console.log('before switch', store.messageSentConfirmation);
+      store.messageSentConfirmation = true;
+      console.log('after switch', store.messageSentConfirmation);
+      console.log('wow!!');
+      hashHistory.push(`/main`);
+    });
   },
   goBackFunction: function() {
     hashHistory.push(`/newmessage/${store.messageToBeSent.get('recipient_id')}`);

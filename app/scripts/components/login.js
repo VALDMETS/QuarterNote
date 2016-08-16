@@ -24,6 +24,7 @@ export default React.createClass({
       success: (user, resp) => {
         store.session.unset('password');
         store.session.set({authtoken: resp._kmd.authtoken, friend_id: resp.friend_id});
+        store.friendList.fetch();
         hashHistory.push('/main');
       },
       error: () => {

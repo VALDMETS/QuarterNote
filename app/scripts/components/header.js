@@ -15,8 +15,8 @@ export default React.createClass({
           <li><Link to="/login">Login</Link></li>
           <li><Link to="/about">About</Link></li>
         </ul>
-        <h1>Quarter Note</h1>
-        <Link className="main-button" to="/newmessage/overlay">Logo</Link>
+        <h1>QN</h1>
+        <Link className="main-button" to="/selectfriend">Logo</Link>
       </header>
     )
   }

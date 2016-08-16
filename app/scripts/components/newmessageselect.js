@@ -29,7 +29,6 @@ export default React.createClass({
     store.friendList.fetch().then( () => {
       store.friendList.remove(store.session.get('friend_id'));
       this.setState({friendList: store.friendList.toJSON()});
-      console.log(this.state.friendList);
     });
   }
 });

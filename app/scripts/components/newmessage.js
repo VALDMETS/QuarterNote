@@ -37,13 +37,14 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
+    console.log(store.themeList);
     let content = store.messageToBeSent.syllabizer(this.refs.message.value);
     store.messageToBeSent.set({
       sender: store.session.get('username'),
       recipient_id: this.props.params.id,
       content: content,
-      theme: 'speak',
-      theme_id: '57b1e44e616900c708e8400c'
+      theme: store.themeMetaInfo[0].theme,
+      theme_id: store.themeMetaInfo.theme_id
     });
     console.log(store.messageToBeSent);
     hashHistory.push(`/newmessage/${this.props.params.id}/preview`);
