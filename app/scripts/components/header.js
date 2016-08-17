@@ -21,6 +21,7 @@ export default React.createClass({
             <li><Link to={selfProfile}>Profile</Link></li>
             <li><Link onClick={this.logoutFunction} to="/login">Log Out</Link></li>
             <li><Link to="/about">About</Link></li>
+            <div ref="escaper" onClick={this.escapeFunction}/>
           </ul>
         </div>
         <h1>QuarterNote</h1>
@@ -31,8 +32,10 @@ export default React.createClass({
   expandFunction: function() {
     if (this.state.menuToggle) {
       this.refs.headermenu.className = "header-menu expanded";
+      this.refs.escaper.className = "invisible-escape";
     } else {
       this.refs.headermenu.className = "header-menu";
+      this.refs.escaper.className = "";
     }
     this.setState({menuToggle: !this.state.menuToggle});
   },
@@ -42,5 +45,8 @@ export default React.createClass({
       url: `https://baas.kinvey.com/user/${settings.appKey}/_logout`
     })
     store.session.clear();
+  },
+  escapeFunction: function () {
+    this.expandFunction();
   }
 });

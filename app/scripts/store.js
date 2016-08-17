@@ -31,7 +31,7 @@ export default {
     button: 'I Think You\'re Right',
     phrase: '\"With so many ways to talk, QuarterNote has replaced all other forms of communication for me.\" -- You, soon'
   }, {
-    button: '',
-    phrase: ''
+    button: 'You Know Me Well',
+    phrase: 'The smart phone is a great invention. You can be outside, pretending to take in the world. But you\'re in a different world. A cyber-world.'
   }]
 };

@@ -28,17 +28,21 @@ export default React.createClass({
     });
     let messageButton;
     if (store.session.get('_id') !== this.props.params.id) {
-      let buttonVal = `Send a message to ${this.state.user.username}!`;
+      let buttonVal = `Message ${this.state.user.username}!`;
       messageButton = <input type="button" value={buttonVal} onClick={this.newMessage}/>
     }
     return (
       <div className="profile-page">
         <Header/>
         <h2>{this.state.user.username}</h2>
-        <div className="profile-pic">{profilePic}</div>
-        <p className="sect1">Some descriptive stuff that will be replaced by actual profile materials. But when? Hopefully soon. Don't go crazy waiting for it.</p>
-        {messageButton}
-        <p className="sect2">Additional facts, blah blah blah</p>
+        <section className="left-side">
+          <div className="profile-pic">{profilePic}</div>
+          {messageButton}
+        </section>
+        <section className="right-side">
+          <p className="sect1">Some descriptive stuff that will be replaced by actual profile materials. But when? Hopefully soon. Don't go crazy waiting for it.</p>
+          <p className="sect2">Additional facts, blah blah blah</p>
+        </section>
         <section className="friend-list">
           <h5>Friends</h5>
           {friendPics}

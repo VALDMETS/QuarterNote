@@ -22,10 +22,14 @@ export default React.createClass({
         <div className="message-window">
           <div className={themeClass}>
             {syllableAnimation}
+            <div className="left-button">
+              <input type="button" value="CONFIRM" onClick={this.confirmFunction}/>
+            </div>
+            <div className="right-button">
+              <input type="button" value="GO BACK" onClick={this.goBackFunction}/>
+            </div>
           </div>
         </div>
-        <input type="button" value="Confirm Message" onClick={this.confirmFunction}/>
-        <input type="button" value="Go Back" onClick={this.goBackFunction}/>
       </div>
     )
   },

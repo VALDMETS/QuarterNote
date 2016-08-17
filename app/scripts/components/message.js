@@ -23,10 +23,14 @@ export default React.createClass({
         <div className="message-window">
           <div className={themeClass}>
             {syllableAnimation}
+            <div className="left-button">
+              <input type="button" value="REPLY" onClick={this.replyFunction}/>
+            </div>
+            <div className="right-button">
+              <input type="button" value="GO BACK" onClick={this.goBackFunction}/>
+            </div>
           </div>
-        </div>
-        <input type="button" value="Go Back" onClick={this.goBackFunction}/>
-        <input type="button" value="Reply" onClick={this.replyFunction}/>
+        </div>  
       </div>
     )
   },

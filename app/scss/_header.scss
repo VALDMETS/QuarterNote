@@ -3,7 +3,7 @@
 @import 'animations';
 
 header {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   box-sizing: border-box;
   top: 0px;
@@ -29,7 +29,7 @@ header {
     left: 0px;
     top: 0px;
     ul {
-      z-index: 3;
+      z-index: 4;
       padding-left: 0px;
       height: 0px;
       transition: .3s;
@@ -99,5 +99,14 @@ header {
     position: absolute;
     right: 10px;
     top: 30px;
+  }
+  .invisible-escape {
+    position: fixed;
+    // background-color: rgba(0,0,0,.4);
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 }

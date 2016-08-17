@@ -142,7 +142,7 @@
   100% {
     background-position: 9% 0%; } }
 header {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   box-sizing: border-box;
   top: 0px;
@@ -165,7 +165,7 @@ header {
     left: 0px;
     top: 0px; }
     header .menu-button ul {
-      z-index: 3;
+      z-index: 4;
       padding-left: 0px;
       height: 0px;
       transition: .3s;
@@ -223,6 +223,13 @@ header {
     position: absolute;
     right: 10px;
     top: 30px; }
+  header .invisible-escape {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
 
 @font-face {
   font-family: 'Speak';
@@ -259,6 +266,10 @@ header {
   color: green;
   font-family: 'Speak', 'monospace';
   font-size: 50px; }
+  .speak .left-button [type="button"], .speak .right-button [type="button"] {
+    color: green;
+    border: 2px solid green;
+    background: black; }
 
 body {
   margin: 0;
@@ -333,38 +344,62 @@ body {
   position: relative; }
   .profile-page h2 {
     text-align: center; }
-  .profile-page .profile-pic {
-    display: inline-block;
-    margin: 10px;
-    height: 44vw;
-    width: 44vw;
-    max-height: 500px;
-    max-width: 500px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    border: 2px solid #03312E;
-    object-fit: cover;
-    overflow: hidden; }
-    .profile-page .profile-pic img {
-      width: 50vw;
-      height: auto; }
-  .profile-page .sect1 {
+  .profile-page .left-side {
+    padding: 0;
+    margin: 0;
     display: block;
-    width: 46%;
-    float: right;
-    margin: 0 2% 0 0; }
-  .profile-page .sect2 {
+    width: 50%;
+    float: left; }
+    .profile-page .left-side .profile-pic {
+      display: block;
+      margin: 0 auto;
+      height: 44vw;
+      width: 44vw;
+      max-height: 500px;
+      max-width: 500px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      border: 2px solid #03312E;
+      object-fit: cover;
+      overflow: hidden; }
+      .profile-page .left-side .profile-pic img {
+        width: 50vw;
+        height: auto; }
+    .profile-page .left-side [type="button"] {
+      display: block;
+      width: 90%;
+      height: 38px;
+      margin: 10px auto;
+      padding: 1vw;
+      font-size: 3.2vw;
+      text-align: center;
+      border: 2px solid rgba(0, 0, 0, 0.4);
+      border-radius: 100px;
+      background-color: rgba(0, 0, 0, 0.2); }
+  .profile-page .right-side {
+    padding: 0;
+    margin: 0;
     display: block;
-    width: 46%;
-    margin: 0 2% 0 52%; }
+    width: 50%;
+    float: right; }
+    .profile-page .right-side p {
+      font-weight: 200;
+      font-style: italic; }
+    .profile-page .right-side .sect1 {
+      width: 87%;
+      margin: 0 5% 0 8%; }
+    .profile-page .right-side .sect2 {
+      width: 87%;
+      margin: 28px 5% 0 8%; }
   .profile-page .friend-list {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 180px;
+    height: 30vh;
     background-color: #009F93; }
 
 .message-placemat {
+  z-index: 2;
   position: fixed;
   background: rgba(0, 0, 0, 0.8);
   top: 60px;
@@ -379,5 +414,21 @@ body {
     left: 5%;
     height: 60%;
     top: 10%; }
+  .message-placemat .left-button, .message-placemat .right-button {
+    z-index: 3;
+    position: fixed;
+    width: 50%;
+    bottom: 10%;
+    color: #C5F9F6; }
+    .message-placemat .left-button [type="button"], .message-placemat .right-button [type="button"] {
+      width: 74%;
+      display: block;
+      font: 28px;
+      padding: 8px;
+      margin: 20px auto; }
+  .message-placemat .left-button {
+    left: 0; }
+  .message-placemat .right-button {
+    right: 0; }
 
 /*# sourceMappingURL=main.css.map */

@@ -4,7 +4,7 @@ import store from '../store';
 
 export default React.createClass({
   render: function() {
-    let randInt = Math.floor(Math.random()*3);
+    let randInt = Math.floor(Math.random()*4);
     return (
       <div className="login-page">
         <div className="intro-hero">
