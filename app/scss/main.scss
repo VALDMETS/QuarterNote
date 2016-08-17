@@ -31,44 +31,97 @@ body {
 }
 .alert-box {
   width: 100%;
-  .new-message-alert {
-    position: relative;
-    padding: 0 4px;
-    width: 90%;
-    height: 57px;
-    margin: 14px auto;
+}
+.new-message-alert, .message-sent {
+  position: relative;
+  padding: 0 4px;
+  width: 90%;
+  height: 57px;
+  margin: 14px auto;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 28px;
+  background-color: rgba(256, 256, 256, .2);
+  .alert-color {
+    position: absolute;
+    top: -5px;
+    left: -5px;
     box-sizing: border-box;
-    border: 2px solid white;
-    border-radius: 28px;
-    background-color: rgba(256, 256, 256, .2);
-    .alert-color {
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      box-sizing: border-box;
-      border: 2 px solid white;
-      border-radius: 50%;
-      background-color: $turq;
-      height: 49px;
-      width: 49px;
-      margin: 7px;
-    }
-    p {
-      margin: 3px 0;
-      padding-left: 56px;
-      font-size: 15px;
-    }
-    span {
-      margin: 0;
-      color: $turq;
-      padding-left: 170px;
-      font-size: 13px;
-      font-style: italic;
-      font-weight: 200;
-    }
+    border: 2 px solid white;
+    border-radius: 50%;
+    background-color: $turq;
+    height: 49px;
+    width: 49px;
+    margin: 7px;
+  }
+  p {
+    margin: 3px 0;
+    padding-left: 56px;
+    font-size: 15px;
+  }
+  span {
+    margin: 0;
+    display: block;
+    color: $turq;
+    float: right;
+    padding-right: 10px;
+    text-align: left;
+    width: 130px;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 200;
   }
 }
-
+.message-sent {
+  border: 2px solid green;
+  p {
+    padding: 12px 0 0 0;
+    text-align: center;
+    color: green;
+  }
+}
+.profile-page {
+  position: relative;
+  h2 {
+    text-align: center;
+  }
+  .profile-pic {
+    // float: left;
+    display: inline-block;
+    margin: 10px;
+    height: 44vw;
+    width: 44vw;
+    max-height: 500px;
+    max-width: 500px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 2px solid $dark;
+    object-fit: cover;
+    overflow: hidden;
+    img {
+      width: 50vw;
+      height: auto;
+    }
+  }
+  .sect1 {
+    display: block;
+    width: 46%;
+    float: right;
+    margin: 0 2% 0 0;
+  }
+  .sect2 {
+    display: block;
+    width: 46%;
+    margin: 0 2% 0 52%;
+  }
+  .friend-list {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 180px;
+    background-color: $green;
+  }
+}
 .message-placemat {
   position: fixed;
   background: rgba(0,0,0,.8);

@@ -16,7 +16,7 @@ export default React.createClass({
   render: function() {
     let messageSentConfirmation;
     if (this.state.messageSentConfirmation === true) {
-      messageSentConfirmation = <div className="message-sent">Message Sent!</div>
+      messageSentConfirmation = <div className="message-sent"><p>Message Sent!</p></div>
     }
     let newMessages = this.state.messages.map( (message, i) => {
       return <MessageAlert info={message} key={i}/>

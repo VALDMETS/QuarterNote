@@ -36,7 +36,9 @@ export default React.createClass({
         <Header/>
         <h2>{this.state.user.username}</h2>
         <div className="profile-pic">{profilePic}</div>
+        <p className="sect1">Some descriptive stuff that will be replaced by actual profile materials. But when? Hopefully soon. Don't go crazy waiting for it.</p>
         {messageButton}
+        <p className="sect2">Additional facts, blah blah blah</p>
         <section className="friend-list">
           <h5>Friends</h5>
           {friendPics}
