@@ -11,8 +11,9 @@ export default React.createClass({
           <h2>Welcome to QuarterNote</h2>
           <input type="button" ref="gotologin" onClick={this.goLogin} value="Log In"/>
         </div>
-        <p>The piping-hottest musical messenger app</p>
-        <h4>- of all time -</h4>
+        <p>"The piping-hottest musical messenger app</p>
+        <h4>of all time"</h4>
+        <p>-- You, 2016</p>
         <form onSubmit={this.submitFunction}>
           <p>I feel so lucky to sign up</p>
           <input type="text" ref="signupname" placeholder="Your Name"/>
