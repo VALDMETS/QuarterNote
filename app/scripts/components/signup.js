@@ -14,7 +14,7 @@ export default React.createClass({
         <p>The piping-hottest musical messenger app</p>
         <h4>- of all time -</h4>
         <form onSubmit={this.submitFunction}>
-          <h3>I feel so lucky to sign up</h3>
+          <p>I feel so lucky to sign up</p>
           <input type="text" ref="signupname" placeholder="Your Name"/>
           <input type="password" ref="signuppass" placeholder="Password"/>
           <input type="submit" value="GO"/>

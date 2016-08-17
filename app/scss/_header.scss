@@ -1,0 +1,103 @@
+@import 'variables';
+@import 'fonts';
+@import 'animations';
+
+header {
+  z-index: 2;
+  position: fixed;
+  box-sizing: border-box;
+  top: 0px;
+  width: 100%;
+  height: 60px;
+  background-color: $turq;
+  border-bottom: 2px solid rgba(0, 0, 0, .1);
+
+  background: linear-gradient(141deg, $turq, $light, $green);
+  background-size: 600% 600%;
+
+  -webkit-animation: Hero 8s ease infinite;
+  -moz-animation: Hero 8s ease infinite;
+  animation: Hero 8s ease infinite;
+
+  .menu-button {
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, .1);
+    border-bottom: none;
+    position: absolute;
+    width: 60px;
+    height: 58px;
+    left: 0px;
+    top: 0px;
+    ul {
+      z-index: 3;
+      padding-left: 0px;
+      height: 0px;
+      transition: .3s;
+      display: block;
+      position: absolute;
+      top: 42px;
+      left: -10px;
+      width: 200px;
+      a {
+        text-decoration: none;
+        font-size: 20px;
+        display: block;
+        color: transparent;
+      }
+      li {
+        display: block;
+        box-sizing: border-box;
+        padding: 0 0 0 25px;
+        transition: .3s;
+        width: 100%;
+        float: left;
+        overflow: hidden;
+        height: 0;
+        border: none;
+        border-top: none;
+
+        background: linear-gradient(141deg, $turq, $light, $green);
+        background-size: 600% 600%;
+
+        -webkit-animation: Hero 8s ease infinite;
+        -moz-animation: Hero 8s ease infinite;
+        animation: Hero 8s ease infinite;
+      }
+    }
+    .expanded {
+      height: 170px;
+      li {
+        cursor: pointer;
+        padding: 4px 0 8px 25px;
+        height: 36px;
+        border: 2px solid rgba(0, 0, 0, .1);
+        border-top: none;
+        border-left: none;
+        &:hover {
+          background-color: $white;
+          transition: .5s;
+        }
+        &:active {
+          background-color: white;
+          transition: 0s;
+        }
+      }
+      a {
+        color: black;
+      }
+    }
+  }
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 8px $dark;
+    margin-top: 0;
+    padding: 15px 0;
+    text-align: center;
+  }
+  .main-button {
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 30px;
+  }
+}

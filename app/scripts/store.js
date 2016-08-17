@@ -31,7 +31,7 @@ export default {
     button: 'I Think You\'re Right',
     phrase: '\"With so many ways to talk, QuarterNote has replaced all other forms of communication for me.\" -- You, soon'
   }, {
-    button:
-    phrase:
+    button: '',
+    phrase: ''
   }]
 };

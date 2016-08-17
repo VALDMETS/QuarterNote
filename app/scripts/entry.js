@@ -19,6 +19,6 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
 
 ReactDOM.render(router, document.getElementById('container'));
 
-if(!store.session.get('authtoken')) {
-  hashHistory.push('/signup');
-}
+// if(!store.session.get('authtoken')) {
+//   hashHistory.push('/signup');
+// }

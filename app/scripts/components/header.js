@@ -23,7 +23,7 @@ export default React.createClass({
             <li><Link to="/about">About</Link></li>
           </ul>
         </div>
-        <h1>QN</h1>
+        <h1>QuarterNote</h1>
         <Link className="main-button" to="/selectfriend">Logo</Link>
       </header>
     )

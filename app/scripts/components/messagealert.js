@@ -1,12 +1,15 @@
 import React from 'react';
+import moment from 'moment';
 import {hashHistory} from 'react-router';
 
 export default React.createClass({
   render: function() {
+    let timestampFormat = 'from ' + moment(this.props.info.timestamp).fromNow();
     return (
-      <div onClick={this.clickFunction} className="new-message">
-        <span>New message from {this.props.info.sender}!</span>
-        <span>{this.props.info.timestamp}</span>
+      <div onClick={this.clickFunction} className="new-message-alert">
+        <div className="alert-color"/>
+        <p>New message from {this.props.info.sender}!</p>
+        <span>{timestampFormat}</span>
       </div>
     )
   },

@@ -1,0 +1,17 @@
+@import 'variables';
+@import 'fonts';
+@import 'animations';
+
+.speak {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10% 10% 0 10%;
+  border: 5px solid green;
+  background-color: black;
+
+  color: green;
+  font-family: 'Speak', 'monospace';
+  font-size: 50px;
+}
