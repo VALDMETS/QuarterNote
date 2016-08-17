@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, Router, hashHistory} from 'react-router';
 
 import Main from './main';
+import Signup from './signup';
 import Login from './login';
 import Profile from './profile';
 import NewMessageSelect from './newmessageselect';
@@ -15,6 +16,7 @@ const router = (
     <Route path="/main" component={Main}>
       <Route path="message/:id" component={Message}/>
     </Route>
+    <Route path="/signup" component={Signup}/>
     <Route path="/login" component={Login}/>
     <Route path="/profile/:id" component={Profile}/>
     <Route path="/selectfriend" component={NewMessageSelect}/>

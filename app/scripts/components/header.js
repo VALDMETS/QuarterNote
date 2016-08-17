@@ -2,8 +2,14 @@ import React from 'react';
 import {Link} from 'react-router';
 
 import store from '../store';
+import settings from '../settings';
 
 export default React.createClass({
+  getInitialState: function() {
+    return {
+      menuToggle: true
+    }
+  },
   render: function() {
     let selfProfile = `/profile/${store.session.get('_id')}`;
     return (
@@ -13,7 +19,7 @@ export default React.createClass({
             <li><Link to="/main">Check Messages</Link></li>
             <li><Link to="/selectfriend">New Message</Link></li>
             <li><Link to={selfProfile}>Profile</Link></li>
-            <li><Link to="/login">Login</Link></li>
+            <li><Link onClick={this.logoutFunction} to="/login">Log Out</Link></li>
             <li><Link to="/about">About</Link></li>
           </ul>
         </div>
@@ -23,6 +29,18 @@ export default React.createClass({
     )
   },
   expandFunction: function() {
-    this.refs.headermenu.className = "header-menu expanded";
+    if (this.state.menuToggle) {
+      this.refs.headermenu.className = "header-menu expanded";
+    } else {
+      this.refs.headermenu.className = "header-menu";
+    }
+    this.setState({menuToggle: !this.state.menuToggle});
+  },
+  logoutFunction: function () {
+    store.session.save(null, {
+      type: 'POST',
+      url: `https://baas.kinvey.com/user/${settings.appKey}/_logout`
+    })
+    store.session.clear();
   }
 });

@@ -6,11 +6,10 @@ export default React.createClass({
   render: function() {
     return (
       <div className="login-page">
-        <h2>Welcome to QuarterNote.</h2>
+        <h2>Welcome Back.</h2>
+        <input type="button" ref="gotologin" onClick={this.goSignup} value="Sign Up"/>
         <form onSubmit={this.submitFunction}>
-          <h4>Ready to start having fun?</h4>
-          <p>Go do something off the internet then. Get a life.</p>
-          <p>But if you really insist on using the hottest new app of your lifetime, go ahead and log in below:</p>
+          <p>go ahead and log in below:</p>
           <input type="text" ref="loginname" placeholder="Your Name"/>
           <input type="password" ref="loginpass" placeholder="Password"/>
           <input type="submit" value="Let's do this rude thing"/>
@@ -20,10 +19,13 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
-    store.session.save({username: this.refs.loginname.value, password: this.refs.loginpass.value}, {
+    store.session.save({
+      username: this.refs.loginname.value,
+      password: this.refs.loginpass.value,
+    }, {
       success: (user, resp) => {
         store.session.unset('password');
-        store.session.set({authtoken: resp._kmd.authtoken, friend_id: resp.friend_id});
+        store.session.set({authtoken: resp._kmd.authtoken});
         store.friendList.fetch();
         hashHistory.push('/main');
       },
@@ -31,5 +33,8 @@ export default React.createClass({
         console.log('sorry, something went wrong');
       }
     })
+  },
+  goSignup: function() {
+    hashHistory.push('/signup');
   }
 });

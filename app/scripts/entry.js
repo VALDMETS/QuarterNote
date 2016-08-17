@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {hashHistory} from 'react-router';
 import $ from 'jquery';
 
 import store from './store';
 import settings from './settings';
 import router from './components/router';
+
+
 
 $(document).ajaxSend(function(e, xhr, jqueryAjax){
   if (store.session.get('authtoken')) {
@@ -15,3 +18,7 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
 });
 
 ReactDOM.render(router, document.getElementById('container'));
+
+if(!store.session.get('authtoken')) {
+  hashHistory.push('/signup');
+}
