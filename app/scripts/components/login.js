@@ -4,15 +4,19 @@ import store from '../store';
 
 export default React.createClass({
   render: function() {
+    let randInt = Math.floor(Math.random()*3);
     return (
       <div className="login-page">
-        <h2>Welcome Back.</h2>
-        <input type="button" ref="gotologin" onClick={this.goSignup} value="Sign Up"/>
+        <div className="intro-hero">
+          <h2>Welcome Back.</h2>
+          <input type="button" ref="gotologin" onClick={this.goSignup} value="Sign Up"/>
+        </div>
+        <p>{store.loginGreetings[randInt].phrase}</p>
         <form onSubmit={this.submitFunction}>
-          <p>go ahead and log in below:</p>
+          <p>Go ahead and log in</p>
           <input type="text" ref="loginname" placeholder="Your Name"/>
           <input type="password" ref="loginpass" placeholder="Password"/>
-          <input type="submit" value="Let's do this rude thing"/>
+          <input type="submit" value={store.loginGreetings[randInt].button}/>
         </form>
       </div>
     )

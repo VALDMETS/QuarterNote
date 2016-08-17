@@ -7,15 +7,17 @@ export default React.createClass({
   render: function() {
     return (
       <div className="signup-page">
-        <h2>Welcome to QuarterNote.</h2>
-        <input type="button" ref="gotologin" onClick={this.goLogin} value="Log In"/>
+        <div className="intro-hero">
+          <h2>Welcome to QuarterNote</h2>
+          <input type="button" ref="gotologin" onClick={this.goLogin} value="Log In"/>
+        </div>
+        <p>The piping-hottest musical messenger app</p>
+        <h4>- of all time -</h4>
         <form onSubmit={this.submitFunction}>
-          <h4>Ready to start having fun?</h4>
-          <p>Go do something off the internet then. Get a life.</p>
-          <p>But if you really insist on using the hottest new app of your lifetime, go ahead and sign up below:</p>
+          <h3>I feel so lucky to sign up</h3>
           <input type="text" ref="signupname" placeholder="Your Name"/>
           <input type="password" ref="signuppass" placeholder="Password"/>
-          <input type="submit" value="Let's do this rude thing"/>
+          <input type="submit" value="GO"/>
         </form>
       </div>
     )
