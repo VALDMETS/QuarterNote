@@ -24,17 +24,17 @@
     background-position: 9% 0%; } }
 @-webkit-keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 @-moz-keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 @keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 @font-face {
@@ -63,17 +63,17 @@
     background-position: 9% 0%; } }
 @-webkit-keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 @-moz-keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 @keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 .login-page, .signup-page {
@@ -173,17 +173,17 @@
     background-position: 9% 0%; } }
 @-webkit-keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 @-moz-keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 @keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 header {
@@ -302,17 +302,17 @@ header {
     background-position: 9% 0%; } }
 @-webkit-keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 @-moz-keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 @keyframes Module-Move {
   0% {
-    margin: 0 auto; }
+    margin: -5px auto; }
   100% {
     margin: 10px auto; } }
 .speak {

@@ -10,11 +10,11 @@ import store from '../store';
 export default React.createClass({
   getInitialState: function() {
     return {
-      name: ''
+      currentFriend: store.friendList.get(this.props.params.id).toJSON()
     }
   },
   render: function() {
-    let messageTitle = <h4>New Quarter Note to {this.state.name}</h4>
+    let messageTitle = <h4>New Quarter Note to {this.state.currentFriend.username}</h4>
     return (
       <div className="new-message">
         <Header/>
@@ -28,12 +28,12 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    let recipientName = new Friend({_id: this.props.params.id});
-    recipientName.fetch({
-      success: () => {
-        this.setState({name: recipientName.get('username')});
-      }
-    })
+    // let recipientName = new Friend({_id: this.props.params.id});
+    // recipientName.fetch({
+    //   success: () => {
+    //     this.setState({name: recipientName.get('username')});
+    //   }
+    // })
   },
   submitFunction: function(e) {
     e.preventDefault();
