@@ -5,6 +5,7 @@ import NewMessages from '../collections/newmessages';
 
 import Header from './header';
 import MessageAlert from './messagealert';
+import FriendRequest from './friendrequest';
 
 export default React.createClass({
   getInitialState: function() {
@@ -18,6 +19,9 @@ export default React.createClass({
     if (this.state.messageSentConfirmation === true) {
       messageSentConfirmation = <div className="message-sent"><p>Message Sent!</p></div>
     }
+    let friendRequests = store.friendRequests.map( (request, i) => {
+      return <FriendRequest info={request} key={i}/>
+    });
     let newMessages = this.state.messages.map( (message, i) => {
       return <MessageAlert info={message} key={i}/>
     });
@@ -27,6 +31,7 @@ export default React.createClass({
         <div className="alert-notifications">
           <h2>Welcome, {store.session.get('username')}</h2>
           {messageSentConfirmation}
+          {friendRequests}
         </div>
         <div className="alert-box">
           {newMessages}

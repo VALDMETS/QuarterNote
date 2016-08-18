@@ -351,7 +351,7 @@ body {
 .alert-box {
   width: 100%; }
 
-.new-message-alert, .message-sent, .friend-selector {
+.new-message-alert, .message-sent, .friend-request, .friend-selector {
   position: relative;
   padding: 0 4px;
   width: 90%;
@@ -364,7 +364,7 @@ body {
   -webkit-animation: Module-Move .4s;
   -moz-animation: Module-Move .4s;
   animation: Module-Move .4s; }
-  .new-message-alert .alert-color, .new-message-alert .selector-pic, .message-sent .alert-color, .message-sent .selector-pic, .friend-selector .alert-color, .friend-selector .selector-pic {
+  .new-message-alert .alert-color, .new-message-alert .selector-pic, .message-sent .alert-color, .message-sent .selector-pic, .friend-request .alert-color, .friend-request .selector-pic, .friend-selector .alert-color, .friend-selector .selector-pic {
     position: absolute;
     top: -5px;
     left: -5px;
@@ -377,14 +377,14 @@ body {
     margin: 7px;
     object-fit: cover;
     overflow: hidden; }
-    .new-message-alert .alert-color img, .new-message-alert .selector-pic img, .message-sent .alert-color img, .message-sent .selector-pic img, .friend-selector .alert-color img, .friend-selector .selector-pic img {
+    .new-message-alert .alert-color img, .new-message-alert .selector-pic img, .message-sent .alert-color img, .message-sent .selector-pic img, .friend-request .alert-color img, .friend-request .selector-pic img, .friend-selector .alert-color img, .friend-selector .selector-pic img {
       width: 49px;
       height: auto; }
-  .new-message-alert p, .message-sent p, .friend-selector p {
+  .new-message-alert p, .message-sent p, .friend-request p, .friend-selector p {
     margin: 3px 0;
     padding-left: 56px;
     font-size: 15px; }
-  .new-message-alert span, .message-sent span, .friend-selector span {
+  .new-message-alert span, .message-sent span, .friend-request span, .friend-selector span {
     margin: 0;
     display: block;
     color: #037171;
@@ -395,7 +395,7 @@ body {
     font-size: 13px;
     font-style: italic;
     font-weight: 200; }
-  .new-message-alert h5, .message-sent h5, .friend-selector h5 {
+  .new-message-alert h5, .message-sent h5, .friend-request h5, .friend-selector h5 {
     margin: 6px;
     text-align: center;
     font-size: 18px; }

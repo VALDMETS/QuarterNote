@@ -1,8 +1,10 @@
 import Session from './models/session';
-import FriendList from './collections/friendlist';
 import Message from './models/message';
+
+import FriendList from './collections/friendlist';
 import NewMessages from './collections/newmessages';
 import ThemeList from './collections/themelist';
+import FriendRequests from './collections/friendrequests';
 
 export default {
   session: new Session(),
@@ -12,6 +14,7 @@ export default {
   themeList: new ThemeList(),
 
   friendRequests: [],
+  // friendRequests: new FriendRequests(),
 
   messageSentConfirmation: false,
   themeMetaInfo: [{

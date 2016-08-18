@@ -39,7 +39,7 @@ export default Bb.Model.extend({
       success: (friendData) => {
         // console.log(friendData);
         friendData.forEach( (listing) => {
-          if(listing.confirmation === null) {
+          if(listing.confirmation === null && listing.recipient_id === store.session.get('_id')) {
             store.friendRequests.push(listing);
           } else {
             if(listing.requestor_id === this.get('_id')) {
@@ -62,5 +62,19 @@ export default Bb.Model.extend({
         hashHistory.push('/main');
       }
     })
+  },
+  requestConfirm: function(request) {
+    console.log(request);
+    $.ajax({
+      url: `https://baas.kinvey.com/appdata/${settings.appKey}/friends/${request._id}`,
+      type: 'PUT',
+      data: {
+        "confirmation": JSON.stringify(true),
+        "requestor": request.requestor,
+        "requestor_id": request.requestor_id,
+        "recipient": request.recipient,
+        "recipient_id": request.recipient_id
+      }
+    });
   }
 });
