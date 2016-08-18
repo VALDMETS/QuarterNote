@@ -37,6 +37,35 @@
     margin: -5px auto; }
   100% {
     margin: 10px auto; } }
+@-webkit-keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
 @font-face {
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
@@ -76,6 +105,35 @@
     margin: -5px auto; }
   100% {
     margin: 10px auto; } }
+@-webkit-keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
 .login-page, .signup-page {
   position: relative; }
   .login-page [type="button"], .signup-page [type="button"] {
@@ -186,6 +244,35 @@
     margin: -5px auto; }
   100% {
     margin: 10px auto; } }
+@-webkit-keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
 header {
   z-index: 3;
   position: fixed;
@@ -315,6 +402,35 @@ header {
     margin: -5px auto; }
   100% {
     margin: 10px auto; } }
+@-webkit-keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
 .speak {
   box-sizing: border-box;
   display: block;
@@ -337,7 +453,7 @@ body {
   background: #C5F9F6;
   color: #03312E; }
 
-.alert-notifications, .about, .new-message, .select-friend, .profile-page {
+.alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend {
   margin-top: 90px; }
 
 .alert-notifications {
@@ -351,7 +467,7 @@ body {
 .alert-box {
   width: 100%; }
 
-.new-message-alert, .message-sent, .friend-request, .friend-selector {
+.new-message-alert, .friend-request, .friend-selector, .friend-listing {
   position: relative;
   padding: 0 4px;
   width: 90%;
@@ -364,7 +480,7 @@ body {
   -webkit-animation: Module-Move .4s;
   -moz-animation: Module-Move .4s;
   animation: Module-Move .4s; }
-  .new-message-alert .alert-color, .new-message-alert .selector-pic, .message-sent .alert-color, .message-sent .selector-pic, .friend-request .alert-color, .friend-request .selector-pic, .friend-selector .alert-color, .friend-selector .selector-pic {
+  .new-message-alert .alert-color, .new-message-alert .selector-pic, .new-message-alert .search-pic, .friend-request .alert-color, .friend-request .selector-pic, .friend-request .search-pic, .friend-selector .alert-color, .friend-selector .selector-pic, .friend-selector .search-pic, .friend-listing .alert-color, .friend-listing .selector-pic, .friend-listing .search-pic {
     position: absolute;
     top: -5px;
     left: -5px;
@@ -377,14 +493,14 @@ body {
     margin: 7px;
     object-fit: cover;
     overflow: hidden; }
-    .new-message-alert .alert-color img, .new-message-alert .selector-pic img, .message-sent .alert-color img, .message-sent .selector-pic img, .friend-request .alert-color img, .friend-request .selector-pic img, .friend-selector .alert-color img, .friend-selector .selector-pic img {
+    .new-message-alert .alert-color img, .new-message-alert .selector-pic img, .new-message-alert .search-pic img, .friend-request .alert-color img, .friend-request .selector-pic img, .friend-request .search-pic img, .friend-selector .alert-color img, .friend-selector .selector-pic img, .friend-selector .search-pic img, .friend-listing .alert-color img, .friend-listing .selector-pic img, .friend-listing .search-pic img {
       width: 49px;
       height: auto; }
-  .new-message-alert p, .message-sent p, .friend-request p, .friend-selector p {
+  .new-message-alert p, .friend-request p, .friend-selector p, .friend-listing p {
     margin: 3px 0;
     padding-left: 56px;
     font-size: 15px; }
-  .new-message-alert span, .message-sent span, .friend-request span, .friend-selector span {
+  .new-message-alert span, .friend-request span, .friend-selector span, .friend-listing span {
     margin: 0;
     display: block;
     color: #037171;
@@ -395,17 +511,34 @@ body {
     font-size: 13px;
     font-style: italic;
     font-weight: 200; }
-  .new-message-alert h5, .message-sent h5, .friend-request h5, .friend-selector h5 {
+  .new-message-alert h5, .friend-request h5, .friend-selector h5, .friend-listing h5 {
     margin: 6px;
     text-align: center;
     font-size: 18px; }
 
 .message-sent {
-  border: 2px solid green; }
-  .message-sent p {
-    padding: 12px 0 0 0;
-    text-align: center;
-    color: green; }
+  position: relative;
+  padding: 0 4px;
+  width: 90%;
+  margin: 10px auto;
+  box-sizing: border-box;
+  border-radius: 28px;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  height: 0px;
+  display: block;
+  opacity: 0;
+  border: 0px solid transparent;
+  color: transparent;
+  font-size: 0px;
+  margin: 0;
+  padding: 0;
+  -webkit-animation: Module-Move .4s;
+  -moz-animation: Module-Move .4s;
+  animation: Module-Move .4s;
+  -webkit-animation: AlertDisappear 3.5s forwards;
+  -moz-animation: AlertDisappear 3.5s forwards;
+  animation: AlertDisappear 3.5s forwards; }
 
 .profile-page {
   position: relative; }

@@ -37,7 +37,6 @@ export default Bb.Model.extend({
         })
       },
       success: (friendData) => {
-        // console.log(friendData);
         friendData.forEach( (listing) => {
           if(listing.confirmation === null && listing.recipient_id === store.session.get('_id')) {
             store.friendRequests.push(listing);

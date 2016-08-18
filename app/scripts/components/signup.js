@@ -3,6 +3,8 @@ import {hashHistory} from 'react-router';
 import store from '../store';
 import settings from '../settings'
 
+import Request from '../models/request';
+
 export default React.createClass({
   render: function() {
     return (
@@ -27,14 +29,24 @@ export default React.createClass({
     e.preventDefault();
     store.session.save({
       username: this.refs.signupname.value,
-      password: this.refs.signuppass.value
+      password: this.refs.signuppass.value,
+      img_url: "http://piq.codeus.net/static/media/userpics/piq_43701_400x400.png"
     }, {
       url: `https://baas.kinvey.com/user/${settings.appKey}`,
       success: (user, resp) => {
         store.session.unset('password');
         store.session.set({authtoken: resp._kmd.authtoken});
-        store.friendList.fetch();
-        hashHistory.push('/main');
+
+        // gives new user a friend to start :^)
+
+        let initialFriend = new Request({
+          confirmation: true,
+          requestor: "VALDMETS",
+          requestor_id: '57ae0b2c1d7f092358391184',
+          recipient: store.session.get('username'),
+          recipient_id: store.session.get('_id')
+        })
+        initialFriend.save().then( () => {store.session.friendSetup()});
       },
       error: () => {
         console.log('sorry, something went wrong');

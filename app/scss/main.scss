@@ -13,7 +13,7 @@ body {
   color: $dark;
 }
 
-.alert-notifications, .about, .new-message, .select-friend, .profile-page {
+.alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend {
   margin-top: 90px;
 }
 
@@ -29,7 +29,7 @@ body {
 .alert-box {
   width: 100%;
 }
-.new-message-alert, .message-sent, .friend-request, .friend-selector {
+.new-message-alert, .friend-request, .friend-selector, .friend-listing {
   position: relative;
   padding: 0 4px;
   width: 90%;
@@ -44,7 +44,7 @@ body {
   -moz-animation: Module-Move .4s;
   animation: Module-Move .4s;
 
-  .alert-color, .selector-pic {
+  .alert-color, .selector-pic, .search-pic {
     position: absolute;
     top: -5px;
     left: -5px;
@@ -87,12 +87,33 @@ body {
   }
 }
 .message-sent {
-  border: 2px solid green;
-  p {
-    padding: 12px 0 0 0;
-    text-align: center;
-    color: green;
-  }
+
+  position: relative;
+  padding: 0 4px;
+  width: 90%;
+  margin: 10px auto;
+  box-sizing: border-box;
+  border-radius: 28px;
+  background-color: rgba(256, 256, 256, .2);
+  text-align: center;
+
+  height: 0px;
+  display: block;
+  opacity: 0;
+  border: 0px solid transparent;
+  color: transparent;
+  font-size: 0px;
+  margin: 0;
+  padding: 0;
+
+  -webkit-animation: Module-Move .4s;
+  -moz-animation: Module-Move .4s;
+  animation: Module-Move .4s;
+
+  -webkit-animation: AlertDisappear 3.5s forwards;
+  -moz-animation: AlertDisappear 3.5s forwards;
+  animation: AlertDisappear 3.5s forwards;
+
 }
 .profile-page {
   position: relative;

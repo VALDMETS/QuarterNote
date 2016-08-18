@@ -4,8 +4,8 @@ import {hashHistory} from 'react-router';
 export default React.createClass({
   render: function() {
     return (
-      <div onClick={this.clickFunction} className="friend-selector">
-        <div className="selector-pic">
+      <div onClick={this.clickFunction} className="friend-listing">
+        <div className="search-pic">
           <img src={this.props.info.img_url}/>
         </div>
         <h5>{this.props.info.username}</h5>
@@ -13,6 +13,6 @@ export default React.createClass({
     )
   },
   clickFunction: function() {
-    hashHistory.push(`/newmessage/${this.props.info._id}`);
+      hashHistory.push(`/profile/${this.props.info._id}`);
   }
 });

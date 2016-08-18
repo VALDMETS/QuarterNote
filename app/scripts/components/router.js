@@ -9,6 +9,7 @@ import NewMessageSelect from './newmessageselect';
 import NewMessage from './newmessage';
 import Preview from './preview';
 import Message from './message';
+import FriendList from './friendlist';
 import About from './about';
 
 const router = (
@@ -23,6 +24,7 @@ const router = (
     <Route path="/newmessage/:id" component={NewMessage}>
       <Route path="preview" component={Preview}/>
     </Route>
+    <Route path="friends" component={FriendList}/>
     <Route path="/about" component={About}/>
 
   </Router>

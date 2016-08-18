@@ -33,9 +33,6 @@ export default React.createClass({
         store.session.unset('password');
         store.session.set({authtoken: resp._kmd.authtoken});
         store.session.friendSetup();
-        // .then(() => {
-        //   hashHistory.push('/main');
-        // });
       },
       error: () => {
         console.log('sorry, something went wrong');

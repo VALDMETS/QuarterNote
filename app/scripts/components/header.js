@@ -18,6 +18,7 @@ export default React.createClass({
           <ul className="header-menu" ref="headermenu">
             <li><Link to="/main">Check Messages</Link></li>
             <li><Link to="/selectfriend">New Message</Link></li>
+            <li><Link to="/friends">Friends</Link></li>
             <li><Link to={selfProfile}>Profile</Link></li>
             <li><Link onClick={this.logoutFunction} to="/login">Log Out</Link></li>
             <li><Link to="/about">About</Link></li>
