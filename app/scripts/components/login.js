@@ -1,6 +1,8 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
+import $ from 'jquery';
 import store from '../store';
+import settings from '../settings';
 
 export default React.createClass({
   render: function() {
@@ -30,8 +32,10 @@ export default React.createClass({
       success: (user, resp) => {
         store.session.unset('password');
         store.session.set({authtoken: resp._kmd.authtoken});
-        store.friendList.fetch();
-        hashHistory.push('/main');
+        store.session.friendSetup();
+        // .then(() => {
+        //   hashHistory.push('/main');
+        // });
       },
       error: () => {
         console.log('sorry, something went wrong');

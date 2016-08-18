@@ -7,8 +7,16 @@ import store from '../store';
 
 export default React.createClass({
   getInitialState: function() {
+
+    // disallows user to message self by removing them from friend collection on this profile-page
+    
+    let messageableFriends = store.friendList.toJSON();
+    console.log(messageableFriends);
+    messageableFriends = messageableFriends.filter( (friend) => {
+      if (friend._id === store.session.get('_id')) { return false } else { return true }
+    })
     return {
-      friendList: []
+      friendList: messageableFriends
     }
   },
   render: function() {
@@ -24,11 +32,5 @@ export default React.createClass({
         </div>
       </div>
     )
-  },
-  componentDidMount: function() {
-    store.friendList.fetch().then( () => {
-      store.friendList.remove(store.session.get('friend_id'));
-      this.setState({friendList: store.friendList.toJSON()});
-    });
   }
 });

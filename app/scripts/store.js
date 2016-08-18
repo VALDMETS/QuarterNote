@@ -11,6 +11,8 @@ export default {
   newMessages: new NewMessages(),
   themeList: new ThemeList(),
 
+  friendRequests: [],
+
   messageSentConfirmation: false,
   themeMetaInfo: [{
     key: 0,
@@ -19,8 +21,6 @@ export default {
   }, {
 
   }],
-
-
   loginGreetings: [{
     button: 'Let\'s Party',
     phrase: 'There\'s a party on my phone and everyone\'s invited.'
