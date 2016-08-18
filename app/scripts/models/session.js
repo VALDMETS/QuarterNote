@@ -16,7 +16,7 @@ export default Bb.Model.extend({
   urlRoot: `https://baas.kinvey.com/user/${settings.appKey}/login`,
   idAttribute: '_id',
   friendSetup: function() {
-    let friendFilter = [{username: this.get('username')}];
+    let friendParams = [{username: this.get('username')}];
     $.ajax({
       url: `https://baas.kinvey.com/appdata/${settings.appKey}/friends`,
       data: {
@@ -43,17 +43,17 @@ export default Bb.Model.extend({
             store.friendRequests.push(listing);
           } else {
             if(listing.requestor_id === this.get('_id')) {
-              friendFilter.push({username: listing.recipient});
+              friendParams.push({username: listing.recipient});
             } else {
-              friendFilter.push({username: listing.requestor});
+              friendParams.push({username: listing.requestor});
             }
           }
         });
         console.log(store.friendRequests);
-        console.log(friendFilter);
+        console.log(friendParams);
         store.friendList.fetch({
           data: {
-            query: JSON.stringify({"$or": friendFilter})
+            query: JSON.stringify({"$or": friendParams})
           },
           success: function() {
             console.log(store.friendList);
@@ -63,18 +63,4 @@ export default Bb.Model.extend({
       }
     })
   },
-  requestConfirm: function(request) {
-    console.log(request);
-    $.ajax({
-      url: `https://baas.kinvey.com/appdata/${settings.appKey}/friends/${request._id}`,
-      type: 'PUT',
-      data: {
-        "confirmation": JSON.stringify(true),
-        "requestor": request.requestor,
-        "requestor_id": request.requestor_id,
-        "recipient": request.recipient,
-        "recipient_id": request.recipient_id
-      }
-    });
-  }
 });

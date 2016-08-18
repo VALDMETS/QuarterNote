@@ -9,17 +9,13 @@ import store from '../store';
 
 export default React.createClass({
   getInitialState: function() {
-    let messageableFriends = store.friendList.toJSON();
-    console.log(messageableFriends);
-    messageableFriends = messageableFriends.filter( (friend) => {
-      if (friend._id === store.session.get('_id')) { return false } else { return true }
-    })
+    let currentProfile = store.friendList.get(this.props.params.id)
     return {
       user: {
-        username: store.session.get('username'),
-        img_url: store.session.get('img_url')
+        username: currentProfile.get('username'),
+        img_url: currentProfile.get('img_url')
       },
-      friends: messageableFriends,
+      friends: store.friendList.toJSON(),
     }
   },
   render: function() {
@@ -55,9 +51,14 @@ export default React.createClass({
       </div>
     )
   },
-  // componentDidMount: function() {
-  //   this.profileUpdater(this.props.params.id);
-  // },
+  componentDidMount: function() {
+    let messageableFriends = store.friendList.toJSON();
+    console.log(messageableFriends);
+    messageableFriends = messageableFriends.filter( (friend) => {
+      if (friend._id === store.session.get('_id')) { return false } else { return true }
+    })
+    this.setState({friends: messageableFriends});
+  },
   componentWillReceiveProps: function(nextProps) {
     if(this.props.params.id !== nextProps.params.id) {
       this.profileUpdater(nextProps.params.id)
