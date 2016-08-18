@@ -14,7 +14,7 @@ export default React.createClass({
         username: '',
         img_url: ''
       },
-      friends: [],
+      friends: store.friendList.toJSON(),
     }
   },
   render: function() {
@@ -52,11 +52,11 @@ export default React.createClass({
   },
   componentDidMount: function() {
     this.profileUpdater(this.props.params.id);
-    store.friendList.fetch({
-      success: () => {
-        this.setState({friends: store.friendList.toJSON()})
-      }
-    });
+    // store.friendList.fetch({
+    //   success: () => {
+    //     this.setState({friends: store.friendList.toJSON()})
+    //   }
+    // });
   },
   componentWillReceiveProps: function(nextProps) {
     if(this.props.params.id !== nextProps.params.id) {
@@ -64,12 +64,14 @@ export default React.createClass({
     }
   },
   profileUpdater: function(id) {
-    let currentProfile = new Friend({_id: id})
-    currentProfile.fetch({
-      success: (resp) => {
-        this.setState({user: currentProfile.toJSON()});
-      }
-    });
+    // let currentProfile = new Friend({_id: id})
+    let currentProfile = store.friendList.get(id);
+    this.setState({user: currentProfile.toJSON()});
+    // currentProfile.fetch({
+    //   success: (resp) => {
+    //     this.setState({user: currentProfile.toJSON()});
+    //   }
+    // });
   },
   newMessage: function() {
     let messageUrl = '/newmessage/' + this.props.params.id;

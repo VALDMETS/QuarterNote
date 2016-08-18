@@ -12,14 +12,11 @@ body {
   background: $white;
   color: $dark;
 }
-#container {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-}
+
 .alert-notifications, .about, .new-message, .select-friend, .profile-page {
   margin-top: 90px;
 }
+
 .alert-notifications {
   width: 100%;
   h2 {
@@ -32,17 +29,22 @@ body {
 .alert-box {
   width: 100%;
 }
-.new-message-alert, .message-sent {
+.new-message-alert, .message-sent, .friend-selector {
   position: relative;
   padding: 0 4px;
   width: 90%;
   height: 57px;
-  margin: 14px auto;
+  margin: 10px auto;
   box-sizing: border-box;
   border: 2px solid white;
   border-radius: 28px;
   background-color: rgba(256, 256, 256, .2);
-  .alert-color {
+
+  -webkit-animation: Module-Move .4s;
+  -moz-animation: Module-Move .4s;
+  animation: Module-Move .4s;
+
+  .alert-color, .selector-pic {
     position: absolute;
     top: -5px;
     left: -5px;
@@ -53,6 +55,13 @@ body {
     height: 49px;
     width: 49px;
     margin: 7px;
+
+    object-fit: cover;
+    overflow: hidden;
+    img {
+      width: 49px;
+      height: auto;
+    }
   }
   p {
     margin: 3px 0;
@@ -70,6 +79,11 @@ body {
     font-size: 13px;
     font-style: italic;
     font-weight: 200;
+  }
+  h5 {
+    margin: 6px;
+    text-align: center;
+    font-size: 18px;
   }
 }
 .message-sent {
@@ -148,7 +162,69 @@ body {
     width: 100%;
     height: 30vh;
     background-color: $green;
+    h5 {
+      margin: -34px 0 10px 0;
+      font-size: 24px;
+      text-align: center;
+    }
+    .friend-widget {
+      width: 23vw;
+      height: 14vw;
+      margin: 3vw 1vw 6vw 1vw;
+      float: left;
+      transition: .6s;
+      &:hover {
+        margin: 0 1vw 9vw 1vw;
+      }
+      .friend-pic {
+        margin: 0 auto;
+        width: 14vw;
+        height: 14vw;
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      h6 {
+        margin: 0;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+    .friend-widget:nth-child(6) {
+      margin: 3vw 1vw 6vw 13vw;
+      &:hover {
+        margin: 0 1vw 9vw 13vw;
+      }
+    }
+    .friend-widget:nth-child(8) {
+      margin: 3vw 13vw 6vw 1vw;
+      &:hover {
+        margin: 0 13vw 9vw 1vw;
+      }
+    }
   }
+}
+.select-friend {
+  h4 {
+    text-align: center;
+  }
+  // .profile-button {
+  //   position: absolute;
+  //   z-index: 5;
+  //   top: -5px;
+  //   right: -5px;
+  //   box-sizing: border-box;
+  //   border: 2 px solid white;
+  //   border-radius: 50%;
+  //   background-color: $turq;
+  //   height: 49px;
+  //   width: 49px;
+  //   margin: 7px;
+  // }
 }
 .message-placemat {
   z-index: 2;

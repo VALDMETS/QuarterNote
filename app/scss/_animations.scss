@@ -13,3 +13,16 @@
     50%{background-position:92% 100%}
     100%{background-position:9% 0%}
 }
+
+@-webkit-keyframes Module-Move {
+    0%{margin: 0 auto;}
+    100%{margin: 10px auto;}
+}
+@-moz-keyframes Module-Move {
+  0%{margin: 0 auto;}
+  100%{margin: 10px auto;}
+}
+@keyframes Module-Move {
+  0%{margin: 0 auto;}
+  100%{margin: 10px auto;}
+}

@@ -7,7 +7,8 @@ export default React.createClass({
   render: function() {
     return (
       <div onClick={this.friendClick} className="friend-widget">
-        {this.props.data.username}
+        <div className="friend-pic"><img src={this.props.data.img_url}/></div>
+        <h6>{this.props.data.username}</h6>
       </div>
     )
   },

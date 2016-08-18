@@ -19,7 +19,7 @@ export default React.createClass({
       <div className="select-friend">
         <Header/>
         <div className="recipient-window">
-          <h4>Who you gonna message?</h4>
+          <h4>Who are you going to message?</h4>
           {friendList}
         </div>
       </div>
