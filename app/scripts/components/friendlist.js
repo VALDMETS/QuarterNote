@@ -1,8 +1,10 @@
 import React from 'react';
+import $ from 'jquery';
 
 import Header from './header'
 import FriendSearch from './friendsearch';
 
+import FriendList from '../collections/friendlist';
 import store from '../store';
 
 export default React.createClass({
@@ -25,11 +27,27 @@ export default React.createClass({
     return (
       <div className="search-friend">
         <Header/>
-        <div className="search-window">
+        <div className="list-window">
           <h4>Your Friends</h4>
           {friendList}
         </div>
+        <form onSubmit={this.submitFunction}>
+          <h4>Find a new friend!</h4>
+          <input type="text" ref="searchname" placeholder="Name Search"/>
+          <input type="submit" value="FIND"/>
+        </form>
       </div>
     )
+  },
+  submitFunction: function(e) {
+    e.preventDefault();
+    let friendSearch = new FriendList();
+    friendSearch.fetch({
+      data: {
+        // query: JSON.stringify({"username": this.refs.searchname.value})
+        query: JSON.stringify({"username":{"$regex":("^.+"+this.refs.searchname.value)+"|"+("^"+this.refs.searchname.value)}})
+      },
+    });
+    console.log(friendSearch);
   }
 });

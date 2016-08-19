@@ -97,8 +97,9 @@ body {
   background-color: rgba(256, 256, 256, .2);
   text-align: center;
 
+  //final state after animation
+
   height: 0px;
-  display: block;
   opacity: 0;
   border: 0px solid transparent;
   color: transparent;
@@ -110,10 +111,9 @@ body {
   -moz-animation: Module-Move .4s;
   animation: Module-Move .4s;
 
-  -webkit-animation: AlertDisappear 3.5s forwards;
-  -moz-animation: AlertDisappear 3.5s forwards;
-  animation: AlertDisappear 3.5s forwards;
-
+  -webkit-animation: AlertDisappear 4s forwards;
+  -moz-animation: AlertDisappear 4s forwards;
+  animation: AlertDisappear 4s forwards;
 }
 .profile-page {
   position: relative;
