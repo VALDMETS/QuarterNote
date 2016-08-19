@@ -50,12 +50,28 @@ export default React.createClass({
       },
       success: () => {
         let results = friendSearch.toJSON();
+        // let falseRequests = [];
+        // let pendingRequests = [];
+        let hiddenIds = store.hiddenRequests.map( (request) => {
+          return request.get('recipient_id')
+        });
+        console.log(hiddenIds);
         results = results.filter( (entry) => {
-          if (store.friendList.get(entry._id)) {
-            return false;
+          // console.log(entry);
+          if (store.friendList.get(entry._id) || hiddenIds.indexOf(String(entry._id)) !== -1) {
+            return false
           } else {
-            return true;
+            return true
           }
+          //   if (hiddenIds.indexOf(String(entry._id)) !== -1) {
+          //     return false
+          //   } else {
+          //     store.requestPending.push(entry._id)
+          //     return true
+          //   }
+          // } else {
+          //   return false;
+          // }
         });
         this.setState({friendList: results, title: 'Search Results'});
       }

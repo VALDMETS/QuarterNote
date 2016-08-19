@@ -40,12 +40,13 @@ export default Bb.Model.extend({
             }
           } else if (listing.confirmation === false && (listing.requestor_id === this.get('_id') || listing.recipient_id === this.get('_id'))) {
             store.hiddenRequests.push(listing);
-          } else if (listing.confirmation === null && listing.requestor_id === this.get('_id')) {
-            store.hiddenRequests.push(listing);
+          } else if (listing.confirmation === null && (listing.requestor_id === this.get('_id') || listing.recipient_id === this.get('_id'))) {
+            store.pendingRequests.push(listing);
           }
         });
-        console.log(store.friendRequests);
+        // console.log(store.friendRequests);
         console.log(store.hiddenRequests);
+        console.log(store.pendingRequests);
         store.friendList.fetch({
           data: {
             query: JSON.stringify({"$or": friendParams})

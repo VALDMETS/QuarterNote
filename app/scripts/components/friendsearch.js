@@ -11,6 +11,11 @@ export default React.createClass({
     if (!store.friendList.get(this.props.info._id)){
       span = <span>Click to friend request!</span>
     }
+    store.pendingRequests.forEach( (request) => {
+      if(request.get('requestor_id') === this.props.info._id || request.get('recipient_id') === this.props.info._id) {
+        span = <span ref="noclick">Request Pending</span>
+      }
+    });
     return (
       <div onClick={this.clickFunction} className="friend-listing">
         <div className="search-pic">
@@ -22,6 +27,12 @@ export default React.createClass({
     )
   },
   clickFunction: function() {
+    if (this.refs.noclick) {
+      
+      //maybe put in a shakey animation
+
+      return null;
+    }
     if (store.friendList.get(this.props.info._id)){
       hashHistory.push(`/profile/${this.props.info._id}`);
     } else {
@@ -36,7 +47,7 @@ export default React.createClass({
           store.requestSentConfirmation = true;
           hashHistory.push('/main');
         }
-      })
+      });
     }
   }
 });

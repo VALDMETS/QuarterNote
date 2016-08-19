@@ -51,6 +51,7 @@ export default React.createClass({
     if(store.friendRequests) {
       store.friendRequests.reset();
     }
+    store.requestPending = [];
   },
   escapeFunction: function () {
     this.expandFunction();

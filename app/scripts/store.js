@@ -14,6 +14,7 @@ export default {
   themeList: new ThemeList(),
   friendRequests: new RequestList(),
   hiddenRequests: new RequestList(),
+  pendingRequests: new RequestList(),
 
   messageSentConfirmation: false,
   requestSentConfirmation: false,
