@@ -49,7 +49,7 @@ export default React.createClass({
     store.newMessages.reset();
     store.messageToBeSent.clear();
     if(store.friendRequests) {
-      store.friendRequests.clear();
+      store.friendRequests.reset();
     }
   },
   escapeFunction: function () {

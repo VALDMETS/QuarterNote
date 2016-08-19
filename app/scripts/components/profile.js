@@ -53,7 +53,6 @@ export default React.createClass({
   },
   componentDidMount: function() {
     let messageableFriends = store.friendList.toJSON();
-    console.log(messageableFriends);
     messageableFriends = messageableFriends.filter( (friend) => {
       if (friend._id === store.session.get('_id')) { return false } else { return true }
     })

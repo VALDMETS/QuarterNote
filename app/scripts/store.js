@@ -17,12 +17,15 @@ export default {
 
   messageSentConfirmation: false,
   requestSentConfirmation: false,
+
   themeMetaInfo: [{
     key: 0,
     theme: 'speak',
     theme_id: '57b1e44e616900c708e8400c'
   }, {
-
+    key: 1,
+    theme: 'fuji',
+    theme_id: '2222'
   }],
   loginGreetings: [{
     button: 'Let\'s Party',

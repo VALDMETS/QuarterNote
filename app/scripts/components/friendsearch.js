@@ -7,12 +7,17 @@ import store from '../store';
 
 export default React.createClass({
   render: function() {
+    let span;
+    if (!store.friendList.get(this.props.info._id)){
+      span = <span>Click to friend request!</span>
+    }
     return (
       <div onClick={this.clickFunction} className="friend-listing">
         <div className="search-pic">
           <img src={this.props.info.img_url}/>
         </div>
         <h5>{this.props.info.username}</h5>
+        {span}
       </div>
     )
   },
@@ -20,7 +25,6 @@ export default React.createClass({
     if (store.friendList.get(this.props.info._id)){
       hashHistory.push(`/profile/${this.props.info._id}`);
     } else {
-      console.log(this.props.info);
       let newRequest = new Request();
       newRequest.save({
         requestor: store.session.get('username'),

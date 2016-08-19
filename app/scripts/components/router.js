@@ -26,9 +26,8 @@ const router = (
     <Route path="/newmessage/:id" component={NewMessage}>
       <Route path="preview" component={Preview}/>
     </Route>
-    <Route path="friends" component={FriendList}/>
+    <Route path="/friends" component={FriendList}/>
     <Route path="/about" component={About}/>
-
   </Router>
 
 )
