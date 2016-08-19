@@ -7,12 +7,7 @@ import store from '../store';
 
 export default React.createClass({
   getInitialState: function() {
-    return store.friendRequests.reduce((returnSoFar, request, i) => {
-      if (this.props.params.id === request._id) {
-        returnSoFar = request;
-      }
-      return returnSoFar;
-    }, {})
+    return store.friendRequests.get(this.props.params.id).toJSON()
   },
   render: function() {
     return (
@@ -31,44 +26,20 @@ export default React.createClass({
     hashHistory.push('/main')
   },
   confirmFunction: function() {
-    let friendRequest = new Request({
-      _id: this.state._id,
-      confirmation: true,
-      requestor: this.state.requestor,
-      requestor_id: this.state.requestor_id,
-      recipient: this.state.recipient,
-      recipient_id: this.state.recipient_id
-    })
-    friendRequest.save().then( () => {
-      store.friendRequests = store.friendRequests.filter( (request) => {
-        console.log(this.state._id);
-        console.log(request._id);
-        if (this.state._id === request._id) {
-          return false
-        } else { return true }
-      });
-      console.log(store.friendRequests);
+    let currentRequest = store.friendRequests.get(this.state._id);
+    currentRequest.save({confirmation: true}).then( () => {
+      store.friendRequests.remove(this.state._id);
+      store.friendRequests.trigger('update');
+      store.session.friendSetup();
       hashHistory.push('/main');
     });
-
   },
   denyFunction: function() {
-    let friendRequest = new Request({
-      _id: this.state._id,
-      confirmation: false,
-      requestor: this.state.requestor,
-      requestor_id: this.state.requestor_id,
-      recipient: this.state.recipient,
-      recipient_id: this.state.recipient_id
-    })
-    friendRequest.save().then( () => {
-      store.friendRequests = store.friendRequests.filter( (request) => {
-        if (this.state._id === request._id) {
-          return false
-        } else { return true }
-      });
+    let currentRequest = store.friendRequests.get(this.state._id);
+    currentRequest.save({confirmation: false}).then( () => {
+      store.friendRequests.remove(this.state._id);
+      store.friendRequests.trigger('update');
+      hashHistory.push('/main');
     });
-    console.log(store.friendRequests);
-    hashHistory.push('/main');
   }
-})
+});

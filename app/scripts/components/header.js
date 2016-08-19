@@ -48,7 +48,9 @@ export default React.createClass({
     store.session.clear();
     store.newMessages.reset();
     store.messageToBeSent.clear();
-    store.friendRequests = [];
+    if(store.friendRequests) {
+      store.friendRequests.clear();
+    }
   },
   escapeFunction: function () {
     this.expandFunction();

@@ -20,6 +20,7 @@ export default React.createClass({
     });
     return (
       <div className="message-placemat">
+        <input type="button" value="X" onClick={this.escapeFunction}/>
         <div className="message-window">
           <div className={themeClass}>
             {syllableAnimation}
@@ -30,7 +31,7 @@ export default React.createClass({
               <input type="button" value="GO BACK" onClick={this.goBackFunction}/>
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     )
   },
@@ -68,5 +69,8 @@ export default React.createClass({
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
     hashHistory.push(`/newmessage/${replyTarget._id}`);
-  }
+  },
+  escapeFunction: function() {
+    hashHistory.push('/main')
+  },
 });

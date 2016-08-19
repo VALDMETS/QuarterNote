@@ -52,12 +52,10 @@ export default Bb.Model.extend({
         store.friendList.fetch({
           data: {
             query: JSON.stringify({"$or": friendParams})
-          },
-          success: function() {
-            console.log(store.friendList);
           }
+        }).then( () => {
+          hashHistory.push('/main');
         });
-        hashHistory.push('/main');
       }
     })
   },

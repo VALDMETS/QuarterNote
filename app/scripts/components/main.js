@@ -9,9 +9,10 @@ import FriendRequest from './friendrequest';
 
 export default React.createClass({
   getInitialState: function() {
+    // console.log('currently, ' + store.friendRequests);
     return {
       messages: store.newMessages.toJSON(),
-      friendRequests: store.friendRequests,
+      friendRequests: store.friendRequests.toJSON(),
       messageSentConfirmation: store.messageSentConfirmation,
       requestSentConfirmation: store.requestSentConfirmation
     }
@@ -56,13 +57,18 @@ export default React.createClass({
       });
     }
     store.newMessages.on('update', this.messageListener);
+    store.friendRequests.on('update', this.messageListener);
   },
   componentWillUnmount: function() {
     store.messageSentConfirmation = false;
     store.requestSentConfirmation = false;
     store.newMessages.off('update', this.messageListener);
+    if(store.friendRequests) {
+      store.friendRequests.off('update', this.messageListener);
+    }
   },
   messageListener: function() {
     this.setState({messages: store.newMessages.toJSON()});
+    this.setState({friendRequests: store.friendRequests.toJSON()});
   }
 });
