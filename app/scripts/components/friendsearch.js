@@ -1,6 +1,10 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
 
+import Request from '../models/request';
+
+import store from '../store';
+
 export default React.createClass({
   render: function() {
     return (
@@ -13,6 +17,22 @@ export default React.createClass({
     )
   },
   clickFunction: function() {
+    if (store.friendList.get(this.props.info._id)){
       hashHistory.push(`/profile/${this.props.info._id}`);
+    } else {
+      console.log(this.props.info);
+      let newRequest = new Request();
+      newRequest.save({
+        requestor: store.session.get('username'),
+        requestor_id: store.session.get('_id'),
+        recipient: this.props.info.username,
+        recipient_id: this.props.info._id
+      }, {
+        success: () => {
+          store.requestSentConfirmation = true;
+          hashHistory.push('/main');
+        }
+      })
+    }
   }
 });

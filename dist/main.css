@@ -771,6 +771,19 @@ body {
   -moz-animation: AlertDisappear 4s forwards;
   animation: AlertDisappear 4s forwards; }
 
+.confirmation-window {
+  display: block;
+  position: absolute;
+  background: #C5F9F6;
+  width: 90%;
+  left: 5%;
+  height: 60%;
+  top: 10%; }
+  .confirmation-window h3 {
+    text-align: center;
+    font-size: 32px;
+    color: #03312E; }
+
 .profile-page {
   position: relative; }
   .profile-page h2 {

@@ -15,6 +15,7 @@ export default {
   friendRequests: [],
 
   messageSentConfirmation: false,
+  requestSentConfirmation: false,
   themeMetaInfo: [{
     key: 0,
     theme: 'speak',

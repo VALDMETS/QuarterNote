@@ -41,7 +41,7 @@ export default Bb.Model.extend({
           if(listing.confirmation === null && listing.recipient_id === store.session.get('_id')) {
             store.friendRequests.push(listing);
           } else {
-            if(listing.requestor_id === this.get('_id')) {
+            if(listing.confirmation === true && listing.requestor_id === this.get('_id')) {
               friendParams.push({username: listing.recipient});
             } else {
               friendParams.push({username: listing.requestor});
@@ -49,7 +49,6 @@ export default Bb.Model.extend({
           }
         });
         console.log(store.friendRequests);
-        console.log(friendParams);
         store.friendList.fetch({
           data: {
             query: JSON.stringify({"$or": friendParams})

@@ -115,6 +115,22 @@ body {
   -moz-animation: AlertDisappear 4s forwards;
   animation: AlertDisappear 4s forwards;
 }
+.confirmation-window {
+  display: block;
+  position: absolute;
+  background: $white;
+  width: 90%;
+  left: 5%;
+  height: 60%;
+  top: 10%;
+  h3 {
+    text-align: center;
+    font-size: 32px;
+    color: $dark;
+  }
+}
+
+
 .profile-page {
   position: relative;
   h2 {

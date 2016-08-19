@@ -9,6 +9,7 @@ import NewMessageSelect from './newmessageselect';
 import NewMessage from './newmessage';
 import Preview from './preview';
 import Message from './message';
+import RequestConfirmation from './requestconfirmation';
 import FriendList from './friendlist';
 import About from './about';
 
@@ -16,6 +17,7 @@ const router = (
   <Router history={hashHistory}>
     <Route path="/main" component={Main}>
       <Route path="message/:id" component={Message}/>
+      <Route path="request/:id" component={RequestConfirmation}/>
     </Route>
     <Route path="/signup" component={Signup}/>
     <Route path="/login" component={Login}/>

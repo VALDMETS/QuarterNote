@@ -11,7 +11,9 @@ export default React.createClass({
   getInitialState: function() {
     return {
       messages: store.newMessages.toJSON(),
-      messageSentConfirmation: store.messageSentConfirmation
+      friendRequests: store.friendRequests,
+      messageSentConfirmation: store.messageSentConfirmation,
+      requestSentConfirmation: store.requestSentConfirmation
     }
   },
   render: function() {
@@ -19,7 +21,11 @@ export default React.createClass({
     if (this.state.messageSentConfirmation === true) {
       messageSentConfirmation = <div className="message-sent"><p>Message Sent!</p></div>
     }
-    let friendRequests = store.friendRequests.map( (request, i) => {
+    let requestSentConfirmation;
+    if (this.state.requestSentConfirmation === true) {
+      requestSentConfirmation = <div className="message-sent"><p>Friend Request Sent!</p></div>
+    }
+    let friendRequests = this.state.friendRequests.map( (request, i) => {
       return <FriendRequest info={request} key={i}/>
     });
     let newMessages = this.state.messages.map( (message, i) => {
@@ -31,6 +37,7 @@ export default React.createClass({
         <div className="alert-notifications">
           <h2>Welcome, {store.session.get('username')}</h2>
           {messageSentConfirmation}
+          {requestSentConfirmation}
           {friendRequests}
         </div>
         <div className="alert-box">
@@ -52,6 +59,7 @@ export default React.createClass({
   },
   componentWillUnmount: function() {
     store.messageSentConfirmation = false;
+    store.requestSentConfirmation = false;
     store.newMessages.off('update', this.messageListener);
   },
   messageListener: function() {

@@ -17,15 +17,6 @@ export default React.createClass({
     )
   },
   clickFunction: function() {
-    let friendRequest = new Request({
-      _id: this.props.info._id,
-      confirmation: true,
-      requestor: this.props.info.requestor,
-      requestor_id: this.props.info.requestor_id,
-      recipient: this.props.info.recipient,
-      recipient_id: this.props.info.recipient_id
-    })
-    friendRequest.save();
-    // store.session.requestConfirm(this.props.info);
+    hashHistory.push(`/main/request/${this.props.info._id}`);
   }
 });

@@ -17,6 +17,7 @@ export default React.createClass({
       if (friend._id === store.session.get('_id')) { return false } else { return true }
     })
     return {
+      title: 'Your Friends',
       friendList: searchableFriends
     }
   },
@@ -28,7 +29,7 @@ export default React.createClass({
       <div className="search-friend">
         <Header/>
         <div className="list-window">
-          <h4>Your Friends</h4>
+          <h4>{this.state.title}</h4>
           {friendList}
         </div>
         <form onSubmit={this.submitFunction}>
@@ -47,7 +48,17 @@ export default React.createClass({
         // query: JSON.stringify({"username": this.refs.searchname.value})
         query: JSON.stringify({"username":{"$regex":("^.+"+this.refs.searchname.value)+"|"+("^"+this.refs.searchname.value)}})
       },
+      success: () => {
+        let results = friendSearch.toJSON();
+        results = results.filter( (entry) => {
+          if (store.friendList.get(entry._id)) {
+            return false;
+          } else {
+            return true;
+          }
+        });
+        this.setState({friendList: results, title: 'Search Results'});
+      }
     });
-    console.log(friendSearch);
   }
 });
