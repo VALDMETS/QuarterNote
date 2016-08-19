@@ -22,33 +22,30 @@ export default Bb.Model.extend({
       data: {
         query: JSON.stringify({
           "$and":[{
-            "$or":[{
-              confirmation: null
-            }, {
-              confirmation: true
-            }]
+            "$or":[{ confirmation: null }, { confirmation: true }, { confirmation: false }]
           }, {
-            "$or":[{
-              requestor_id: this.get('_id')
-            }, {
-              recipient_id: this.get('_id')
-            }]
+            "$or":[{ requestor_id: this.get('_id') }, { recipient_id: this.get('_id') }]
           }]
         })
       },
       success: (friendData) => {
         friendData.forEach( (listing) => {
-          if(listing.confirmation === null && listing.recipient_id === store.session.get('_id')) {
+          if (listing.confirmation === null && listing.recipient_id === store.session.get('_id')) {
             store.friendRequests.push(listing);
-          } else {
-            if(listing.confirmation === true && listing.requestor_id === this.get('_id')) {
+          } else if (listing.confirmation === true) {
+            if(listing.requestor_id === this.get('_id')) {
               friendParams.push({username: listing.recipient});
             } else {
               friendParams.push({username: listing.requestor});
             }
+          } else if (listing.confirmation === false && (listing.requestor_id === this.get('_id') || listing.recipient_id === this.get('_id'))) {
+            store.hiddenRequests.push(listing);
+          } else if (listing.confirmation === null && listing.requestor_id === this.get('_id')) {
+            store.hiddenRequests.push(listing);
           }
         });
         console.log(store.friendRequests);
+        console.log(store.hiddenRequests);
         store.friendList.fetch({
           data: {
             query: JSON.stringify({"$or": friendParams})

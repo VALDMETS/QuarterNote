@@ -13,6 +13,7 @@ export default {
   newMessages: new NewMessages(),
   themeList: new ThemeList(),
   friendRequests: new RequestList(),
+  hiddenRequests: new RequestList(),
 
   messageSentConfirmation: false,
   requestSentConfirmation: false,
