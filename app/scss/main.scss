@@ -87,7 +87,6 @@ body {
   }
 }
 .message-sent {
-
   position: relative;
   padding: 0 4px;
   width: 90%;
@@ -135,7 +134,6 @@ body {
   background-color: $cruise;
   height: 56vh;
   overflow: scroll;
-  // border: 1px solid $turq;
   h4 {
     margin: 12px;
     text-align: center;
@@ -299,19 +297,85 @@ body {
   h4 {
     text-align: center;
   }
-  // .profile-button {
-  //   position: absolute;
-  //   z-index: 5;
-  //   top: -5px;
-  //   right: -5px;
-  //   box-sizing: border-box;
-  //   border: 2 px solid white;
-  //   border-radius: 50%;
-  //   background-color: $turq;
-  //   height: 49px;
-  //   width: 49px;
-  //   margin: 7px;
-  // }
+}
+.new-message {
+  h4 {
+    text-align: center;
+  }
+  form {
+    width: 100%;
+    input {
+      outline: none;
+      color: $dark;
+      margin: 1vh auto;
+      padding: 1% 0;
+      display: block;
+      background: $cruise;
+      width: 90%;
+      height: 6vh;
+      border: none;
+      border-radius: 30px;
+      text-align: center;
+      font-size: 20px;
+      font-family: 'Exo', sans-serif;
+    }
+    ::-webkit-input-placeholder {
+      color: white;
+    }
+    ::-moz-placeholder {
+      color: white;
+    }
+    :-ms-input-placeholder {
+      color: white;
+    }
+    :-moz-placeholder {
+      color: white;
+    }
+    [type="submit"] {
+      color: $dark;
+      height: 7vh;
+    }
+    .theme-list {
+      width: 100%;
+      height: 50vh;
+      background-color: $cruise;
+      margin: 3vh auto;
+      padding: 3vh 0;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      h6 {
+        text-align: center;
+        font-size: 20px;
+        margin: 0;
+      }
+      [type="button"] {
+        box-sizing: border-box;
+        box-shadow: -4px -1px rgba(0,0,0,.1);
+        background-color: $white;
+        font-size: 17px;
+        width: 69%;
+        height: 5vh;
+        margin: 2vh 13% 2vh 16%;
+        transition: .2s;
+      }
+      .active {
+        width: 69.5%;
+        box-shadow: 0px 0px rgba(0,0,0,.1);
+        margin: 3vh 15% 1vh 15.5%;
+      }
+      .speak {
+        font-family: 'Speak';
+        font-size: 20px;
+        letter-spacing: .1rem;
+      }
+      .speak.active {
+        box-shadow: none;
+        background-color: black;
+        color: $hotgreen;
+      }
+    }
+
+  }
 }
 .message-placemat {
   z-index: 2;

@@ -44,9 +44,6 @@ export default Bb.Model.extend({
             store.pendingRequests.push(listing);
           }
         });
-        // console.log(store.friendRequests);
-        console.log(store.hiddenRequests);
-        console.log(store.pendingRequests);
         store.friendList.fetch({
           data: {
             query: JSON.stringify({"$or": friendParams})

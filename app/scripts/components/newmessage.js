@@ -14,13 +14,19 @@ export default React.createClass({
     }
   },
   render: function() {
-    let messageTitle = <h4>New Quarter Note to {this.state.currentFriend.username}</h4>
+    let messageTitle = <h4>Messaging {this.state.currentFriend.username}</h4>
     return (
       <div className="new-message">
         <Header/>
         {messageTitle}
         <form onSubmit={this.submitFunction}>
-          <input type="text" ref="message" placeholder="Your New Quarter Note"/>
+          <input type="text" ref="message" placeholder="Message"/>
+          <section className="theme-list">
+            <h6>Choose Theme</h6>
+            <input type="button" ref="speak" className="speak active" onClick={this.speakFunction} value="CONSOLE"/>
+            <input type="button" ref="fuji" className="fuji" onClick={this.fujiFunction} value="FUJI"/>
+            <input type="button" ref="zara" className="zara" onClick={this.fujiFunction} value="ZARATHUSTRA"/>
+          </section>
           <input type="submit" value="Send it!"/>
         </form>
         {this.props.children}
