@@ -349,19 +349,17 @@ body {
         margin: 0;
       }
       [type="button"] {
-        box-sizing: border-box;
-        box-shadow: -4px -1px rgba(0,0,0,.1);
+        box-shadow: -4px 0 rgba(0,0,0,.1);
         background-color: $white;
         font-size: 17px;
-        width: 69%;
-        height: 5vh;
-        margin: 2vh 13% 2vh 16%;
+        width: 70%;
+        height: 6vh;
+        margin: 2vh 13% 2vh 17%;
         transition: .2s;
       }
       .active {
-        width: 69.5%;
         box-shadow: 0px 0px rgba(0,0,0,.1);
-        margin: 3vh 15% 1vh 15.5%;
+        margin: 2vh 15% 2vh 15.5%;
       }
       .speak {
         font-family: 'Speak';
@@ -369,9 +367,15 @@ body {
         letter-spacing: .1rem;
       }
       .speak.active {
-        box-shadow: none;
         background-color: black;
         color: $hotgreen;
+      }
+      .fuji {
+        font-family: 'Fuji';
+      }
+      .fuji.active {
+        background-color: brown;
+        color: white;
       }
     }
 

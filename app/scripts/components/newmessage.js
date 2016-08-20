@@ -10,7 +10,8 @@ import store from '../store';
 export default React.createClass({
   getInitialState: function() {
     return {
-      currentFriend: store.friendList.get(this.props.params.id).toJSON()
+      currentFriend: store.friendList.get(this.props.params.id).toJSON(),
+      themeKey: 0
     }
   },
   render: function() {
@@ -25,21 +26,14 @@ export default React.createClass({
             <h6>Choose Theme</h6>
             <input type="button" ref="speak" className="speak active" onClick={this.speakFunction} value="CONSOLE"/>
             <input type="button" ref="fuji" className="fuji" onClick={this.fujiFunction} value="FUJI"/>
-            <input type="button" ref="zara" className="zara" onClick={this.fujiFunction} value="ZARATHUSTRA"/>
+            <input type="button" ref="neon" className="neon" onClick={this.neonFunction} value="NEON"/>
+            <input type="button" ref="zara" className="zara" onClick={this.zaraFunction} value="ZARATHUSTRA"/>
           </section>
           <input type="submit" value="Send it!"/>
         </form>
         {this.props.children}
       </div>
     )
-  },
-  componentDidMount: function() {
-    // let recipientName = new Friend({_id: this.props.params.id});
-    // recipientName.fetch({
-    //   success: () => {
-    //     this.setState({name: recipientName.get('username')});
-    //   }
-    // })
   },
   submitFunction: function(e) {
     e.preventDefault();
@@ -54,5 +48,33 @@ export default React.createClass({
     });
     console.log(store.messageToBeSent);
     hashHistory.push(`/newmessage/${this.props.params.id}/preview`);
-  }
+  },
+  speakFunction: function() {
+    this.refs.speak.className = "speak active";
+    this.refs.fuji.className = "fuji";
+    this.refs.neon.className = "neon";
+    this.refs.zara.className = "zara";
+    this.setState({themeKey: 0});
+  },
+  fujiFunction: function() {
+    this.refs.speak.className = "speak";
+    this.refs.fuji.className = "fuji active";
+    this.refs.neon.className = "neon";
+    this.refs.zara.className = "zara";
+    this.setState({themeKey: 2});
+  },
+  neonFunction: function() {
+    this.refs.speak.className = "speak";
+    this.refs.fuji.className = "fuji";
+    this.refs.neon.className = "neon active";
+    this.refs.zara.className = "zara";
+    this.setState({themeKey: 1});
+  },
+  zaraFunction: function() {
+    this.refs.speak.className = "speak";
+    this.refs.fuji.className = "fuji";
+    this.refs.neon.className = "neon";
+    this.refs.zara.className = "zara active";
+    this.setState({themeKey: 2});
+  },
 });
