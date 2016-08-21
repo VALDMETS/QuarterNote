@@ -27,6 +27,14 @@ export default {
     key: 1,
     theme: 'fuji',
     theme_id: '2222'
+  }, {
+    key: 2,
+    theme: 'neon',
+    theme_id: '3333'
+  }, {
+    key: 3,
+    theme: 'zarathustra',
+    theme_id: '57b91314e9ea451559128287'
   }],
   loginGreetings: [{
     button: 'Let\'s Party',

@@ -43,8 +43,8 @@ export default React.createClass({
       sender: store.session.get('username'),
       recipient_id: this.props.params.id,
       content: content,
-      theme: store.themeMetaInfo[0].theme,
-      theme_id: store.themeMetaInfo[0].theme_id
+      theme: store.themeMetaInfo[this.state.themeKey].theme,
+      theme_id: store.themeMetaInfo[this.state.themeKey].theme_id
     });
     console.log(store.messageToBeSent);
     hashHistory.push(`/newmessage/${this.props.params.id}/preview`);
@@ -61,20 +61,20 @@ export default React.createClass({
     this.refs.fuji.className = "fuji active";
     this.refs.neon.className = "neon";
     this.refs.zara.className = "zara";
-    this.setState({themeKey: 2});
+    this.setState({themeKey: 1});
   },
   neonFunction: function() {
     this.refs.speak.className = "speak";
     this.refs.fuji.className = "fuji";
     this.refs.neon.className = "neon active";
     this.refs.zara.className = "zara";
-    this.setState({themeKey: 1});
+    this.setState({themeKey: 2});
   },
   zaraFunction: function() {
     this.refs.speak.className = "speak";
     this.refs.fuji.className = "fuji";
     this.refs.neon.className = "neon";
     this.refs.zara.className = "zara active";
-    this.setState({themeKey: 2});
+    this.setState({themeKey: 3});
   },
 });

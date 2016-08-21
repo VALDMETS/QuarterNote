@@ -23,3 +23,19 @@
     }
   }
 }
+.zarathustra {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: gold;
+  color: black;
+  font-family: 'Zara', serif;
+  .left-button, .right-button {
+    [type="button"] {
+      color: black;
+      border: 2px solid gold;
+      background: gold;
+    }
+  }
+}

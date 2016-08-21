@@ -4,6 +4,9 @@
 @font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Zara';
+  src: url("assets/zara.ttf") format("truetype"); }
 @-webkit-keyframes Hero {
   0% {
     background-position: 9% 0%; }
@@ -133,6 +136,9 @@
 @font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Zara';
+  src: url("assets/zara.ttf") format("truetype"); }
 @-webkit-keyframes Hero {
   0% {
     background-position: 9% 0%; }
@@ -333,6 +339,9 @@
 @font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Zara';
+  src: url("assets/zara.ttf") format("truetype"); }
 @-webkit-keyframes Hero {
   0% {
     background-position: 9% 0%; }
@@ -552,6 +561,9 @@ header {
 @font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Zara';
+  src: url("assets/zara.ttf") format("truetype"); }
 @-webkit-keyframes Hero {
   0% {
     background-position: 9% 0%; }
@@ -690,6 +702,19 @@ header {
     color: #1EE646;
     border: 2px solid #1EE646;
     background: black; }
+
+.zarathustra {
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: gold;
+  color: black;
+  font-family: 'Zara', serif; }
+  .zarathustra .left-button [type="button"], .zarathustra .right-button [type="button"] {
+    color: black;
+    border: 2px solid gold;
+    background: gold; }
 
 body {
   margin: 0;
