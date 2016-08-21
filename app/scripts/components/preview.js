@@ -9,7 +9,7 @@ import Message from '../models/message';
 export default React.createClass({
   getInitialState: function() {
     return {
-      syllableDisplay: [''],
+      syllableDisplay: [],
     }
   },
   render: function() {
@@ -21,7 +21,9 @@ export default React.createClass({
       <div className="message-placemat">
         <div className="message-window">
           <div className={themeClass}>
-            {syllableAnimation}
+            <div className="theme-object">
+              {syllableAnimation}
+            </div>
             <div className="left-button">
               <input type="button" value="CONFIRM" onClick={this.confirmFunction}/>
             </div>

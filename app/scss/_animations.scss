@@ -131,3 +131,40 @@
     font-size: 0px;
   }
 }
+
+// Theme Animations
+
+@-webkit-keyframes FadeIn {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@-moz-keyframes FadeIn {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+@keyframes FadeIn {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@-webkit-keyframes Space {
+    0%{background-position:0% 0%}
+    100%{background-position:0% 100%}
+}
+@-moz-keyframes Space {
+  0%{background-position:0% 0%}
+  100%{background-position:0% 100%}
+}
+@keyframes Space {
+  0%{
+    background-position:0% -50%;
+    -webkit-filter: brightness(0%);
+  }
+  60%{
+    -webkit-filter: brightness(100%);
+  }
+  100%{
+    background-position:0% 100%;
+    // -webkit-filter: brightness(100%);
+  }
+}

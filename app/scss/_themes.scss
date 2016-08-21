@@ -15,6 +15,10 @@
   font-family: 'Speak', 'monospace';
   font-size: 50px;
 
+  .theme-object {
+    height: 100%;
+    width: 100%;
+  }
   .left-button, .right-button {
     [type="button"] {
       color: $hotgreen;
@@ -24,13 +28,41 @@
   }
 }
 .zarathustra {
+  position: relative;
   box-sizing: border-box;
   display: block;
   height: 100%;
   width: 100%;
-  background: gold;
-  color: black;
+  background: url('assets/zara.jpg');
+  background-size: 200% 200%;
+  color: #222;
+  text-shadow: 2px 2px #BBB;
   font-family: 'Zara', serif;
+  overflow: hidden;
+  // filter: brightness(0%);
+  text-align: center;
+
+  -webkit-animation: Space 40s forwards;
+  -moz-animatin: Space 40s forwards;
+  animation: Space 40s forwards;
+  span {
+    -webkit-animation: FadeIn .6s;
+    -moz-animation: FadeIn .6s;
+    animation: FadeIn .6s;
+  }
+  .theme-object {
+    position: absolute;
+    height: 80%;
+    width: 70%;
+    bottom: 0;
+    left: 15%;
+    // margin-top: 30%;
+    background-color: black;
+    box-shadow: 0 0 15px gray;
+    span {
+      font-size: 35px;
+    }
+  }
   .left-button, .right-button {
     [type="button"] {
       color: black;

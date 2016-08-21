@@ -10,7 +10,7 @@ export default React.createClass({
   getInitialState: function() {
     return {
       currentMessage: store.newMessages.get(this.props.params.id).toJSON(),
-      syllableDisplay: [''],
+      syllableDisplay: [],
     }
   },
   render: function() {
@@ -23,7 +23,9 @@ export default React.createClass({
         <input type="button" value="X" onClick={this.escapeFunction}/>
         <div className="message-window">
           <div className={themeClass}>
-            {syllableAnimation}
+            <div className="theme-object">
+              {syllableAnimation}
+            </div>
             <div className="left-button">
               <input type="button" value="REPLY" onClick={this.replyFunction}/>
             </div>

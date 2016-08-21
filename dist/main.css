@@ -130,6 +130,39 @@
     color: transparent;
     margin: 0;
     font-size: 0px; } }
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes Space {
+  0% {
+    background-position: 0% 0%; }
+  100% {
+    background-position: 0% 100%; } }
+@-moz-keyframes Space {
+  0% {
+    background-position: 0% 0%; }
+  100% {
+    background-position: 0% 100%; } }
+@keyframes Space {
+  0% {
+    background-position: 0% -50%;
+    -webkit-filter: brightness(0%); }
+  60% {
+    -webkit-filter: brightness(100%); }
+  100% {
+    background-position: 0% 100%; } }
 @font-face {
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
@@ -262,6 +295,39 @@
     color: transparent;
     margin: 0;
     font-size: 0px; } }
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes Space {
+  0% {
+    background-position: 0% 0%; }
+  100% {
+    background-position: 0% 100%; } }
+@-moz-keyframes Space {
+  0% {
+    background-position: 0% 0%; }
+  100% {
+    background-position: 0% 100%; } }
+@keyframes Space {
+  0% {
+    background-position: 0% -50%;
+    -webkit-filter: brightness(0%); }
+  60% {
+    -webkit-filter: brightness(100%); }
+  100% {
+    background-position: 0% 100%; } }
 .login-page, .signup-page {
   position: relative; }
   .login-page [type="button"], .signup-page [type="button"] {
@@ -465,6 +531,39 @@
     color: transparent;
     margin: 0;
     font-size: 0px; } }
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes Space {
+  0% {
+    background-position: 0% 0%; }
+  100% {
+    background-position: 0% 100%; } }
+@-moz-keyframes Space {
+  0% {
+    background-position: 0% 0%; }
+  100% {
+    background-position: 0% 100%; } }
+@keyframes Space {
+  0% {
+    background-position: 0% -50%;
+    -webkit-filter: brightness(0%); }
+  60% {
+    -webkit-filter: brightness(100%); }
+  100% {
+    background-position: 0% 100%; } }
 header {
   z-index: 3;
   position: fixed;
@@ -687,6 +786,39 @@ header {
     color: transparent;
     margin: 0;
     font-size: 0px; } }
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes Space {
+  0% {
+    background-position: 0% 0%; }
+  100% {
+    background-position: 0% 100%; } }
+@-moz-keyframes Space {
+  0% {
+    background-position: 0% 0%; }
+  100% {
+    background-position: 0% 100%; } }
+@keyframes Space {
+  0% {
+    background-position: 0% -50%;
+    -webkit-filter: brightness(0%); }
+  60% {
+    -webkit-filter: brightness(100%); }
+  100% {
+    background-position: 0% 100%; } }
 .speak {
   box-sizing: border-box;
   display: block;
@@ -698,19 +830,44 @@ header {
   color: #1EE646;
   font-family: 'Speak', 'monospace';
   font-size: 50px; }
+  .speak .theme-object {
+    height: 100%;
+    width: 100%; }
   .speak .left-button [type="button"], .speak .right-button [type="button"] {
     color: #1EE646;
     border: 2px solid #1EE646;
     background: black; }
 
 .zarathustra {
+  position: relative;
   box-sizing: border-box;
   display: block;
   height: 100%;
   width: 100%;
-  background: gold;
-  color: black;
-  font-family: 'Zara', serif; }
+  background: url("assets/zara.jpg");
+  background-size: 200% 200%;
+  color: #222;
+  text-shadow: 2px 2px #BBB;
+  font-family: 'Zara', serif;
+  overflow: hidden;
+  text-align: center;
+  -webkit-animation: Space 40s forwards;
+  -moz-animatin: Space 40s forwards;
+  animation: Space 40s forwards; }
+  .zarathustra span {
+    -webkit-animation: FadeIn .6s;
+    -moz-animation: FadeIn .6s;
+    animation: FadeIn .6s; }
+  .zarathustra .theme-object {
+    position: absolute;
+    height: 80%;
+    width: 70%;
+    bottom: 0;
+    left: 15%;
+    background-color: black;
+    box-shadow: 0 0 15px gray; }
+    .zarathustra .theme-object span {
+      font-size: 35px; }
   .zarathustra .left-button [type="button"], .zarathustra .right-button [type="button"] {
     color: black;
     border: 2px solid gold;
