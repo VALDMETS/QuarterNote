@@ -157,10 +157,7 @@
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% -50%;
-    -webkit-filter: brightness(0%); }
-  60% {
-    -webkit-filter: brightness(100%); }
+    background-position: 0% -50%; }
   100% {
     background-position: 0% 100%; } }
 @font-face {
@@ -322,10 +319,7 @@
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% -50%;
-    -webkit-filter: brightness(0%); }
-  60% {
-    -webkit-filter: brightness(100%); }
+    background-position: 0% -50%; }
   100% {
     background-position: 0% 100%; } }
 .login-page, .signup-page {
@@ -558,10 +552,7 @@
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% -50%;
-    -webkit-filter: brightness(0%); }
-  60% {
-    -webkit-filter: brightness(100%); }
+    background-position: 0% -50%; }
   100% {
     background-position: 0% 100%; } }
 header {
@@ -813,10 +804,7 @@ header {
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% -50%;
-    -webkit-filter: brightness(0%); }
-  60% {
-    -webkit-filter: brightness(100%); }
+    background-position: 0% -50%; }
   100% {
     background-position: 0% 100%; } }
 .speak {
@@ -851,9 +839,9 @@ header {
   font-family: 'Zara', serif;
   overflow: hidden;
   text-align: center;
-  -webkit-animation: Space 40s forwards;
-  -moz-animatin: Space 40s forwards;
-  animation: Space 40s forwards; }
+  -webkit-animation: Space 20s forwards;
+  -moz-animatin: Space 20s forwards;
+  animation: Space 20s linear forwards; }
   .zarathustra span {
     -webkit-animation: FadeIn .6s;
     -moz-animation: FadeIn .6s;
@@ -865,10 +853,11 @@ header {
     bottom: 0;
     left: 15%;
     background-color: black;
-    box-shadow: 0 0 15px gray; }
+    box-shadow: 0 0 30px #CCC; }
     .zarathustra .theme-object span {
       font-size: 35px; }
   .zarathustra .left-button [type="button"], .zarathustra .right-button [type="button"] {
+    z-index: 10;
     color: black;
     border: 2px solid gold;
     background: gold; }

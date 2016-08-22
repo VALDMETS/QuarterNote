@@ -14,7 +14,14 @@ export default React.createClass({
       messages: store.newMessages.toJSON(),
       friendRequests: store.friendRequests.toJSON(),
       messageSentConfirmation: store.messageSentConfirmation,
-      requestSentConfirmation: store.requestSentConfirmation
+      requestSentConfirmation: store.requestSentConfirmation,
+      interval: window.setInterval( () => {
+        store.newMessages.fetch({
+          data: {
+            query: JSON.stringify({recipient_id: store.session.get('_id')})
+          }
+        });
+      }, 1000)
     }
   },
   render: function() {
@@ -60,6 +67,7 @@ export default React.createClass({
     store.friendRequests.on('update', this.messageListener);
   },
   componentWillUnmount: function() {
+    clearInterval(this.state.interval);
     store.messageSentConfirmation = false;
     store.requestSentConfirmation = false;
     store.newMessages.off('update', this.messageListener);
