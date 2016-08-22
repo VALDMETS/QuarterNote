@@ -39,11 +39,10 @@
   text-shadow: 2px 2px #BBB;
   font-family: 'Zara', serif;
   overflow: hidden;
-  // filter: brightness(0%);
   text-align: center;
 
-  -webkit-animation: Space 20s forwards;
-  -moz-animatin: Space 20s forwards;
+  -webkit-animation: Space 20s linear forwards;
+  -moz-animatin: Space 20s linear forwards;
   animation: Space 20s linear forwards;
   span {
     -webkit-animation: FadeIn .6s;
@@ -56,9 +55,15 @@
     width: 70%;
     bottom: 0;
     left: 15%;
-    // margin-top: 30%;
-    background-color: black;
     box-shadow: 0 0 30px #CCC;
+
+    background: linear-gradient(134deg, #000000, #111111, #292929, #111111, #000000);
+    background-size: 600% 600%;
+
+    -webkit-animation: Hero 15s ease infinite;
+    -moz-animation: Hero 15s ease infinite;
+    animation: Hero 15s ease infinite;
+
     span {
       font-size: 35px;
     }

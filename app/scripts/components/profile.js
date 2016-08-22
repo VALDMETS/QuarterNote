@@ -9,16 +9,6 @@ import store from '../store';
 
 export default React.createClass({
   getInitialState: function() {
-    // let currentProfile;
-    // if(store.friendList) {
-    //   currentProfile = store.friendList.get(this.props.params.id)
-    // } else {
-    //   store.session.friendSetup({}, {
-    //     success: () => {
-    //       currentProfile = storefriendList.get(this.props.params.id)
-    //     }
-    //   });
-    // }
     return {
       user: {
         username: '',

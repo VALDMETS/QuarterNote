@@ -39,7 +39,11 @@ export default React.createClass({
     if(store.friendList.toJSON().length) {
       this.setState({currentFriend: store.friendList.get(this.props.params.id).toJSON()});
     } else {
-      store.session.friendSetup().then( () => {this.setState({currentFriend: store.friendList.get(this.props.params.id).toJSON()});});
+      store.session.friendSetup()
+        .then( () => {
+          this.setState({currentFriend: store.friendList.get(this.props.params.id).toJSON()
+        });
+      });
     }
   },
   submitFunction: function(e) {

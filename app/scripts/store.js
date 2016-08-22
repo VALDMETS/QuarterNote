@@ -37,6 +37,9 @@ export default {
     theme_id: '57b91314e9ea451559128287'
   }],
   loginGreetings: [{
+    button: 'I beg forgiveness',
+    phrase: 'Nice try, but that didn\'t work.'
+  }, {
     button: 'Let\'s Party',
     phrase: 'There\'s a party on my phone and everyone\'s invited.'
   }, {

@@ -6,7 +6,16 @@ import settings from '../settings'
 import Request from '../models/request';
 
 export default React.createClass({
+  getInitialState: function() {
+    return {
+      error: false
+    }
+  },
   render: function() {
+    let loginIntro = <p>I feel so lucky to sign up</p>;
+    if(this.state.error) {
+      loginIntro = <p className="loginerror">Username is already taken!</p>
+    }
     return (
       <div className="signup-page">
         <div className="intro-hero">
@@ -17,7 +26,7 @@ export default React.createClass({
         <h4>of all time"</h4>
         <p>-- You, 2016</p>
         <form onSubmit={this.submitFunction}>
-          <p>I feel so lucky to sign up</p>
+          {loginIntro}
           <input type="text" ref="signupname" placeholder="Your Name"/>
           <input type="password" ref="signuppass" placeholder="Password"/>
           <input type="submit" value="GO"/>
@@ -53,7 +62,7 @@ export default React.createClass({
         });
       },
       error: () => {
-        console.log('sorry, something went wrong');
+        this.setState({error: true});
       }
     })
   },

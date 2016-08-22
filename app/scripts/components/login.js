@@ -5,8 +5,18 @@ import store from '../store';
 import settings from '../settings';
 
 export default React.createClass({
+  getInitialState: function() {
+    return {
+      error: false
+    }
+  },
   render: function() {
-    let randInt = Math.floor(Math.random()*4);
+    let randInt = Math.ceil(Math.random()*4);
+    let loginIntro = <p>Go ahead and log in</p>
+    if(this.state.error) {
+      loginIntro = <p className="loginerror">Incorrect name/password</p>
+      randInt = 0;
+    }
     return (
       <div className="login-page">
         <div className="intro-hero">
@@ -15,7 +25,7 @@ export default React.createClass({
         </div>
         <p>{store.loginGreetings[randInt].phrase}</p>
         <form onSubmit={this.submitFunction}>
-          <p>Go ahead and log in</p>
+          {loginIntro}
           <input type="text" ref="loginname" placeholder="Your Name"/>
           <input type="password" ref="loginpass" placeholder="Password"/>
           <input type="submit" value={store.loginGreetings[randInt].button}/>
@@ -44,7 +54,7 @@ export default React.createClass({
         }));
       },
       error: () => {
-        console.log('sorry, something went wrong');
+        this.setState({error: true});
       }
     })
   },

@@ -53,6 +53,12 @@ export default Bb.Model.extend({
           }).then( () => {
             resolve();
           });
+        },
+        error: () => {
+          localStorage.clear();
+          store.session.clear();
+          hashHistory.push('/login');
+          reject();
         }
       })
     });

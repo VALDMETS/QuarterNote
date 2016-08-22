@@ -157,9 +157,9 @@
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% 100%; }
+    background-position: 0% 0%; }
   100% {
-    background-position: 0% 0%; } }
+    background-position: 0% 100%; } }
 @font-face {
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
@@ -319,9 +319,9 @@
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% 100%; }
+    background-position: 0% 0%; }
   100% {
-    background-position: 0% 0%; } }
+    background-position: 0% 100%; } }
 .login-page, .signup-page {
   position: relative; }
   .login-page [type="button"], .signup-page [type="button"] {
@@ -332,6 +332,8 @@
     padding: 8px 14px;
     color: white;
     border: none; }
+  .login-page .loginerror, .signup-page .loginerror {
+    color: red; }
   .login-page p, .signup-page p {
     padding: 0 5%;
     font-size: 15px;
@@ -552,9 +554,9 @@
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% 100%; }
+    background-position: 0% 0%; }
   100% {
-    background-position: 0% 0%; } }
+    background-position: 0% 100%; } }
 header {
   z-index: 3;
   position: fixed;
@@ -804,9 +806,9 @@ header {
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% 100%; }
+    background-position: 0% 0%; }
   100% {
-    background-position: 0% 0%; } }
+    background-position: 0% 100%; } }
 .speak {
   box-sizing: border-box;
   display: block;
@@ -839,8 +841,8 @@ header {
   font-family: 'Zara', serif;
   overflow: hidden;
   text-align: center;
-  -webkit-animation: Space 20s forwards;
-  -moz-animatin: Space 20s forwards;
+  -webkit-animation: Space 20s linear forwards;
+  -moz-animatin: Space 20s linear forwards;
   animation: Space 20s linear forwards; }
   .zarathustra span {
     -webkit-animation: FadeIn .6s;
@@ -852,8 +854,12 @@ header {
     width: 70%;
     bottom: 0;
     left: 15%;
-    background-color: black;
-    box-shadow: 0 0 30px #CCC; }
+    box-shadow: 0 0 30px #CCC;
+    background: linear-gradient(134deg, #000000, #111111, #292929, #111111, #000000);
+    background-size: 600% 600%;
+    -webkit-animation: Hero 15s ease infinite;
+    -moz-animation: Hero 15s ease infinite;
+    animation: Hero 15s ease infinite; }
     .zarathustra .theme-object span {
       font-size: 35px; }
   .zarathustra .left-button [type="button"], .zarathustra .right-button [type="button"] {
