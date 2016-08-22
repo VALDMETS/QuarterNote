@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 import Header from './header'
 import FriendSelect from './friendselect';
@@ -7,16 +8,8 @@ import store from '../store';
 
 export default React.createClass({
   getInitialState: function() {
-
-    // disallows user to message self by removing them from friend collection on this profile-page
-    
-    let messageableFriends = store.friendList.toJSON();
-    console.log(messageableFriends);
-    messageableFriends = messageableFriends.filter( (friend) => {
-      if (friend._id === store.session.get('_id')) { return false } else { return true }
-    })
     return {
-      friendList: messageableFriends
+      friendList: []
     }
   },
   render: function() {
@@ -32,5 +25,31 @@ export default React.createClass({
         </div>
       </div>
     )
+  },
+  componentDidMount: function() {
+    if(store.friendList.toJSON().length) {
+      console.log('wow workin');
+      let messageableFriends = store.friendList.toJSON();
+      messageableFriends = messageableFriends.filter( (friend) => {
+        if (friend._id === store.session.get('_id')) { return false } else { return true }
+      });
+      this.setState({friendList: messageableFriends});
+    } else {
+      console.log('wow still workin');
+      store.session.friendSetup({
+        success: () => {
+          console.log('i can believe');
+          let messageableFriends = store.friendList.toJSON();
+          messageableFriends = messageableFriends.filter( (friend) => {
+            if (friend._id === store.session.get('_id')) { return false } else { return true }
+          });
+          this.setState({friendList: messageableFriends});
+        },
+        error: () => {
+          localStorage.clear();
+          hashHistory.push('/login');
+        }
+      })
+    }
   }
 });

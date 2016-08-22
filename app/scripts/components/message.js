@@ -11,6 +11,7 @@ export default React.createClass({
     return {
       currentMessage: store.newMessages.get(this.props.params.id).toJSON(),
       syllableDisplay: [],
+      sound: {}
     }
   },
   render: function() {
@@ -43,6 +44,7 @@ export default React.createClass({
       let currentTheme = store.themeList.get(themeId);
       console.log(this.state.currentMessage.content);
       let sound = new Howl({src: currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].sound_url});
+      this.setState({sound: sound});
       sound.play();
       sound.on('load', () => {
         let animationTiming = currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].timing;
@@ -62,6 +64,7 @@ export default React.createClass({
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
+    this.state.sound.stop();
     hashHistory.push('/main');
   },
   replyFunction: function() {
@@ -70,9 +73,11 @@ export default React.createClass({
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
+    this.state.sound.stop();
     hashHistory.push(`/newmessage/${replyTarget._id}`);
   },
   escapeFunction: function() {
+    this.state.sound.stop();
     hashHistory.push('/main')
   },
 });

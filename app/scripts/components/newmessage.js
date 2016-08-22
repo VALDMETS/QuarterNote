@@ -10,7 +10,7 @@ import store from '../store';
 export default React.createClass({
   getInitialState: function() {
     return {
-      currentFriend: store.friendList.get(this.props.params.id).toJSON(),
+      currentFriend: [],
       themeKey: 0
     }
   },
@@ -34,6 +34,21 @@ export default React.createClass({
         {this.props.children}
       </div>
     )
+  },
+  componentDidMount: function () {
+    if(store.friendList.toJSON().length) {
+      this.setState({currentFriend: store.friendList.get(this.props.params.id).toJSON()});
+    } else {
+      store.session.friendSetup({},{
+        success: () => {
+          this.setState({currentFriend: store.friendList.get(this.props.params.id).toJSON()});
+        },
+        error: () => {
+          localStorage.clear();
+          hashHistory.push('/login');
+        }
+      });
+    }
   },
   submitFunction: function(e) {
     e.preventDefault();

@@ -17,6 +17,9 @@ export default Bb.Model.extend({
   urlRoot: `https://baas.kinvey.com/user/${settings.appKey}/login`,
   idAttribute: '_id',
   friendSetup: function() {
+    // const promise = new Promise( (resolve,reject) => {
+    //
+    // });
     let friendParams = [{username: this.get('username')}];
     $.ajax({
       url: `https://baas.kinvey.com/appdata/${settings.appKey}/friends`,
@@ -50,6 +53,7 @@ export default Bb.Model.extend({
             query: JSON.stringify({"$or": friendParams})
           }
         }).then( () => {
+          // return promise;
           hashHistory.push('/main');
         });
       }

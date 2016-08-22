@@ -7,9 +7,17 @@ import store from './store';
 import settings from './settings';
 import router from './components/router';
 
+$(document).ajaxSend(function(e, xhr, jqueryAjax){
+  if (store.session.get('authtoken')) {
+    xhr.setRequestHeader('Authorization', 'Kinvey ' + store.session.get('authtoken'));
+  } else {
+    xhr.setRequestHeader('Authorization', 'Basic ' + settings.basicAuth);
+  }
+});
+
 if(localStorage.getItem("user")) {
   let localInfo = JSON.parse(localStorage.getItem("user"));
-  console.log(localInfo);
+  // console.log(localInfo);
   store.session.set({
     _id: localInfo._id,
     username: localInfo.username,
@@ -18,14 +26,6 @@ if(localStorage.getItem("user")) {
   });
   store.session.friendSetup();
 }
-
-$(document).ajaxSend(function(e, xhr, jqueryAjax){
-  if (store.session.get('authtoken')) {
-    xhr.setRequestHeader('Authorization', 'Kinvey ' + store.session.get('authtoken'));
-  } else {
-    xhr.setRequestHeader('Authorization', 'Basic ' + settings.basicAuth);
-  }
-});
 
 ReactDOM.render(router, document.getElementById('container'));
 

@@ -10,6 +10,7 @@ export default React.createClass({
   getInitialState: function() {
     return {
       syllableDisplay: [],
+      sound: {}
     }
   },
   render: function() {
@@ -40,6 +41,7 @@ export default React.createClass({
       let theme_id = store.messageToBeSent.get('theme_id');
       let currentTheme = store.themeList.get(theme_id)
       let sound = new Howl({src: currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url});
+      this.setState({sound: sound});
       sound.play();
       sound.on('load', () => {
         let animationTiming = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].timing;
@@ -61,10 +63,12 @@ export default React.createClass({
       store.messageToBeSent = new Message();
       // console.log(store.messageToBeSent);
       store.messageSentConfirmation = true;
+      this.state.sound.stop();
       hashHistory.push(`/main`);
     });
   },
   goBackFunction: function() {
+    this.state.sound.stop();
     hashHistory.push(`/newmessage/${store.messageToBeSent.get('recipient_id')}`);
   }
 });
