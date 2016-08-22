@@ -157,9 +157,9 @@
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% -50%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @font-face {
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
@@ -319,9 +319,9 @@
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% -50%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 .login-page, .signup-page {
   position: relative; }
   .login-page [type="button"], .signup-page [type="button"] {
@@ -552,9 +552,9 @@
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% -50%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 header {
   z-index: 3;
   position: fixed;
@@ -804,9 +804,9 @@ header {
     background-position: 0% 100%; } }
 @keyframes Space {
   0% {
-    background-position: 0% -50%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 .speak {
   box-sizing: border-box;
   display: block;

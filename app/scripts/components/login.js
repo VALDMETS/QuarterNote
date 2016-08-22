@@ -33,6 +33,15 @@ export default React.createClass({
         store.session.unset('password');
         store.session.set({authtoken: resp._kmd.authtoken});
         store.session.friendSetup();
+        // localStorage.setItem ({
+
+        // })
+        localStorage.setItem('user', JSON.stringify({
+          username: store.session.get('username'),
+          authtoken: store.session.get('authtoken'),
+          img_url: store.session.get('img_url'),
+          _id: store.session.get('_id')
+        }));
       },
       error: () => {
         console.log('sorry, something went wrong');

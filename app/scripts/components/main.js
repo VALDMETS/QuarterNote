@@ -9,7 +9,6 @@ import FriendRequest from './friendrequest';
 
 export default React.createClass({
   getInitialState: function() {
-    // console.log('currently, ' + store.friendRequests);
     return {
       messages: store.newMessages.toJSON(),
       friendRequests: store.friendRequests.toJSON(),
@@ -21,7 +20,7 @@ export default React.createClass({
             query: JSON.stringify({recipient_id: store.session.get('_id')})
           }
         });
-      }, 1000)
+      }, 2000)
     }
   },
   render: function() {

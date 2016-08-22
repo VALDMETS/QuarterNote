@@ -46,6 +46,7 @@ export default React.createClass({
       url: `https://baas.kinvey.com/user/${settings.appKey}/_logout`
     })
     store.session.clear();
+    localStorage.clear();
     store.newMessages.reset();
     store.messageToBeSent.clear();
     if(store.friendRequests) {
