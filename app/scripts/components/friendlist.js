@@ -9,16 +9,9 @@ import store from '../store';
 
 export default React.createClass({
   getInitialState: function() {
-
-    // disallows user to search/friend self by removing them from friend collection on this profile-page
-
-    let searchableFriends = store.friendList.toJSON();
-    searchableFriends = searchableFriends.filter( (friend) => {
-      if (friend._id === store.session.get('_id')) { return false } else { return true }
-    })
     return {
       title: 'Your Friends',
-      friendList: searchableFriends
+      friendList: []
     }
   },
   render: function() {
@@ -39,6 +32,23 @@ export default React.createClass({
         </form>
       </div>
     )
+  },
+  componentDidMount: function() {
+    if(store.friendList.toJSON().length) {
+      let searchableFriends = store.friendList.toJSON();
+      searchableFriends = searchableFriends.filter( (friend) => {
+        if (friend._id === store.session.get('_id')) { return false } else { return true }
+      });
+      this.setState({friendList: searchableFriends});
+    } else {
+      store.session.friendSetup().then( () => {
+        let searchableFriends = store.friendList.toJSON();
+        searchableFriends = searchableFriends.filter( (friend) => {
+          if (friend._id === store.session.get('_id')) { return false } else { return true }
+        })
+        this.setState({friendList: searchableFriends});
+      });
+    }
   },
   submitFunction: function(e) {
     e.preventDefault();

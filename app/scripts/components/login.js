@@ -26,7 +26,7 @@ export default React.createClass({
   submitFunction: function(e) {
     e.preventDefault();
     store.session.save({
-      username: this.refs.loginname.value,
+      username: this.refs.loginname.value.toUpperCase(),
       password: this.refs.loginpass.value,
     }, {
       success: (user, resp) => {

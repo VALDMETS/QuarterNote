@@ -28,7 +28,7 @@ export default React.createClass({
   submitFunction: function(e) {
     e.preventDefault();
     store.session.save({
-      username: this.refs.signupname.value,
+      username: this.refs.signupname.value.toUpperCase(),
       password: this.refs.signuppass.value,
       img_url: "http://piq.codeus.net/static/media/userpics/piq_43701_400x400.png"
     }, {
@@ -46,7 +46,11 @@ export default React.createClass({
           recipient: store.session.get('username'),
           recipient_id: store.session.get('_id')
         })
-        initialFriend.save().then( () => {store.session.friendSetup()});
+        initialFriend.save().then( () => {
+          store.session.friendSetup().then( () => {
+            hashHistory.push('/main');
+          })
+        });
       },
       error: () => {
         console.log('sorry, something went wrong');

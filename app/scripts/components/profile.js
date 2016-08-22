@@ -9,25 +9,26 @@ import store from '../store';
 
 export default React.createClass({
   getInitialState: function() {
-    let currentProfile;
-    if(store.friendList) {
-      currentProfile = store.friendList.get(this.props.params.id)
-    } else {
-      store.session.friendSetup({}, {
-        success: () => {
-          currentProfile = storefriendList.get(this.props.params.id)
-        }
-      });
-    }
+    // let currentProfile;
+    // if(store.friendList) {
+    //   currentProfile = store.friendList.get(this.props.params.id)
+    // } else {
+    //   store.session.friendSetup({}, {
+    //     success: () => {
+    //       currentProfile = storefriendList.get(this.props.params.id)
+    //     }
+    //   });
+    // }
     return {
       user: {
-        username: currentProfile.get('username'),
-        img_url: currentProfile.get('img_url')
+        username: '',
+        img_url: ''
       },
-      friends: store.friendList.toJSON(),
+      friends: []
     }
   },
   render: function() {
+    console.log('rendered');
     let profilePic;
     if(this.state.user.img_url) {
       profilePic = <img src={this.state.user.img_url} />
@@ -61,11 +62,35 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    let messageableFriends = store.friendList.toJSON();
-    messageableFriends = messageableFriends.filter( (friend) => {
-      if (friend._id === store.session.get('_id')) { return false } else { return true }
-    })
-    this.setState({friends: messageableFriends});
+    if(store.friendList.toJSON().length) {
+      let currentProfile = store.friendList.get(this.props.params.id);
+      this.setState({
+        user: {
+          username: currentProfile.get('username'),
+          img_url: currentProfile.get('img_url')
+        }
+      });
+      let messageableFriends = store.friendList.toJSON();
+      messageableFriends = messageableFriends.filter( (friend) => {
+        if (friend._id === store.session.get('_id')) { return false } else { return true }
+      })
+      this.setState({friends: messageableFriends});
+    } else {
+      store.session.friendSetup().then( () => {
+        let currentProfile = store.friendList.get(this.props.params.id);
+        this.setState({
+          user: {
+            username: currentProfile.get('username'),
+            img_url: currentProfile.get('img_url')
+          }
+        });
+        let messageableFriends = store.friendList.toJSON();
+        messageableFriends = messageableFriends.filter( (friend) => {
+          if (friend._id === store.session.get('_id')) { return false } else { return true }
+        })
+        this.setState({friends: messageableFriends});
+      });
+    }
   },
   componentWillReceiveProps: function(nextProps) {
     if(this.props.params.id !== nextProps.params.id) {

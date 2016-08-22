@@ -64,7 +64,7 @@ export default React.createClass({
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
-    this.state.sound.stop();
+    this.state.sound.fade(1,0,500);
     hashHistory.push('/main');
   },
   replyFunction: function() {
@@ -73,11 +73,11 @@ export default React.createClass({
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
-    this.state.sound.stop();
+    this.state.sound.fade(1,0,500);
     hashHistory.push(`/newmessage/${replyTarget._id}`);
   },
   escapeFunction: function() {
-    this.state.sound.stop();
+    this.state.sound.fade(1,0,500);
     hashHistory.push('/main')
   },
 });

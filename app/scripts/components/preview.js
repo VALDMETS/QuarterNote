@@ -63,12 +63,12 @@ export default React.createClass({
       store.messageToBeSent = new Message();
       // console.log(store.messageToBeSent);
       store.messageSentConfirmation = true;
-      this.state.sound.stop();
+      this.state.sound.fade(1,0,500);
       hashHistory.push(`/main`);
     });
   },
   goBackFunction: function() {
-    this.state.sound.stop();
+    this.state.sound.fade(1,0,500);
     hashHistory.push(`/newmessage/${store.messageToBeSent.get('recipient_id')}`);
   }
 });
