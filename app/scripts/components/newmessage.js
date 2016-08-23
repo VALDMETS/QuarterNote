@@ -11,11 +11,15 @@ export default React.createClass({
   getInitialState: function() {
     return {
       currentFriend: [],
-      themeKey: 0
+      themeKey: 0,
+      error: false
     }
   },
   render: function() {
     let messageTitle = <h4>Messaging {this.state.currentFriend.username}</h4>
+    if(this.state.error) {
+      messageTitle = <h4 className="error">Sorry, try a shorter message!</h4>
+    }
     return (
       <div className="new-message">
         <Header/>
@@ -25,7 +29,7 @@ export default React.createClass({
           <section className="theme-list">
             <h6>Choose Theme</h6>
             <input type="button" ref="speak" className="speak active" onClick={this.speakFunction} value="CONSOLE"/>
-            <input type="button" ref="fuji" className="fuji" onClick={this.fujiFunction} value="FUJI"/>
+            <input type="button" ref="know" className="know" onClick={this.knowFunction} value="KNOWLEDGE"/>
             <input type="button" ref="neon" className="neon" onClick={this.neonFunction} value="NEON"/>
             <input type="button" ref="zara" className="zara" onClick={this.zaraFunction} value="ZARATHUSTRA"/>
           </section>
@@ -50,41 +54,45 @@ export default React.createClass({
     e.preventDefault();
     console.log(store.themeList);
     let content = store.messageToBeSent.syllabizer(this.refs.message.value);
-    store.messageToBeSent.set({
-      sender: store.session.get('username'),
-      recipient_id: this.props.params.id,
-      content: content,
-      theme: store.themeMetaInfo[this.state.themeKey].theme,
-      theme_id: store.themeMetaInfo[this.state.themeKey].theme_id,
-      timestamp: new Date()
-    });
-    console.log(store.messageToBeSent);
-    hashHistory.push(`/newmessage/${this.props.params.id}/preview`);
+    if (content.length < 15) {
+      store.messageToBeSent.set({
+        sender: store.session.get('username'),
+        recipient_id: this.props.params.id,
+        content: content,
+        theme: store.themeMetaInfo[this.state.themeKey].theme,
+        theme_id: store.themeMetaInfo[this.state.themeKey].theme_id,
+        timestamp: new Date()
+      });
+      console.log(store.messageToBeSent);
+      hashHistory.push(`/newmessage/${this.props.params.id}/preview`);
+    } else {
+      this.setState({error: true});
+    }
   },
   speakFunction: function() {
     this.refs.speak.className = "speak active";
-    this.refs.fuji.className = "fuji";
+    this.refs.know.className = "know";
     this.refs.neon.className = "neon";
     this.refs.zara.className = "zara";
     this.setState({themeKey: 0});
   },
-  fujiFunction: function() {
+  knowFunction: function() {
     this.refs.speak.className = "speak";
-    this.refs.fuji.className = "fuji active";
+    this.refs.know.className = "know active";
     this.refs.neon.className = "neon";
     this.refs.zara.className = "zara";
     this.setState({themeKey: 1});
   },
   neonFunction: function() {
     this.refs.speak.className = "speak";
-    this.refs.fuji.className = "fuji";
+    this.refs.know.className = "know";
     this.refs.neon.className = "neon active";
     this.refs.zara.className = "zara";
     this.setState({themeKey: 2});
   },
   zaraFunction: function() {
     this.refs.speak.className = "speak";
-    this.refs.fuji.className = "fuji";
+    this.refs.know.className = "know";
     this.refs.neon.className = "neon";
     this.refs.zara.className = "zara active";
     this.setState({themeKey: 3});

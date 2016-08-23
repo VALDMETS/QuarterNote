@@ -29,6 +29,7 @@ body {
 .alert-box {
   width: 100%;
 }
+
 .new-message-alert, .friend-request, .friend-selector, .friend-listing {
   position: relative;
   padding: 0 4px;
@@ -299,6 +300,9 @@ body {
   }
 }
 .new-message {
+  .error {
+    color: red;
+  }
   h4 {
     text-align: center;
   }
@@ -375,6 +379,14 @@ body {
       }
       .fuji.active {
         background-color: brown;
+        color: white;
+      }
+      .zara {
+
+      }
+      .zara.active {
+        background: url('assets/zara.jpg');
+        object-fit: cover;
         color: white;
       }
     }

@@ -28,14 +28,12 @@ export default React.createClass({
   },
   componentDidMount: function() {
     if(store.friendList.toJSON().length) {
-      console.log('wow workin');
       let messageableFriends = store.friendList.toJSON();
       messageableFriends = messageableFriends.filter( (friend) => {
         if (friend._id === store.session.get('_id')) { return false } else { return true }
       });
       this.setState({friendList: messageableFriends});
     } else {
-      console.log('wow still workin');
       store.session.friendSetup()
       .then( () => {
         let messageableFriends = store.friendList.toJSON();

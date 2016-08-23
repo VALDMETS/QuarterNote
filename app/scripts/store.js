@@ -25,8 +25,8 @@ export default {
     theme_id: '57b1e44e616900c708e8400c'
   }, {
     key: 1,
-    theme: 'fuji',
-    theme_id: '2222'
+    theme: 'know',
+    theme_id: '57bca116bfc43b0e64e144c1'
   }, {
     key: 2,
     theme: 'neon',

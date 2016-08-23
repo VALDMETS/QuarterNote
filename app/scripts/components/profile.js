@@ -18,7 +18,6 @@ export default React.createClass({
     }
   },
   render: function() {
-    console.log('rendered');
     let profilePic;
     if(this.state.user.img_url) {
       profilePic = <img src={this.state.user.img_url} />
