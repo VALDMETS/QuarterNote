@@ -878,6 +878,40 @@ header {
     border: 2px solid white;
     background: url("assets/know.jpg"); }
 
+.neon {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  padding: 10% 10% 0 10%;
+  height: 100%;
+  width: 100%;
+  background: url("assets/neon.jpg");
+  border: 2px solid #ce1212;
+  color: #ce1212;
+  text-align: center;
+  font-family: 'Neon', 'sans-serif';
+  font-size: 44px;
+  text-transform: uppercase; }
+  .neon span {
+    animation: Neon .6s; }
+@keyframes Neon {
+  0% {
+    color: white;
+    text-shadow: 0px 0px 100px #ce1212; }
+  50% {
+    color: #F18383;
+    text-shadow: 0px 0px 30px #ce1212; }
+  100% {
+    color: #ce1212;
+    text-shadow: 0px 0px 0px #ce1212; } }
+  .neon .theme-object {
+    height: 100%;
+    width: 100%; }
+  .neon .left-button [type="button"], .neon .right-button [type="button"] {
+    color: #ce1212;
+    border: 2px solid #ce1212;
+    background: url("assets/neon.jpg"); }
+
 .zarathustra {
   position: relative;
   box-sizing: border-box;
@@ -1247,7 +1281,8 @@ body {
       font-size: 22px; }
     .new-message form .theme-list .neon.active {
       background: url("assets/neon.jpg");
-      color: yellow; }
+      color: #F18383;
+      text-shadow: 0px 0px 30px #ce1212; }
     .new-message form .theme-list .fuji {
       font-family: 'Fuji'; }
     .new-message form .theme-list .fuji.active {
@@ -1271,7 +1306,6 @@ body {
   .message-placemat .message-window {
     display: block;
     position: absolute;
-    background: gray;
     width: 90%;
     left: 5%;
     height: 60%;

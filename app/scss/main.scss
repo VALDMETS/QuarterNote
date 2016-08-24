@@ -402,7 +402,8 @@ body {
       }
       .neon.active {
         background: url('assets/neon.jpg');
-        color: yellow;
+        color: $menacetrans;
+        text-shadow: 0px 0px 30px $menace;
       }
       .fuji {
         font-family: 'Fuji';
@@ -434,7 +435,7 @@ body {
   .message-window {
     display: block;
     position: absolute;
-    background: gray;
+    // background: gray;
     width: 90%;
     left: 5%;
     height: 60%;

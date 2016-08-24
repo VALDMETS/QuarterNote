@@ -62,6 +62,54 @@
   }
 }
 
+.neon {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  padding: 10% 10% 0 10%;
+  height: 100%;
+  width: 100%;
+  background: url('assets/neon.jpg');
+  border: 2px solid $menace;
+  // border-radius: 40px;
+
+  color: $menace;
+  text-align: center;
+  font-family: 'Neon', 'sans-serif';
+  font-size: 44px;
+  text-transform: uppercase;
+  span {
+    animation: Neon .6s;
+
+    @keyframes Neon {
+      0% {
+        color: white;
+        text-shadow: 0px 0px 100px $menace;
+      }
+      50% {
+        color: $menacetrans;
+        text-shadow: 0px 0px 30px $menace;
+      }
+      100% {
+        color: $menace;
+        text-shadow: 0px 0px 0px $menace;
+      }
+    }
+  }
+
+  .theme-object {
+    height: 100%;
+    width: 100%;
+  }
+  .left-button, .right-button {
+    [type="button"] {
+      color: $menace;
+      border: 2px solid $menace;
+      background: url('assets/neon.jpg');
+    }
+  }
+}
+
 .zarathustra {
   position: relative;
   box-sizing: border-box;
