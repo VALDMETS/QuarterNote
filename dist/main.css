@@ -5,6 +5,9 @@
   font-family: 'Know';
   src: url("assets/know.ttf") format("truetype"); }
 @font-face {
+  font-family: 'Neon';
+  src: url("assets/neon.ttf") format("truetype"); }
+@font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
 @font-face {
@@ -169,6 +172,9 @@
 @font-face {
   font-family: 'Know';
   src: url("assets/know.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Neon';
+  src: url("assets/neon.ttf") format("truetype"); }
 @font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
@@ -407,6 +413,9 @@
 @font-face {
   font-family: 'Know';
   src: url("assets/know.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Neon';
+  src: url("assets/neon.ttf") format("truetype"); }
 @font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
@@ -663,6 +672,9 @@ header {
   font-family: 'Know';
   src: url("assets/know.ttf") format("truetype"); }
 @font-face {
+  font-family: 'Neon';
+  src: url("assets/neon.ttf") format("truetype"); }
+@font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
 @font-face {
@@ -828,17 +840,43 @@ header {
   width: 100%;
   padding: 10% 10% 0 10%;
   border: 5px solid #1EE646;
-  background-color: #0D3615;
+  background-color: #0B2310;
   color: #1EE646;
   font-family: 'Speak', 'monospace';
-  font-size: 50px; }
+  font-size: 40px; }
   .speak .theme-object {
     height: 100%;
     width: 100%; }
   .speak .left-button [type="button"], .speak .right-button [type="button"] {
     color: #1EE646;
     border: 2px solid #1EE646;
-    background: #0D3615; }
+    background: #0B2310; }
+
+.know {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url("assets/know.jpg");
+  color: #B441A7;
+  font-family: 'Know', 'cursive';
+  font-size: 30px;
+  line-height: 31px; }
+  .know .theme-object {
+    box-sizing: border-box;
+    position: absolute;
+    height: 80%;
+    width: 70%;
+    bottom: 0;
+    left: 15%;
+    padding: 4% 6% 0 6%;
+    background-color: white;
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, 0.3); }
+  .know .left-button [type="button"], .know .right-button [type="button"] {
+    color: white;
+    border: 2px solid white;
+    background: url("assets/know.jpg"); }
 
 .zarathustra {
   position: relative;
@@ -858,6 +896,8 @@ header {
     -moz-animation: FadeIn .6s;
     animation: FadeIn .6s; }
   .zarathustra .theme-object {
+    box-sizing: border-box;
+    padding: 4% 3%;
     position: absolute;
     height: 80%;
     width: 70%;
@@ -870,17 +910,17 @@ header {
     -moz-animation: Hero 15s ease infinite;
     animation: Hero 15s ease infinite; }
     .zarathustra .theme-object span {
+      font-family: 'Zara', 'sans-serif';
       line-height: 28px;
       text-transform: uppercase;
-      font-family: 'Exo', sans-serif;
       color: rgba(255, 255, 255, 0.1);
       text-shadow: 2px 2px rgba(255, 255, 255, 0.4);
-      font-size: 35px; }
+      font-size: 31px; }
   .zarathustra .left-button [type="button"], .zarathustra .right-button [type="button"] {
     z-index: 10;
-    color: black;
-    border: 2px solid gold;
-    background: gold; }
+    color: white;
+    border: 2px solid white;
+    background: url("assets/zara.jpg"); }
 
 body {
   margin: 0;
@@ -986,6 +1026,16 @@ body {
     text-align: center;
     font-size: 32px;
     color: #03312E; }
+  .confirmation-window input {
+    outline: none;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin: 10% 0 0 20%;
+    padding: 5px;
+    border: 2px solid black;
+    width: 20%;
+    background: none; }
 
 .search-friend {
   position: relative;
@@ -1014,6 +1064,7 @@ body {
       border: none;
       border-radius: 30px;
       text-align: center;
+      text-transform: uppercase;
       font-size: 20px;
       font-family: 'Exo', sans-serif; }
     .search-friend form [type="submit"] {
@@ -1182,7 +1233,7 @@ body {
       font-size: 20px;
       letter-spacing: .1rem; }
     .new-message form .theme-list .speak.active {
-      background-color: #0D3615;
+      background-color: #0B2310;
       color: #1EE646; }
     .new-message form .theme-list .know {
       font-family: 'Know';
@@ -1190,14 +1241,20 @@ body {
     .new-message form .theme-list .know.active {
       background: url("assets/know.jpg");
       color: white; }
+    .new-message form .theme-list .neon {
+      font-family: 'Neon';
+      letter-spacing: .1rem;
+      font-size: 22px; }
+    .new-message form .theme-list .neon.active {
+      background: url("assets/neon.jpg");
+      color: yellow; }
     .new-message form .theme-list .fuji {
       font-family: 'Fuji'; }
     .new-message form .theme-list .fuji.active {
       background-color: brown;
       color: white; }
-    .new-message form .theme-list .neon.active {
-      background-color: black;
-      color: yellow; }
+    .new-message form .theme-list .zara {
+      font-family: 'Zara'; }
     .new-message form .theme-list .zara.active {
       background: url("assets/zara.jpg");
       object-fit: cover;

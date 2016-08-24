@@ -13,7 +13,7 @@
 
   color: $hotgreen;
   font-family: 'Speak', 'monospace';
-  font-size: 50px;
+  font-size: 40px;
 
   .theme-object {
     height: 100%;
@@ -24,6 +24,40 @@
       color: $hotgreen;
       border: 2px solid $hotgreen;
       background: $backgreen;
+    }
+  }
+}
+
+.know {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: url('assets/know.jpg');
+
+  color: $kidpurp;
+  font-family: 'Know', 'cursive';
+  font-size: 30px;
+  line-height: 31px;
+  // text-transform: lowercase;
+
+  .theme-object {
+    box-sizing: border-box;
+    position: absolute;
+    height: 80%;
+    width: 70%;
+    bottom: 0;
+    left: 15%;
+    padding: 4% 6% 0 6%;
+    background-color: white;
+    box-shadow: 5px 2px 10px rgba(0, 0, 0, .3);
+  }
+  .left-button, .right-button {
+    [type="button"] {
+      color: white;
+      border: 2px solid white;
+      background: url('assets/know.jpg');
     }
   }
 }
@@ -48,6 +82,8 @@
     animation: FadeIn .6s;
   }
   .theme-object {
+    box-sizing: border-box;
+    padding: 4% 3%;
     position: absolute;
     height: 80%;
     width: 70%;
@@ -63,20 +99,20 @@
     animation: Hero 15s ease infinite;
 
     span {
+      font-family: 'Zara', 'sans-serif';
       line-height: 28px;
       text-transform: uppercase;
-      font-family: 'Exo', sans-serif;
       color: rgba(256, 256, 256, .1);
       text-shadow: 2px 2px rgba(256, 256, 256, .4);
-      font-size: 35px;
+      font-size: 31px;
     }
   }
   .left-button, .right-button {
     [type="button"] {
       z-index: 10;
-      color: black;
-      border: 2px solid gold;
-      background: gold;
+      color: white;
+      border: 2px solid white;
+      background: url('assets/zara.jpg');
     }
   }
 }

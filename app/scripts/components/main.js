@@ -14,6 +14,7 @@ export default React.createClass({
       friendRequests: store.friendRequests.toJSON(),
       messageSentConfirmation: store.messageSentConfirmation,
       requestSentConfirmation: store.requestSentConfirmation,
+      newAcceptedConfirmation: store.newAcceptedConfirmation,
       interval: window.setInterval( () => {
         store.newMessages.fetch({
           data: {
@@ -32,6 +33,10 @@ export default React.createClass({
     if (this.state.requestSentConfirmation === true) {
       requestSentConfirmation = <div className="message-sent"><p>Friend Request Sent!</p></div>
     }
+    let newAcceptedConfirmation;
+    if (this.state.newAcceptedConfirmation === true) {
+      newAcceptedConfirmation = <div className="message-sent"><p>New Friend Accepted!</p></div>
+    }
     let friendRequests = this.state.friendRequests.map( (request, i) => {
       return <FriendRequest info={request} key={i}/>
     });
@@ -45,6 +50,7 @@ export default React.createClass({
           <h2>Welcome, {store.session.get('username')}</h2>
           {messageSentConfirmation}
           {requestSentConfirmation}
+          {newAcceptedConfirmation}
           {friendRequests}
         </div>
         <div className="alert-box">
@@ -69,6 +75,7 @@ export default React.createClass({
     clearInterval(this.state.interval);
     store.messageSentConfirmation = false;
     store.requestSentConfirmation = false;
+    store.newAcceptedConfirmation = false;
     store.newMessages.off('update', this.messageListener);
     if(store.friendRequests) {
       store.friendRequests.off('update', this.messageListener);

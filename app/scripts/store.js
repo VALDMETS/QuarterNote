@@ -18,6 +18,7 @@ export default {
 
   messageSentConfirmation: false,
   requestSentConfirmation: false,
+  newAcceptedConfirmation: false,
 
   themeMetaInfo: [{
     key: 0,

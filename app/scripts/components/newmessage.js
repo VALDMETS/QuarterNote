@@ -55,6 +55,7 @@ export default React.createClass({
     console.log(store.themeList);
     let content = store.messageToBeSent.syllabizer(this.refs.message.value);
     if (content.length < 15) {
+      this.setState({error: false});
       store.messageToBeSent.set({
         sender: store.session.get('username'),
         recipient_id: this.props.params.id,

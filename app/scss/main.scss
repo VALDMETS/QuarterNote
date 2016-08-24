@@ -128,6 +128,17 @@ body {
     font-size: 32px;
     color: $dark;
   }
+  input {
+    outline: none;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin: 10% 0 0 20%;
+    padding: 5px;
+    border: 2px solid black;
+    width: 20%;
+    background: none;
+  }
 }
 
 .search-friend {
@@ -158,6 +169,7 @@ body {
       border: none;
       border-radius: 30px;
       text-align: center;
+      text-transform: uppercase;
       font-size: 20px;
       font-family: 'Exo', sans-serif;
     }
@@ -383,6 +395,15 @@ body {
         // object-fit: cover;
         color: white;
       }
+      .neon {
+        font-family: 'Neon';
+        letter-spacing: .1rem;
+        font-size: 22px;
+      }
+      .neon.active {
+        background: url('assets/neon.jpg');
+        color: yellow;
+      }
       .fuji {
         font-family: 'Fuji';
       }
@@ -390,15 +411,8 @@ body {
         background-color: brown;
         color: white;
       }
-      .neon {
-
-      }
-      .neon.active {
-        background-color: black;
-        color: yellow;
-      }
       .zara {
-
+        font-family: 'Zara';
       }
       .zara.active {
         background: url('assets/zara.jpg');

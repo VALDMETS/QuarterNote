@@ -28,11 +28,13 @@ export default React.createClass({
   confirmFunction: function() {
     let currentRequest = store.friendRequests.get(this.state._id);
     currentRequest.save({confirmation: true}).then( () => {
+      console.log('ok bro');
       store.friendRequests.remove(this.state._id);
       store.friendRequests.trigger('update');
       store.session.friendSetup();
       hashHistory.push('/main');
     });
+    store.newAcceptedConfirmation = true;
   },
   denyFunction: function() {
     let currentRequest = store.friendRequests.get(this.state._id);
