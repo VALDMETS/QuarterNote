@@ -9,6 +9,7 @@ export default Bb.Model.extend({
     content: '',
     theme: '',
     theme_id: 0,
+    points: 0,
     timestamp: '',
   },
   urlRoot: `https://baas.kinvey.com/appdata/${settings.appKey}/messages`,

@@ -12,7 +12,8 @@ export default Bb.Model.extend({
     username: '',
     password: '',
     authtoken: '',
-    img_url: ''
+    img_url: '',
+    points: 0,
   },
   urlRoot: `https://baas.kinvey.com/user/${settings.appKey}/login`,
   idAttribute: '_id',

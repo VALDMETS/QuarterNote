@@ -62,6 +62,7 @@ export default React.createClass({
         content: content,
         theme: store.themeMetaInfo[this.state.themeKey].theme,
         theme_id: store.themeMetaInfo[this.state.themeKey].theme_id,
+        points: (100+content.length*(Math.ceil(Math.random()*20))),
         timestamp: new Date()
       });
       hashHistory.push(`/newmessage/${this.props.params.id}/preview`);

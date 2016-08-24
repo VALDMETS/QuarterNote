@@ -17,20 +17,14 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
 
 if(localStorage.getItem("user")) {
   let localInfo = JSON.parse(localStorage.getItem("user"));
-  // console.log(localInfo);
   store.session.set({
     _id: localInfo._id,
     username: localInfo.username,
     authtoken: localInfo.authtoken,
+    points: localInfo.points,
     img_url: localInfo.img_url
   });
   store.session.friendSetup();
 }
 
 ReactDOM.render(router, document.getElementById('container'));
-
-// if(!store.session.get('authtoken')) {
-//   hashHistory.push('/signup');
-// }
-
-// console.log(localStorage.getItem("user"));

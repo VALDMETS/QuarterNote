@@ -40,6 +40,7 @@ export default React.createClass({
     store.session.save({
       username: this.refs.signupname.value.toUpperCase(),
       password: this.refs.signuppass.value,
+      points: 100,
       img_url: "http://piq.codeus.net/static/media/userpics/piq_43701_400x400.png"
     }, {
       url: `https://baas.kinvey.com/user/${settings.appKey}`,

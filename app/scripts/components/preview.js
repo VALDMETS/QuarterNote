@@ -1,6 +1,8 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
 import {Howl} from 'howler';
+
+import settings from '../settings';
 import store from '../store';
 
 import Theme from '../models/theme';
@@ -60,8 +62,16 @@ export default React.createClass({
   confirmFunction: function() {
     store.messageToBeSent.save().
     then(() => {
+      let newPoints = store.session.get('points') + store.messageToBeSent.get('points');
+      localStorage.setItem('user', JSON.stringify({
+        username: store.session.get('username'),
+        authtoken: store.session.get('authtoken'),
+        img_url: store.session.get('img_url'),
+        points: newPoints,
+        _id: store.session.get('_id')
+      }));
+      store.session.save({points: newPoints},{url: `https://baas.kinvey.com/user/${settings.appKey}/${store.session.get('_id')}`});
       store.messageToBeSent = new Message();
-      // console.log(store.messageToBeSent);
       store.messageSentConfirmation = true;
       this.state.sound.fade(1,0,500);
       hashHistory.push(`/main`);
