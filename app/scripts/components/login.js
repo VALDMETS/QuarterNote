@@ -41,19 +41,17 @@ export default React.createClass({
     }, {
       success: (user, resp) => {
         store.session.unset('password');
-        store.session.set({authtoken: resp._kmd.authtoken, points: resp.points});
-        console.log(resp);
-        store.session.friendSetup()
-        .then( () => {
-          hashHistory.push('/main');
-        });
+        store.session.set({authtoken: resp._kmd.authtoken});
         localStorage.setItem('user', JSON.stringify({
           username: store.session.get('username'),
           authtoken: store.session.get('authtoken'),
           img_url: store.session.get('img_url'),
-          points: store.session.get('points'),
           _id: store.session.get('_id')
         }));
+        store.session.friendSetup()
+        .then( () => {
+          hashHistory.push('/main');
+        });
       },
       error: () => {
         this.setState({error: true});

@@ -62,15 +62,8 @@ export default React.createClass({
     });
   },
   goBackFunction: function() {
-    let newPoints = store.session.get('points') + store.newMessages.get(this.props.params.id).get('points');
-    localStorage.setItem('user', JSON.stringify({
-      username: store.session.get('username'),
-      authtoken: store.session.get('authtoken'),
-      img_url: store.session.get('img_url'),
-      points: newPoints,
-      _id: store.session.get('_id')
-    }));
-    store.session.save({points: newPoints},{url: `https://baas.kinvey.com/user/${settings.appKey}/${store.session.get('_id')}`});
+    // let newPoints = store.session.get('points') + store.newMessages.get(this.props.params.id).get('points');
+    // store.session.pointAdder(newPoints);
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
@@ -80,15 +73,9 @@ export default React.createClass({
   replyFunction: function() {
     let replyTarget = store.friendList.where({username: this.state.currentMessage.sender});
     replyTarget = replyTarget[0].toJSON();
-    let newPoints = store.session.get('points') + store.newMessages.get(this.props.params.id).get('points');
-    localStorage.setItem('user', JSON.stringify({
-      username: store.session.get('username'),
-      authtoken: store.session.get('authtoken'),
-      img_url: store.session.get('img_url'),
-      points: newPoints,
-      _id: store.session.get('_id')
-    }));
-    store.session.save({points: newPoints},{url: `https://baas.kinvey.com/user/${settings.appKey}/${store.session.get('_id')}`});
+    // let newPoints = store.session.get('points') + store.newMessages.get(this.props.params.id).get('points');
+    // store.session.pointAdder(newPoints);
+
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');

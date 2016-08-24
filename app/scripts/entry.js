@@ -8,7 +8,9 @@ import settings from './settings';
 import router from './components/router';
 
 $(document).ajaxSend(function(e, xhr, jqueryAjax){
+  // if (localStorage.getItem('user')) {
   if (store.session.get('authtoken')) {
+    // xhr.setRequestHeader('Authorization', 'Kinvey ' + JSON.parse(localStorage.getItem('user')).authtoken);
     xhr.setRequestHeader('Authorization', 'Kinvey ' + store.session.get('authtoken'));
   } else {
     xhr.setRequestHeader('Authorization', 'Basic ' + settings.basicAuth);
@@ -16,14 +18,7 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
 });
 
 if(localStorage.getItem("user")) {
-  let localInfo = JSON.parse(localStorage.getItem("user"));
-  store.session.set({
-    _id: localInfo._id,
-    username: localInfo.username,
-    authtoken: localInfo.authtoken,
-    points: localInfo.points,
-    img_url: localInfo.img_url
-  });
+  store.session.localStoragePull();
   store.session.friendSetup();
 }
 
