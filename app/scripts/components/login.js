@@ -50,6 +50,9 @@ export default React.createClass({
         }));
         store.session.friendSetup()
         .then( () => {
+          store.pointTotal.fetch({
+            data: {query: JSON.stringify({recipient_id: store.session.get('_id')})}
+          });
           hashHistory.push('/main');
         });
       },

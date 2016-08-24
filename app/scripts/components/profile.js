@@ -14,7 +14,8 @@ export default React.createClass({
         username: '',
         img_url: ''
       },
-      friends: []
+      friends: [],
+      points: 0
     }
   },
   render: function() {
@@ -26,6 +27,15 @@ export default React.createClass({
     friendPics = this.state.friends.map( (friend,i) => {
       return <FriendWidget data={friend} key={i}/>
     });
+    let points;
+    if (this.state.points > 0 && this.state.points < 2000) {
+      points = this.state.points;
+      console.log('wow what a thing to be');
+      //add hat thing here
+    } else if (this.state.points > 2000) {
+      points = this.state.points;
+      console.log('big points big money');
+    }
     let messageButton;
     if (store.session.get('_id') !== this.props.params.id) {
       let buttonVal = `Message ${this.state.user.username}!`;
@@ -80,6 +90,12 @@ export default React.createClass({
         this.setState({friends: messageableFriends});
       });
     }
+    let points = store.pointTotal.toJSON();
+    points = points.reduce( (pointsSoFar, pointModel) => {
+      pointsSoFar = pointsSoFar + pointModel.points;
+      return pointsSoFar;
+    }, 0)
+    this.setState({points: points});
   },
   componentWillReceiveProps: function(nextProps) {
     if(this.props.params.id !== nextProps.params.id) {

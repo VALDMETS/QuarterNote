@@ -5,6 +5,7 @@ import FriendList from './collections/friendlist';
 import NewMessages from './collections/newmessages';
 import ThemeList from './collections/themelist';
 import RequestList from './collections/requestlist';
+import PointTotal from './collections/pointtotal';
 
 export default {
   session: new Session(),
@@ -15,6 +16,7 @@ export default {
   friendRequests: new RequestList(),
   hiddenRequests: new RequestList(),
   pendingRequests: new RequestList(),
+  pointTotal: new PointTotal(),
 
   messageSentConfirmation: false,
   requestSentConfirmation: false,
