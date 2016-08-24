@@ -1071,6 +1071,22 @@ body {
     width: 20%;
     background: none; }
 
+.misc-message {
+  display: block;
+  width: 86%;
+  margin: 40px auto 0 auto;
+  text-align: center; }
+  .misc-message span {
+    font-weight: 200;
+    font-style: italic; }
+  .misc-message h6 {
+    margin: 80px 0 10px 0;
+    font-size: 18px; }
+  .misc-message p {
+    text-align: left;
+    font-weight: 200;
+    font-style: italic; }
+
 .search-friend {
   position: relative;
   background-color: #B6E6E3;

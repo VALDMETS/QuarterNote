@@ -19,6 +19,7 @@ export default {
   messageSentConfirmation: false,
   requestSentConfirmation: false,
   newAcceptedConfirmation: false,
+  newUser: false,
 
   themeMetaInfo: [{
     key: 0,
@@ -34,6 +35,10 @@ export default {
     theme_id: '57bdb8b7860f011015de8519'
   }, {
     key: 3,
+    theme: 'fuji',
+    theme_id: '4444'
+  }, {
+    key: 4,
     theme: 'zarathustra',
     theme_id: '57b91314e9ea451559128287'
   }],
@@ -52,5 +57,15 @@ export default {
   }, {
     button: 'You Know Me Well',
     phrase: 'The smart phone is a great invention. You can be outside, pretending to take in the world. But you\'re in a different world. A cyber-world.'
+  }],
+  emptyPage: [{
+    title: 'But hey,',
+    phrase: 'Everyone is talking about you. And they\'re only saying nice things. Don\'t act so surprised.'
+  }, {
+    title: 'But hey,',
+    phrase: 'You\'re great looking. And you\'ve got great intangible features as well. You\'re more than just a person, you\'re a force of nature.'
+  }, {
+    title: 'Did you know?',
+    phrase: 'This app was coded in pitch blackness underneath an industrial paper shredding operation. We\'re committed to excellence.'
   }]
 };

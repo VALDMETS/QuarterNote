@@ -28,6 +28,7 @@ const router = (
     </Route>
     <Route path="/friends" component={FriendList}/>
     <Route path="/about" component={About}/>
+    <Route path="/*" component={Signup}/>
   </Router>
 
 )

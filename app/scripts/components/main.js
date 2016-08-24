@@ -43,6 +43,21 @@ export default React.createClass({
     let newMessages = this.state.messages.map( (message, i) => {
       return <MessageAlert info={message} key={i}/>
     });
+    let blankPage;
+    if (!friendRequests.length && !newMessages.length) {
+      let randInt = Math.floor(Math.random()*3);
+      blankPage = <div className="misc-message"><span>No New Messages</span><h6>{store.emptyPage[randInt].title}</h6><p>{store.emptyPage[randInt].phrase}</p></div>
+      if (store.newUser) {
+        blankPage = (
+          <div className="misc-message">
+            <span>No New Messages</span>
+            <h6>Welcome to QuarterNote!</h6>
+            <p>So kind of you to join us. You're already friends with our benevolent dictator, VALDMETS, but you can find more friends using the menu to the top left.</p>
+            <p>You can also play around with message themes before sending them, which is fun in itself. Cool!</p>
+          </div>
+        )
+      }
+    }
     return (
       <div className="main-page">
         <Header/>
@@ -52,6 +67,7 @@ export default React.createClass({
           {requestSentConfirmation}
           {newAcceptedConfirmation}
           {friendRequests}
+          {blankPage}
         </div>
         <div className="alert-box">
           {newMessages}

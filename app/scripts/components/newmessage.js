@@ -31,6 +31,7 @@ export default React.createClass({
             <input type="button" ref="speak" className="speak active" onClick={this.speakFunction} value="CONSOLE"/>
             <input type="button" ref="know" className="know" onClick={this.knowFunction} value="KNOWLEDGE"/>
             <input type="button" ref="neon" className="neon" onClick={this.neonFunction} value="NEON"/>
+            <input type="button" ref="fuji" className="fuji" onClick={this.fujiFunction} value="FUJI"/>
             <input type="button" ref="zara" className="zara" onClick={this.zaraFunction} value="ZARATHUSTRA"/>
           </section>
           <input type="submit" value="Send it!"/>
@@ -52,7 +53,6 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
-    console.log(store.themeList);
     let content = store.messageToBeSent.syllabizer(this.refs.message.value);
     if (content.length < 15) {
       this.setState({error: false});
@@ -64,7 +64,6 @@ export default React.createClass({
         theme_id: store.themeMetaInfo[this.state.themeKey].theme_id,
         timestamp: new Date()
       });
-      console.log(store.messageToBeSent);
       hashHistory.push(`/newmessage/${this.props.params.id}/preview`);
     } else {
       this.setState({error: true});
@@ -74,6 +73,7 @@ export default React.createClass({
     this.refs.speak.className = "speak active";
     this.refs.know.className = "know";
     this.refs.neon.className = "neon";
+    this.refs.fuji.className = "fuji";
     this.refs.zara.className = "zara";
     this.setState({themeKey: 0});
   },
@@ -81,6 +81,7 @@ export default React.createClass({
     this.refs.speak.className = "speak";
     this.refs.know.className = "know active";
     this.refs.neon.className = "neon";
+    this.refs.fuji.className = "fuji";
     this.refs.zara.className = "zara";
     this.setState({themeKey: 1});
   },
@@ -88,14 +89,24 @@ export default React.createClass({
     this.refs.speak.className = "speak";
     this.refs.know.className = "know";
     this.refs.neon.className = "neon active";
+    this.refs.fuji.className = "fuji";
     this.refs.zara.className = "zara";
     this.setState({themeKey: 2});
+  },
+  fujiFunction: function() {
+    this.refs.speak.className = "speak";
+    this.refs.know.className = "know";
+    this.refs.neon.className = "neon";
+    this.refs.fuji.className = "fuji active";
+    this.refs.zara.className = "zara";
+    this.setState({themeKey: 3});
   },
   zaraFunction: function() {
     this.refs.speak.className = "speak";
     this.refs.know.className = "know";
     this.refs.neon.className = "neon";
+    this.refs.fuji.className = "fuji";
     this.refs.zara.className = "zara active";
-    this.setState({themeKey: 3});
+    this.setState({themeKey: 4});
   },
 });

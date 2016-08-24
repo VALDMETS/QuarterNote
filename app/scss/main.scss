@@ -140,7 +140,25 @@ body {
     background: none;
   }
 }
-
+.misc-message {
+  display: block;
+  width: 86%;
+  margin: 40px auto 0 auto;
+  text-align: center;
+  span {
+    font-weight: 200;
+    font-style: italic;
+  }
+  h6 {
+    margin: 80px 0 10px 0;
+    font-size: 18px;
+  }
+  p {
+    text-align: left;
+    font-weight: 200;
+    font-style: italic;
+  }
+}
 .search-friend {
   position: relative;
   background-color: $cruise;

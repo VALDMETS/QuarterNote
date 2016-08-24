@@ -42,7 +42,6 @@ export default React.createClass({
     store.themeList.fetch().then( () => {
       let themeId = this.state.currentMessage.theme_id;
       let currentTheme = store.themeList.get(themeId);
-      console.log(this.state.currentMessage.content);
       let sound = new Howl({src: currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].sound_url});
       this.setState({sound: sound});
       sound.play();

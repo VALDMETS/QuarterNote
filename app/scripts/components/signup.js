@@ -4,6 +4,7 @@ import store from '../store';
 import settings from '../settings'
 
 import Request from '../models/request';
+import Message from '../models/message';
 
 export default React.createClass({
   getInitialState: function() {
@@ -46,7 +47,7 @@ export default React.createClass({
         store.session.unset('password');
         store.session.set({authtoken: resp._kmd.authtoken});
 
-        // gives new user a friend to start :^)
+        // gives new user a friend + message to start :^)
 
         let initialFriend = new Request({
           confirmation: true,
@@ -55,10 +56,21 @@ export default React.createClass({
           recipient: store.session.get('username'),
           recipient_id: store.session.get('_id')
         })
-        initialFriend.save().then( () => {
-          store.session.friendSetup().then( () => {
-            hashHistory.push('/main');
-          })
+        let initialMessage = new Message({
+          sender: 'VALDMETS',
+          recipient_id: store.session.get('_id'),
+          content: ['thanks ','for ','join','ing ','quar','ter ','note!'],
+          theme: 'know',
+          theme_id: '57bca116bfc43b0e64e144c1',
+          timestamp: new Date()
+        });
+        initialMessage.save().then( () => {
+          initialFriend.save().then( () => {
+            store.session.friendSetup().then( () => {
+              store.newUser = true;
+              hashHistory.push('/main');
+            })
+          });
         });
       },
       error: () => {
