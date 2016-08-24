@@ -9,7 +9,7 @@
   width: 100%;
   padding: 10% 10% 0 10%;
   border: 5px solid $hotgreen;
-  background-color: black;
+  background-color: $backgreen;
 
   color: $hotgreen;
   font-family: 'Speak', 'monospace';
@@ -23,10 +23,11 @@
     [type="button"] {
       color: $hotgreen;
       border: 2px solid $hotgreen;
-      background: black;
+      background: $backgreen;
     }
   }
 }
+
 .zarathustra {
   position: relative;
   box-sizing: border-box;

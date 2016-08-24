@@ -2,6 +2,9 @@
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
 @font-face {
+  font-family: 'Know';
+  src: url("assets/know.ttf") format("truetype"); }
+@font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
 @font-face {
@@ -163,6 +166,9 @@
 @font-face {
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Know';
+  src: url("assets/know.ttf") format("truetype"); }
 @font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
@@ -398,6 +404,9 @@
 @font-face {
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Know';
+  src: url("assets/know.ttf") format("truetype"); }
 @font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
@@ -651,6 +660,9 @@ header {
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
 @font-face {
+  font-family: 'Know';
+  src: url("assets/know.ttf") format("truetype"); }
+@font-face {
   font-family: 'Fuji';
   src: url("assets/fuji.ttf") format("truetype"); }
 @font-face {
@@ -816,7 +828,7 @@ header {
   width: 100%;
   padding: 10% 10% 0 10%;
   border: 5px solid #1EE646;
-  background-color: black;
+  background-color: #0D3615;
   color: #1EE646;
   font-family: 'Speak', 'monospace';
   font-size: 50px; }
@@ -826,7 +838,7 @@ header {
   .speak .left-button [type="button"], .speak .right-button [type="button"] {
     color: #1EE646;
     border: 2px solid #1EE646;
-    background: black; }
+    background: #0D3615; }
 
 .zarathustra {
   position: relative;
@@ -1170,13 +1182,22 @@ body {
       font-size: 20px;
       letter-spacing: .1rem; }
     .new-message form .theme-list .speak.active {
-      background-color: black;
+      background-color: #0D3615;
       color: #1EE646; }
+    .new-message form .theme-list .know {
+      font-family: 'Know';
+      font-size: 20px; }
+    .new-message form .theme-list .know.active {
+      background: url("assets/know.jpg");
+      color: white; }
     .new-message form .theme-list .fuji {
       font-family: 'Fuji'; }
     .new-message form .theme-list .fuji.active {
       background-color: brown;
       color: white; }
+    .new-message form .theme-list .neon.active {
+      background-color: black;
+      color: yellow; }
     .new-message form .theme-list .zara.active {
       background: url("assets/zara.jpg");
       object-fit: cover;

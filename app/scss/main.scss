@@ -371,8 +371,17 @@ body {
         letter-spacing: .1rem;
       }
       .speak.active {
-        background-color: black;
+        background-color: $backgreen;
         color: $hotgreen;
+      }
+      .know {
+        font-family: 'Know';
+        font-size: 20px;
+      }
+      .know.active {
+        background: url('assets/know.jpg');
+        // object-fit: cover;
+        color: white;
       }
       .fuji {
         font-family: 'Fuji';
@@ -380,6 +389,13 @@ body {
       .fuji.active {
         background-color: brown;
         color: white;
+      }
+      .neon {
+
+      }
+      .neon.active {
+        background-color: black;
+        color: yellow;
       }
       .zara {
 
