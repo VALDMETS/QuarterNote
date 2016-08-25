@@ -92,6 +92,7 @@ export default React.createClass({
     store.messageSentConfirmation = false;
     store.requestSentConfirmation = false;
     store.newAcceptedConfirmation = false;
+    store.newUser = false;
     store.newMessages.off('update', this.messageListener);
     if(store.friendRequests) {
       store.friendRequests.off('update', this.messageListener);

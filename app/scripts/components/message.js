@@ -7,6 +7,7 @@ import store from '../store';
 
 import Message from '../models/message';
 import Theme from '../models/theme';
+import PointEvent from '../models/pointevent';
 
 export default React.createClass({
   getInitialState: function() {
@@ -62,6 +63,12 @@ export default React.createClass({
     });
   },
   goBackFunction: function() {
+    let pointScore = new PointEvent();
+    pointScore.save({
+      recipient_id: store.session.get('_id'),
+      points: store.newMessages.get(this.props.params.id).get('points'),
+      event_type: 'msg_received'
+    });
     // let newPoints = store.session.get('points') + store.newMessages.get(this.props.params.id).get('points');
     // store.session.pointAdder(newPoints);
     store.newMessages.get(this.props.params.id).destroy();
@@ -73,6 +80,14 @@ export default React.createClass({
   replyFunction: function() {
     let replyTarget = store.friendList.where({username: this.state.currentMessage.sender});
     replyTarget = replyTarget[0].toJSON();
+
+    let pointScore = new PointEvent();
+    pointScore.save({
+      recipient_id: store.session.get('_id'),
+      points: store.newMessages.get(this.props.params.id).get('points'),
+      event_type: 'msg_received'
+    });
+
     // let newPoints = store.session.get('points') + store.newMessages.get(this.props.params.id).get('points');
     // store.session.pointAdder(newPoints);
 

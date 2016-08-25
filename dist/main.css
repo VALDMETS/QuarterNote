@@ -153,19 +153,19 @@
     opacity: 1; } }
 @-webkit-keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @-moz-keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @font-face {
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
@@ -321,19 +321,19 @@
     opacity: 1; } }
 @-webkit-keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @-moz-keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 .login-page, .signup-page {
   position: relative; }
   .login-page [type="button"], .signup-page [type="button"] {
@@ -562,19 +562,19 @@
     opacity: 1; } }
 @-webkit-keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @-moz-keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 header {
   z-index: 3;
   position: fixed;
@@ -820,19 +820,19 @@ header {
     opacity: 1; } }
 @-webkit-keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @-moz-keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 @keyframes Space {
   0% {
-    background-position: 0% 0%; }
+    background-position: 0% 100%; }
   100% {
-    background-position: 0% 100%; } }
+    background-position: 0% 0%; } }
 .speak {
   box-sizing: border-box;
   display: block;
@@ -919,7 +919,7 @@ header {
   height: 100%;
   width: 100%;
   background: url("assets/zara.jpg");
-  background-size: 200% 200%;
+  background-size: 100% auto;
   overflow: hidden;
   text-align: center;
   -webkit-animation: Space 40s linear forwards;
@@ -1153,6 +1153,7 @@ body {
     width: 50%;
     float: left; }
     .profile-page .left-side .profile-pic {
+      position: relative;
       display: block;
       margin: 0 auto;
       height: 44vw;
@@ -1165,8 +1166,14 @@ body {
       object-fit: cover;
       overflow: hidden; }
       .profile-page .left-side .profile-pic img {
+        position: absolute;
+        left: -2.6vw;
+        top: -.5vw;
         width: 50vw;
-        height: auto; }
+        height: auto;
+        z-index: 1; }
+      .profile-page .left-side .profile-pic .profile-hat {
+        z-index: 2; }
     .profile-page .left-side [type="button"] {
       display: block;
       width: 90%;

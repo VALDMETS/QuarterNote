@@ -28,13 +28,13 @@ export default React.createClass({
       return <FriendWidget data={friend} key={i}/>
     });
     let points;
+    let profileHat;
     if (this.state.points > 0 && this.state.points < 2000) {
       points = this.state.points;
-      console.log('wow what a thing to be');
       //add hat thing here
     } else if (this.state.points > 10000) {
+      profileHat = <img className="profile-hat" src="assets/profile/crown.png"/>
       points = (this.state.points/1000).toFixed(0) + 'K';
-      console.log('big points big money');
     }
     let messageButton;
     if (store.session.get('_id') !== this.props.params.id) {
@@ -50,7 +50,10 @@ export default React.createClass({
           <span>{points}</span>
         </div>
         <section className="left-side">
-          <div className="profile-pic">{profilePic}</div>
+          <div className="profile-pic">
+            {profileHat}
+            {profilePic}
+          </div>
           {messageButton}
         </section>
         <section className="right-side">

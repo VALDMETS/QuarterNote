@@ -241,6 +241,7 @@ body {
     width: 50%;
     float: left;
     .profile-pic {
+      position: relative;
       display: block;
       margin: 0 auto;
       height: 44vw;
@@ -253,8 +254,15 @@ body {
       object-fit: cover;
       overflow: hidden;
       img {
+        position: absolute;
+        left: -2.6vw;
+        top: -.5vw;
         width: 50vw;
         height: auto;
+        z-index: 1;
+      }
+      .profile-hat {
+        z-index: 2;
       }
     }
     [type="button"] {

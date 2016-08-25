@@ -7,6 +7,7 @@ import store from '../store';
 
 import Theme from '../models/theme';
 import Message from '../models/message';
+import PointEvent from '../models/pointevent';
 
 export default React.createClass({
   getInitialState: function() {
@@ -64,6 +65,12 @@ export default React.createClass({
     then(() => {
       // let newPoints = store.session.get('points') + store.messageToBeSent.get('points');
       // store.session.pointAdder(newPoints);
+      let pointScore = new PointEvent();
+      pointScore.save({
+        recipient_id: store.session.get('_id'),
+        points: store.messageToBeSent.get('points'),
+        event_type: 'msg_sent'
+      })
       store.messageToBeSent = new Message();
       store.messageSentConfirmation = true;
       this.state.sound.fade(1,0,500);

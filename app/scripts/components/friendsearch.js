@@ -12,7 +12,7 @@ export default React.createClass({
       span = <span>Click to friend request!</span>
     }
     store.pendingRequests.forEach( (request) => {
-      if(request.get('requestor_id') === this.props.info._id || request.get('recipient_id') === this.props.info._id) {
+      if((request.get('requestor_id') === this.props.info._id || request.get('recipient_id') === this.props.info._id) && request.get('confirmation') === null) {
         span = <span ref="noclick">Request Pending</span>
       }
     });
@@ -28,7 +28,7 @@ export default React.createClass({
   },
   clickFunction: function() {
     if (this.refs.noclick) {
-      
+
       //maybe put in a shakey animation
 
       return null;
@@ -45,6 +45,7 @@ export default React.createClass({
       }, {
         success: () => {
           store.requestSentConfirmation = true;
+          store.session.friendSetup();
           hashHistory.push('/main');
         }
       });
