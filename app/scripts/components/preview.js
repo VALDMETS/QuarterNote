@@ -23,6 +23,7 @@ export default React.createClass({
     });
     return (
       <div className="message-placemat">
+        <audio ref="default" />
         <div className="message-window">
           <div className={themeClass}>
             <div className="theme-object">
@@ -41,8 +42,16 @@ export default React.createClass({
   },
   componentDidMount: function() {
     store.themeList.fetch().then( () => {
+
+      // let player = this.refs.default;
+      // player.play();
+
       let theme_id = store.messageToBeSent.get('theme_id');
-      let currentTheme = store.themeList.get(theme_id)
+      let currentTheme = store.themeList.get(theme_id);
+
+      // player.src = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url;
+      // player.play();
+
       let sound = new Howl({src: currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url});
       this.setState({sound: sound});
       sound.play();

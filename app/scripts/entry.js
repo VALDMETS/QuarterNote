@@ -23,3 +23,22 @@ if(localStorage.getItem("user")) {
 }
 
 ReactDOM.render(router, document.getElementById('container'));
+
+// var snd = new Audio("https://www.dropbox.com/s/fhe3n1y1n7z7i5m/speak1.mp3?dl=1"); // buffers automatically when created
+// snd.play();
+// snd.buffered = function (){
+//   console.log('bloop');
+// }
+
+// let sound = document.getElementById('audio');
+// let button = document.getElementById('button');
+// button.addEventListener('click', function () {
+//   console.log('wow');
+//   sound.src="https://www.dropbox.com/s/fhe3n1y1n7z7i5m/speak1.mp3?dl=1";
+//   sound.play();
+//
+// });
+//
+// this.refs.blah.
+//
+// let audio = this.refs.blah
