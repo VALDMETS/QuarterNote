@@ -44,12 +44,12 @@ export default React.createClass({
     return (
       <div className="profile-page">
         <Header/>
-        <h2>{this.state.user.username}</h2>
         <div className="point-container">
           <h5>SCORE</h5>
           <span>{points}</span>
         </div>
         <section className="left-side">
+          <h2>{this.state.user.username}</h2>
           <div className="profile-pic">
             {profileHat}
             {profilePic}

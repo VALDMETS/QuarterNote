@@ -28,6 +28,16 @@ header {
     height: 58px;
     left: 0px;
     top: 0px;
+    img {
+      display: block;
+      position: absolute;
+      opacity: .7;
+      transition: .2s;
+      left: 4px;
+      top: 5px;
+      width: 46px;
+      height: auto;
+    }
     ul {
       z-index: 4;
       padding-left: 0px;
@@ -91,8 +101,9 @@ header {
     color: white;
     text-shadow: 1px 1px 8px $dark;
     margin-top: 0;
-    padding: 15px 0;
+    padding: 5px 0;
     text-align: center;
+    font-size: 36px;
   }
   .main-button {
     display: block;
