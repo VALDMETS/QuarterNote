@@ -213,7 +213,26 @@ body {
 .profile-page {
   position: relative;
   h2 {
+    text-align: left;
+    padding-left: 20%;
+  }
+  .point-container {
+    position: absolute;
+    top: -25px;
+    right: 0;
+    width: 56px;
+    height: 50px;
     text-align: center;
+    // background: orange;
+    h5 {
+      margin: 0;
+      font-style: italic;
+      font-weight: 200;
+      font-size: 13px;
+    }
+    span {
+
+    }
   }
   .left-side {
     padding: 0;

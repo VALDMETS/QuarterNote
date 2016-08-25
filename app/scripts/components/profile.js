@@ -32,8 +32,8 @@ export default React.createClass({
       points = this.state.points;
       console.log('wow what a thing to be');
       //add hat thing here
-    } else if (this.state.points > 2000) {
-      points = this.state.points;
+    } else if (this.state.points > 10000) {
+      points = (this.state.points/1000).toFixed(0) + 'K';
       console.log('big points big money');
     }
     let messageButton;
@@ -45,6 +45,10 @@ export default React.createClass({
       <div className="profile-page">
         <Header/>
         <h2>{this.state.user.username}</h2>
+        <div className="point-container">
+          <h5>SCORE</h5>
+          <span>{points}</span>
+        </div>
         <section className="left-side">
           <div className="profile-pic">{profilePic}</div>
           {messageButton}
@@ -62,52 +66,55 @@ export default React.createClass({
   },
   componentDidMount: function() {
     if(store.friendList.toJSON().length) {
-      let currentProfile = store.friendList.get(this.props.params.id);
-      this.setState({
-        user: {
-          username: currentProfile.get('username'),
-          img_url: currentProfile.get('img_url')
-        }
-      });
-      let messageableFriends = store.friendList.toJSON();
-      messageableFriends = messageableFriends.filter( (friend) => {
-        if (friend._id === store.session.get('_id')) { return false } else { return true }
-      })
-      this.setState({friends: messageableFriends});
+      this.buildContent();
     } else {
       store.session.friendSetup().then( () => {
-        let currentProfile = store.friendList.get(this.props.params.id);
-        this.setState({
-          user: {
-            username: currentProfile.get('username'),
-            img_url: currentProfile.get('img_url')
-          }
-        });
-        let messageableFriends = store.friendList.toJSON();
-        messageableFriends = messageableFriends.filter( (friend) => {
-          if (friend._id === store.session.get('_id')) { return false } else { return true }
-        })
-        this.setState({friends: messageableFriends});
+        this.buildContent();
       });
     }
-    let points = store.pointTotal.toJSON();
-    points = points.reduce( (pointsSoFar, pointModel) => {
-      pointsSoFar = pointsSoFar + pointModel.points;
-      return pointsSoFar;
-    }, 0)
-    this.setState({points: points});
   },
   componentWillReceiveProps: function(nextProps) {
     if(this.props.params.id !== nextProps.params.id) {
       this.profileUpdater(nextProps.params.id)
+      this.pointUpdater(nextProps.params.id);
     }
   },
   profileUpdater: function(id) {
     let currentProfile = store.friendList.get(id);
     this.setState({user: currentProfile.toJSON()});
   },
+  pointUpdater: function(id) {
+    let currentProfile = store.friendList.get(id);
+    store.pointTotal.fetch({
+      data: {query: JSON.stringify({recipient_id: currentProfile.get('_id')})}
+    }).then( () => {
+      let points = store.pointTotal.toJSON();
+      points = points.reduce( (pointsSoFar, pointModel) => {
+        pointsSoFar = pointsSoFar + pointModel.points;
+        return pointsSoFar;
+      }, 0)
+      console.log(points);
+      this.setState({points: points});
+    });
+  },
   newMessage: function() {
     let messageUrl = '/newmessage/' + this.props.params.id;
     hashHistory.push(messageUrl);
+  },
+  buildContent: function() {
+    let currentProfile = store.friendList.get(this.props.params.id);
+    this.setState({
+      user: {
+        username: currentProfile.get('username'),
+        img_url: currentProfile.get('img_url')
+      }
+    });
+    let messageableFriends = store.friendList.toJSON();
+    messageableFriends = messageableFriends.filter( (friend) => {
+      if (friend._id === store.session.get('_id')) { return false } else { return true }
+    })
+    this.setState({friends: messageableFriends});
+    console.log(currentProfile.get('_id'));
+    this.pointUpdater(this.props.params.id)
   }
 });
