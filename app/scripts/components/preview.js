@@ -22,8 +22,8 @@ export default React.createClass({
       return <span key={i}>{syllable}</span>
     });
     return (
-      <div className="message-placemat">
-        <audio ref="default" />
+      <div className="message-placemat" ref="preview">
+        <audio src="https://www.dropbox.com/s/fhe3n1y1n7z7i5m/speak1.mp3?dl=1" ref="audio" onPlay={this.playAnimation}/>
         <div className="message-window">
           <div className={themeClass}>
             <div className="theme-object">
@@ -41,21 +41,29 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    store.themeList.fetch().then( () => {
+    // store.themeList.fetch().then( () => {
 
-      // let player = this.refs.default;
+      // let player = this.refs.audio;
       // player.play();
 
       let theme_id = store.messageToBeSent.get('theme_id');
       let currentTheme = store.themeList.get(theme_id);
 
+      // store.currentAudio.src = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url;
+      // store.currentAudio.addEventListener('play', this.animateFunction);
+      // store.currentAudio.play();
+
       // player.src = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url;
       // player.play();
 
-      let sound = new Howl({src: currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url});
-      this.setState({sound: sound});
-      sound.play();
-      sound.on('load', () => {
+      // store.currentAudio = new Howl({
+      //   src: currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url,
+      //   buffer: true,
+      //   html5: true
+      // });
+      this.setState({sound: store.currentAudio});
+      store.currentAudio.play();
+      store.currentAudio.on('load', () => {
         let animationTiming = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].timing;
         animationTiming.forEach( (timer, i) => {
           setTimeout( () => {
@@ -67,13 +75,12 @@ export default React.createClass({
           }, timer)
         });
       });
-    });
+    // });
   },
   confirmFunction: function() {
     store.messageToBeSent.save().
     then(() => {
-      // let newPoints = store.session.get('points') + store.messageToBeSent.get('points');
-      // store.session.pointAdder(newPoints);
+      let newPoints = store.session.get('points') + store.messageToBeSent.get('points');
       let pointScore = new PointEvent();
       pointScore.save({
         recipient_id: store.session.get('_id'),
@@ -89,5 +96,8 @@ export default React.createClass({
   goBackFunction: function() {
     this.state.sound.fade(1,0,500);
     hashHistory.push(`/newmessage/${store.messageToBeSent.get('recipient_id')}`);
+  },
+  animateFunction: function() {
+    console.log('wow wee got em');
   }
 });

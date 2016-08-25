@@ -42,13 +42,13 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    store.themeList.fetch().then( () => {
+    // store.themeList.fetch().then( () => {
       let themeId = this.state.currentMessage.theme_id;
       let currentTheme = store.themeList.get(themeId);
-      let sound = new Howl({src: currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].sound_url});
-      this.setState({sound: sound});
-      sound.play();
-      sound.on('load', () => {
+      // let sound = new Howl({src: currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].sound_url});
+      this.setState({sound: store.currentAudio});
+      store.currentAudio.play();
+      store.currentAudio.on('load', () => {
         let animationTiming = currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].timing;
         animationTiming.forEach( (timer, i) => {
           setTimeout( () => {
@@ -60,7 +60,7 @@ export default React.createClass({
           }, timer)
         });
       });
-    });
+    // });
   },
   goBackFunction: function() {
     let pointScore = new PointEvent();
@@ -69,8 +69,6 @@ export default React.createClass({
       points: store.newMessages.get(this.props.params.id).get('points'),
       event_type: 'msg_received'
     });
-    // let newPoints = store.session.get('points') + store.newMessages.get(this.props.params.id).get('points');
-    // store.session.pointAdder(newPoints);
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
@@ -80,17 +78,12 @@ export default React.createClass({
   replyFunction: function() {
     let replyTarget = store.friendList.where({username: this.state.currentMessage.sender});
     replyTarget = replyTarget[0].toJSON();
-
     let pointScore = new PointEvent();
     pointScore.save({
       recipient_id: store.session.get('_id'),
       points: store.newMessages.get(this.props.params.id).get('points'),
       event_type: 'msg_received'
     });
-
-    // let newPoints = store.session.get('points') + store.newMessages.get(this.props.params.id).get('points');
-    // store.session.pointAdder(newPoints);
-
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');

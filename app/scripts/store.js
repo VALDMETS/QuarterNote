@@ -18,6 +18,8 @@ export default {
   pendingRequests: new RequestList(),
   pointTotal: new PointTotal(),
 
+  currentAudio: '',
+
   messageSentConfirmation: false,
   requestSentConfirmation: false,
   newAcceptedConfirmation: false,

@@ -68,6 +68,7 @@ export default React.createClass({
         initialMessage.save().then( () => {
           initialFriend.save().then( () => {
             store.session.friendSetup().then( () => {
+              store.themeList.fetch();
               store.newUser = true;
               hashHistory.push('/main');
             })
