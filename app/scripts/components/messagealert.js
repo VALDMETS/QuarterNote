@@ -2,6 +2,8 @@ import React from 'react';
 import moment from 'moment';
 import {hashHistory} from 'react-router';
 
+import store from '../store';
+
 export default React.createClass({
   render: function() {
     let timestampFormat = 'from ' + moment(this.props.info.timestamp).fromNow();
@@ -14,6 +16,13 @@ export default React.createClass({
     )
   },
   clickFunction: function() {
+    let currentTheme = store.themeList.get(this.props.info.theme_id)
+    let content = this.props.info.content;
+    store.currentAudio = new Howl ({
+      buffer: true,
+      html5: true,
+      src: currentTheme.get('timingArr')[(content.length - 1)].sound_url
+    });
     hashHistory.push(`/main/message/${this.props.info._id}`)
   }
 });

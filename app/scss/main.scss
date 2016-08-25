@@ -6,14 +6,6 @@
 @import 'header';
 @import 'themes';
 
-// #button {
-//   display: block;
-//   position: fixed;
-//   height: 100px;
-//   width: 100px;
-//   background: orange;
-//   z-index: 10;
-// }
 body {
   margin: 0;
   font-family: 'Exo', sans-serif;
@@ -153,6 +145,9 @@ body {
   width: 86%;
   margin: 40px auto 0 auto;
   text-align: center;
+  -webkit-animation: FadeIn .5s;
+  -moz-animation: FadeIn .5s;
+  animation: FadeIn .5s;
   span {
     font-weight: 200;
     font-style: italic;

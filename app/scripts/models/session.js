@@ -64,35 +64,34 @@ export default Bb.Model.extend({
       })
     });
   },
-  pointAdder: function(newPoints) {
-    localStorage.setItem('user', JSON.stringify({
-      username: this.get('username'),
-      authtoken: this.get('authtoken'),
-      img_url: this.get('img_url'),
-      points: newPoints,
-      _id: this.get('_id')
-    }));
-    let id = store.session.get('_id');
-    let authtoken = store.session.get('authtoken');
-    this.clear();
-    $.ajax({
-      url: `https://baas.kinvey.com/user/${settings.appKey}/${id}`,
-      type: 'PUT',
-      data: {
-        points: newPoints
-      },
-      success: () => {
-        this.localStoragePull();
-      }
-    });
-  },
+  // pointAdder: function(newPoints) {
+  //   localStorage.setItem('user', JSON.stringify({
+  //     username: this.get('username'),
+  //     authtoken: this.get('authtoken'),
+  //     img_url: this.get('img_url'),
+  //     points: newPoints,
+  //     _id: this.get('_id')
+  //   }));
+  //   let id = store.session.get('_id');
+  //   let authtoken = store.session.get('authtoken');
+  //   this.clear();
+  //   $.ajax({
+  //     url: `https://baas.kinvey.com/user/${settings.appKey}/${id}`,
+  //     type: 'PUT',
+  //     data: {
+  //       points: newPoints
+  //     },
+  //     success: () => {
+  //       this.localStoragePull();
+  //     }
+  //   });
+  // },
   localStoragePull: function() {
     let localInfo = JSON.parse(localStorage.getItem("user"));
     store.session.set({
       _id: localInfo._id,
       username: localInfo.username,
       authtoken: localInfo.authtoken,
-      points: localInfo.points,
       img_url: localInfo.img_url
     });
   },

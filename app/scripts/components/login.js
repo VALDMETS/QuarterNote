@@ -50,6 +50,7 @@ export default React.createClass({
         }));
         store.session.friendSetup()
         .then( () => {
+          store.themeList.fetch();
           hashHistory.push('/main');
         });
       },
