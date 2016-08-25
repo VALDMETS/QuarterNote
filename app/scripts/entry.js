@@ -20,6 +20,7 @@ $(document).ajaxSend(function(e, xhr, jqueryAjax){
 if(localStorage.getItem("user")) {
   store.session.localStoragePull();
   store.session.friendSetup();
+  store.themeList.fetch();
 }
 
 ReactDOM.render(router, document.getElementById('container'));

@@ -25,7 +25,9 @@ export default React.createClass({
     }
     let friendPics;
     friendPics = this.state.friends.map( (friend,i) => {
-      return <FriendWidget data={friend} key={i}/>
+      if (i < 7) {
+        return <FriendWidget data={friend} key={i}/>
+      }
     });
     let points;
     let profileHat;

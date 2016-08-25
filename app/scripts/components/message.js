@@ -14,7 +14,6 @@ export default React.createClass({
     return {
       currentMessage: store.newMessages.get(this.props.params.id).toJSON(),
       syllableDisplay: [],
-      sound: {}
     }
   },
   render: function() {
@@ -42,25 +41,21 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    // store.themeList.fetch().then( () => {
-      let themeId = this.state.currentMessage.theme_id;
-      let currentTheme = store.themeList.get(themeId);
-      // let sound = new Howl({src: currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].sound_url});
-      this.setState({sound: store.currentAudio});
-      store.currentAudio.play();
-      store.currentAudio.on('load', () => {
-        let animationTiming = currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].timing;
-        animationTiming.forEach( (timer, i) => {
-          setTimeout( () => {
-            let newState = this.state.syllableDisplay;
-            newState.push(this.state.currentMessage.content[i]);
-            this.setState({
-              syllableDisplay: newState
-            })
-          }, timer)
-        });
+    let themeId = this.state.currentMessage.theme_id;
+    let currentTheme = store.themeList.get(themeId);
+    store.currentAudio.play();
+    store.currentAudio.on('load', () => {
+      let animationTiming = currentTheme.get('timingArr')[(this.state.currentMessage.content.length - 1)].timing;
+      animationTiming.forEach( (timer, i) => {
+        setTimeout( () => {
+          let newState = this.state.syllableDisplay;
+          newState.push(this.state.currentMessage.content[i]);
+          this.setState({
+            syllableDisplay: newState
+          })
+        }, timer)
       });
-    // });
+    });
   },
   goBackFunction: function() {
     let pointScore = new PointEvent();
@@ -72,7 +67,7 @@ export default React.createClass({
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
-    this.state.sound.fade(1,0,500);
+    store.currentAudio.fade(1,0,500);
     hashHistory.push('/main');
   },
   replyFunction: function() {
@@ -87,11 +82,11 @@ export default React.createClass({
     store.newMessages.get(this.props.params.id).destroy();
     store.newMessages.remove(this.props.params.id);
     store.newMessages.trigger('update');
-    this.state.sound.fade(1,0,500);
+    store.currentAudio.fade(1,0,500);
     hashHistory.push(`/newmessage/${replyTarget._id}`);
   },
   escapeFunction: function() {
-    this.state.sound.fade(1,0,500);
+    store.currentAudio.fade(1,0,500);
     hashHistory.push('/main')
   },
 });

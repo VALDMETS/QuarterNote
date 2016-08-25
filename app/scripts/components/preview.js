@@ -12,8 +12,7 @@ import PointEvent from '../models/pointevent';
 export default React.createClass({
   getInitialState: function() {
     return {
-      syllableDisplay: [],
-      sound: {}
+      syllableDisplay: []
     }
   },
   render: function() {
@@ -41,41 +40,21 @@ export default React.createClass({
     )
   },
   componentDidMount: function() {
-    // store.themeList.fetch().then( () => {
-
-      // let player = this.refs.audio;
-      // player.play();
-
-      let theme_id = store.messageToBeSent.get('theme_id');
-      let currentTheme = store.themeList.get(theme_id);
-
-      // store.currentAudio.src = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url;
-      // store.currentAudio.addEventListener('play', this.animateFunction);
-      // store.currentAudio.play();
-
-      // player.src = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url;
-      // player.play();
-
-      // store.currentAudio = new Howl({
-      //   src: currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].sound_url,
-      //   buffer: true,
-      //   html5: true
-      // });
-      this.setState({sound: store.currentAudio});
-      store.currentAudio.play();
-      store.currentAudio.on('load', () => {
-        let animationTiming = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].timing;
-        animationTiming.forEach( (timer, i) => {
-          setTimeout( () => {
-            let newState = this.state.syllableDisplay;
-            newState.push(store.messageToBeSent.get('content')[i]);
-            this.setState({
-              syllableDisplay: newState
-            })
-          }, timer)
-        });
+    let theme_id = store.messageToBeSent.get('theme_id');
+    let currentTheme = store.themeList.get(theme_id);
+    store.currentAudio.play();
+    store.currentAudio.on('load', () => {
+      let animationTiming = currentTheme.get('timingArr')[(store.messageToBeSent.get('content').length - 1)].timing;
+      animationTiming.forEach( (timer, i) => {
+        setTimeout( () => {
+          let newState = this.state.syllableDisplay;
+          newState.push(store.messageToBeSent.get('content')[i]);
+          this.setState({
+            syllableDisplay: newState
+          });
+        }, timer);
       });
-    // });
+    });
   },
   confirmFunction: function() {
     store.messageToBeSent.save().
@@ -89,12 +68,12 @@ export default React.createClass({
       })
       store.messageToBeSent = new Message();
       store.messageSentConfirmation = true;
-      this.state.sound.fade(1,0,500);
+      store.currentAudio.fade(1,0,500);
       hashHistory.push(`/main`);
     });
   },
   goBackFunction: function() {
-    this.state.sound.fade(1,0,500);
+    store.currentAudio.fade(1,0,500);
     hashHistory.push(`/newmessage/${store.messageToBeSent.get('recipient_id')}`);
   },
   animateFunction: function() {

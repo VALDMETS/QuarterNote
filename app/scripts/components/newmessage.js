@@ -56,7 +56,6 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
-
     let content = store.messageToBeSent.syllabizer(this.refs.message.value);
     if (content.length < 15) {
       this.setState({error: false});
@@ -71,7 +70,6 @@ export default React.createClass({
       });
       let theme_id = store.messageToBeSent.get('theme_id');
       let currentTheme = store.themeList.get(theme_id);
-      console.log(currentTheme);
       store.currentAudio = new Howl ({
         buffer: true,
         html5: true,

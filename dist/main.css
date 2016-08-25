@@ -1085,7 +1085,10 @@ body {
   display: block;
   width: 86%;
   margin: 40px auto 0 auto;
-  text-align: center; }
+  text-align: center;
+  -webkit-animation: FadeIn .5s;
+  -moz-animation: FadeIn .5s;
+  animation: FadeIn .5s; }
   .misc-message span {
     font-weight: 200;
     font-style: italic; }

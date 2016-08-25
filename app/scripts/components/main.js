@@ -15,6 +15,7 @@ export default React.createClass({
       messageSentConfirmation: store.messageSentConfirmation,
       requestSentConfirmation: store.requestSentConfirmation,
       newAcceptedConfirmation: store.newAcceptedConfirmation,
+      oneCheck: false,
       interval: window.setInterval( () => {
         store.newMessages.fetch({
           data: {
@@ -44,7 +45,7 @@ export default React.createClass({
       return <MessageAlert info={message} key={i}/>
     });
     let blankPage;
-    if (!friendRequests.length && !newMessages.length) {
+    if (!friendRequests.length && !newMessages.length && this.state.oneCheck) {
       let randInt = Math.floor(Math.random()*3);
       blankPage = <div className="misc-message"><span>No New Messages</span><h6>{store.emptyPage[randInt].title}</h6><p>{store.emptyPage[randInt].phrase}</p></div>
       if (store.newUser) {
@@ -82,6 +83,9 @@ export default React.createClass({
         data: {
           query: JSON.stringify({recipient_id: store.session.get('_id')})
         }
+      }).then( () => {
+        this.setState({oneCheck: false});
+        this.setState({oneCheck: true});
       });
     }
     store.newMessages.on('update', this.messageListener);
@@ -99,7 +103,9 @@ export default React.createClass({
     }
   },
   messageListener: function() {
-    this.setState({messages: store.newMessages.toJSON()});
-    this.setState({friendRequests: store.friendRequests.toJSON()});
+    this.setState({
+      friendRequests: store.friendRequests.toJSON(),
+      messages: store.newMessages.toJSON(),
+    });
   }
 });
