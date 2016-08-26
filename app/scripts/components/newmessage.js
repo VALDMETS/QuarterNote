@@ -1,5 +1,6 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
+import $ from 'jquery';
 
 import Friend from '../models/friend';
 import Message from '../models/message';
@@ -19,6 +20,9 @@ export default React.createClass({
     let messageTitle = <h4>Messaging {this.state.currentFriend.username}</h4>
     if(this.state.error) {
       messageTitle = <h4 className="error">Sorry, try a shorter message!</h4>
+      if(this.state.error === "none") {
+        messageTitle = <h4 className="error">Sorry, please write a message!</h4>
+      }
     }
     let playFunction = function () {
       console.log('wow wee');
@@ -28,7 +32,7 @@ export default React.createClass({
         <Header/>
         {messageTitle}
         <form onSubmit={this.submitFunction}>
-          <input type="text" ref="message" placeholder="Message"/>
+          <input id="blur" type="text" ref="message" placeholder="Message"/>
           <section className="theme-list">
             <h6>Choose Theme</h6>
             <input type="button" ref="speak" className="speak active" onClick={this.speakFunction} value="CONSOLE"/>
@@ -56,8 +60,12 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
+    $('#blur').blur();
+    //change one thing
     let content = store.messageToBeSent.syllabizer(this.refs.message.value);
-    if (content.length < 15) {
+    console.log(content);
+    if (content[0] != " " && content.length < 15) {
+      console.log(content);
       this.setState({error: false});
       store.messageToBeSent.set({
         sender: store.session.get('username'),
@@ -77,7 +85,11 @@ export default React.createClass({
       });
       hashHistory.push(`/newmessage/${this.props.params.id}/preview`);
     } else {
-      this.setState({error: true});
+      if (content[0] === " ") {
+        this.setState({error: "none"});
+      } else {
+        this.setState({error: true});
+      }
     }
   },
   speakFunction: function() {
