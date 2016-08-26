@@ -603,9 +603,9 @@ header {
       position: absolute;
       opacity: .7;
       transition: .2s;
-      left: 4px;
-      top: 5px;
-      width: 46px;
+      left: 7px;
+      top: 8px;
+      width: 40px;
       height: auto; }
     header .menu-button ul {
       z-index: 4;
@@ -658,10 +658,10 @@ header {
   header h1 {
     color: white;
     text-shadow: 1px 1px 8px #03312E;
-    margin-top: 0;
+    margin-top: 3px;
     padding: 5px 0;
     text-align: center;
-    font-size: 36px; }
+    font-size: 33px; }
   header .main-button {
     display: block;
     position: absolute;
@@ -1220,22 +1220,28 @@ body {
       margin: 28px 5% 0 8%; }
   .profile-page .friend-list {
     position: fixed;
+    display: flex;
+    flex-wrap: wrap;
     bottom: 0;
     width: 100%;
     height: 28vh;
     background-color: #009F93; }
     .profile-page .friend-list h5 {
+      display: block;
+      position: absolute;
+      width: 50%;
+      left: 25%;
       margin: -30px 0 0 0;
       font-size: 20px;
       text-align: center; }
     .profile-page .friend-list .friend-widget {
       width: 23vw;
       height: 14vw;
-      margin: 3vw 1vw 6vw 1vw;
+      margin: 2vw 1vw 6vw 1vw;
       float: left;
       transition: .3s; }
       .profile-page .friend-list .friend-widget:hover {
-        margin: 0vw 1vw 9vw 1vw; }
+        margin: 0vw 1vw 8vw 1vw; }
       .profile-page .friend-list .friend-widget .friend-pic {
         margin: 0 auto;
         width: 14vw;
@@ -1251,11 +1257,11 @@ body {
         text-align: center;
         font-size: 14px; }
     .profile-page .friend-list .friend-widget:nth-child(6) {
-      margin: 3vw 1vw 6vw 13vw; }
+      margin: 2vw 1vw 6vw 13vw; }
       .profile-page .friend-list .friend-widget:nth-child(6):hover {
         margin: 0vw 1vw 9vw 13vw; }
     .profile-page .friend-list .friend-widget:nth-child(8) {
-      margin: 3vw 0vw 6vw 1vw; }
+      margin: 2vw 0vw 6vw 1vw; }
       .profile-page .friend-list .friend-widget:nth-child(8):hover {
         margin: 0vw 0vw 9vw 1vw; }
 

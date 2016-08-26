@@ -88,7 +88,7 @@ export default {
     phrase: 'We\'ve all been there. Maybe send some new messages and people will reply. Life is full of challenges, and we all believe in you.'
   }, {
     title: 'Did you know?',
-    phrase: 'You got a random profile picture when you signed up. The universe is full of random, uncontrollable events. But you can earn cool accessories. Take control.'
+    phrase: 'You got a random profile picture when you signed up. The universe is full of random, uncontrollable events. But you can earn cool accessories, both on this app and in real life.'
   }, {
     title: 'Did you know?',
     phrase: 'Social media is the new regular media. Regular media is now old media, which means watching TV is basically like going to a museum.'
