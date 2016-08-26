@@ -1177,7 +1177,12 @@ body {
       box-sizing: border-box;
       border: 2px solid #03312E;
       object-fit: cover;
-      overflow: hidden; }
+      overflow: hidden;
+      background: linear-gradient(141deg, #037171, #02C3BD, #009F93);
+      background-size: 600% 600%;
+      -webkit-animation: Hero 8s ease infinite;
+      -moz-animation: Hero 8s ease infinite;
+      animation: Hero 8s ease infinite; }
       .profile-page .left-side .profile-pic img {
         position: absolute;
         left: -.25vw;

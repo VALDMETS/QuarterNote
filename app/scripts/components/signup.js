@@ -40,11 +40,12 @@ export default React.createClass({
   },
   submitFunction: function(e) {
     e.preventDefault();
+    let randInt = Math.floor(Math.random()*10);
     if (this.refs.signupname.value.length <= 12) {
       store.session.save({
         username: this.refs.signupname.value.toUpperCase(),
         password: this.refs.signuppass.value,
-        img_url: "http://piq.codeus.net/static/media/userpics/piq_43701_400x400.png"
+        img_url: `assets/profile/tar${randInt}.png`
       }, {
         url: `https://baas.kinvey.com/user/${settings.appKey}`,
         success: (user, resp) => {

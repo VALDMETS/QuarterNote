@@ -20,29 +20,45 @@ export default React.createClass({
   },
   render: function() {
     let profilePic;
+    let friendPics;
     if(this.state.user.img_url) {
       profilePic = <img src={this.state.user.img_url} />
     }
-    let friendPics;
     friendPics = this.state.friends.map( (friend,i) => {
       if (i < 7) {
         return <FriendWidget data={friend} key={i}/>
       }
     });
-    let points;
+
+    let points = this.state.points;
     let profileHat;
-    if (this.state.points > 0 && this.state.points < 2000) {
-      points = this.state.points;
-      //add hat thing here
-    } else if (this.state.points > 10000) {
-      profileHat = <img className="profile-hat" src="assets/profile/crown.png"/>
+    let description;
+    let rankTag;
+    let profileIndex = 0;
+    if (this.state.points >= 2000 && this.state.points < 5000) {
+      profileHat = <img className="profile-hat" src="assets/profile/headband.png"/>
+      profileIndex = 1;
+    } else if (this.state.points >= 5000 && this.state.points < 10000) {
+      profileHat = <img className="profile-hat" src="assets/profile/trucker.png"/>
+      profileIndex = 2;
+    } else if (this.state.points >= 10000 && this.state.points < 50000) {
       points = (this.state.points/1000).toFixed(0) + 'K';
+      profileHat = <img className="profile-hat" src="assets/profile/shades.png"/>
+      profileIndex = 3;
+    } else if (this.state.points >= 50000 && this.state.points < 1000000) {
+      points = (this.state.points/1000).toFixed(0) + 'K';
+      profileHat = <img className="profile-hat" src="assets/profile/crown.png"/>
+      profileIndex = 4;
     }
+    description = store.profileBlurb[profileIndex].phrase;
+    rankTag = store.profileBlurb[profileIndex].tag;
+
     let messageButton;
     if (store.session.get('_id') !== this.props.params.id) {
       let buttonVal = `Message ${this.state.user.username}!`;
       messageButton = <input type="button" value={buttonVal} onClick={this.newMessage}/>
     }
+
     return (
       <div className="profile-page">
         <Header/>
@@ -59,8 +75,8 @@ export default React.createClass({
           {messageButton}
         </section>
         <section className="right-side">
-          <p className="sect1">Some descriptive stuff that will be replaced by actual profile materials. But when? Hopefully soon. Don't go crazy waiting for it.</p>
-          <p className="sect2">Additional facts, blah blah blah</p>
+          <p className="sect1">{this.state.user.username}{description}</p>
+          <p className="sect2">{rankTag}</p>
         </section>
         <section className="friend-list">
           <h5>Friends</h5>
@@ -98,7 +114,6 @@ export default React.createClass({
         pointsSoFar = pointsSoFar + pointModel.points;
         return pointsSoFar;
       }, 0)
-      console.log(points);
       this.setState({points: points});
     });
   },
@@ -119,7 +134,6 @@ export default React.createClass({
       if (friend._id === store.session.get('_id')) { return false } else { return true }
     })
     this.setState({friends: messageableFriends});
-    console.log(currentProfile.get('_id'));
     this.pointUpdater(this.props.params.id)
   }
 });

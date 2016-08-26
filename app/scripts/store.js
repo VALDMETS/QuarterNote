@@ -71,5 +71,21 @@ export default {
   }, {
     title: 'Did you know?',
     phrase: 'This app was coded in pitch blackness underneath an industrial paper shredding operation. We\'re committed to excellence.'
+  }],
+  profileBlurb: [{
+    phrase: ' is new to the game. They haven\'t sent or received a lot of messages, but give them time. We are all rooting for them!',
+    tag: 'Next Reward: Grasshopper Headband - 2000 points'
+  }, {
+    phrase: ' is just getting started. You should see some of the notes they\'ve sent - A++++ would read again. Great intangibles.',
+    tag: 'Next Reward: Trucker Cap - 5000 points'
+  }, {
+    phrase: ' is hitting their stride. Look at that hat - are you jealous? A real hat? Acting like you\'re not jealous is worse than the act itself.',
+    tag: 'Next Reward: Sharp Shades - 10,000 points'
+  }, {
+    phrase: ' has really surpassed all of our expectations. Wow. When you talk about making it, they really have made it. They are a force of nature.',
+    tag: 'Next Reward: ??????? - 50,000 points'
+  }, {
+    phrase: ' is on top. Don\'t be discouraged by this - maybe you can be on top someday! But not the very top. That\'s already taken.',
+    tag: 'Next Reward: ??????? - 1,000,000 points'
   }]
 };

@@ -256,6 +256,14 @@ body {
       border: 2px solid $dark;
       object-fit: cover;
       overflow: hidden;
+
+      background: linear-gradient(141deg, $turq, $light, $green);
+      background-size: 600% 600%;
+
+      -webkit-animation: Hero 8s ease infinite;
+      -moz-animation: Hero 8s ease infinite;
+      animation: Hero 8s ease infinite;
+
       img {
         position: absolute;
         left: -.25vw;
