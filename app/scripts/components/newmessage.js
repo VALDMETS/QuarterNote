@@ -61,6 +61,7 @@ export default React.createClass({
   submitFunction: function(e) {
     e.preventDefault();
     $('#blur').blur();
+    //change one thing
     let content = store.messageToBeSent.syllabizer(this.refs.message.value);
     console.log(content);
     if (content[0] != " " && content.length < 15) {
