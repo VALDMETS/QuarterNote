@@ -14,7 +14,7 @@ body {
 }
 
 .alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend {
-  margin-top: 90px;
+  margin-top: 70px;
 }
 
 .alert-notifications {
@@ -165,8 +165,9 @@ body {
 .search-friend {
   position: relative;
   background-color: $cruise;
-  height: 56vh;
+  height: 50vh;
   overflow: scroll;
+  margin-top: 90px;
   h4 {
     margin: 12px;
     text-align: center;
@@ -174,7 +175,7 @@ body {
   form {
     position: fixed;
     width: 100%;
-    height: 24vh;
+    height: 50vw;
     left: 0;
     bottom: 0;
     background-color: $green;
@@ -186,7 +187,7 @@ body {
       display: block;
       background: $cruise;
       width: 90%;
-      height: 6vh;
+      height: 25%;
       border: none;
       border-radius: 30px;
       text-align: center;
@@ -196,7 +197,7 @@ body {
     }
     [type="submit"] {
       color: $dark;
-      height: 7vh;
+      height: 30%;
     }
     ::-webkit-input-placeholder {
       color: white;
@@ -215,6 +216,7 @@ body {
 
 .profile-page {
   position: relative;
+  margin-top: 90px;
   h2 {
     text-align: center;
     margin: 30px auto 10px auto;
@@ -378,18 +380,20 @@ body {
   }
   h4 {
     text-align: center;
+    font-size: 18px;
+    margin: 10px;
   }
   form {
     width: 100%;
     input {
       outline: none;
       color: $dark;
-      margin: 1vh auto;
+      margin: 2vw auto;
       padding: 1% 0;
       display: block;
       background: $cruise;
       width: 90%;
-      height: 6vh;
+      height: 10vw;
       border: none;
       border-radius: 30px;
       text-align: center;
@@ -410,14 +414,14 @@ body {
     }
     [type="submit"] {
       color: $dark;
-      height: 7vh;
+      height: 12vw;
     }
     .theme-list {
       width: 100%;
-      height: 50vh;
+      height: 75vw;
       background-color: $cruise;
-      margin: 3vh auto;
-      padding: 3vh 0;
+      margin: 5vw auto;
+      padding: 5vw 0;
       border-top: 2px solid white;
       border-bottom: 2px solid white;
       h6 {
@@ -430,17 +434,18 @@ body {
         background-color: $white;
         font-size: 17px;
         width: 70%;
-        height: 6vh;
-        margin: 2vh 13% 2vh 17%;
+        height: 10vw;
+        margin: 4vw 13% 4vw 17%;
         transition: .2s;
       }
       .active {
         box-shadow: 0px 0px rgba(0,0,0,.1);
-        margin: 2vh 15% 2vh 15.5%;
+        margin: 4vw 15% 4vw 15.5%;
       }
       .speak {
         font-family: 'Speak';
         font-size: 20px;
+        line-height: 20px;
         letter-spacing: .1rem;
       }
       .speak.active {
