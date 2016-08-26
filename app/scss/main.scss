@@ -253,7 +253,6 @@ body {
       max-width: 500px;
       border-radius: 50%;
       box-sizing: border-box;
-      border: 2px solid $dark;
       object-fit: cover;
       overflow: hidden;
 
@@ -296,6 +295,7 @@ body {
     width: 50%;
     float: right;
     p {
+      font-size: 15px;
       font-weight: 200;
       font-style: italic;
     }
@@ -306,19 +306,17 @@ body {
     .sect2 {
       width: 87%;
       margin: 28px 5% 0 8%;
-      // width: 80%;
-      // margin: 2% 2% 0 16%;
     }
   }
   .friend-list {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 30vh;
+    height: 28vh;
     background-color: $green;
     h5 {
-      margin: -34px 0 10px 0;
-      font-size: 24px;
+      margin: -30px 0 0 0;
+      font-size: 20px;
       text-align: center;
     }
     .friend-widget {
@@ -326,9 +324,9 @@ body {
       height: 14vw;
       margin: 3vw 1vw 6vw 1vw;
       float: left;
-      transition: .6s;
+      transition: .3s;
       &:hover {
-        margin: 0 1vw 9vw 1vw;
+        margin: 0vw 1vw 9vw 1vw;
       }
       .friend-pic {
         margin: 0 auto;
@@ -351,13 +349,13 @@ body {
     .friend-widget:nth-child(6) {
       margin: 3vw 1vw 6vw 13vw;
       &:hover {
-        margin: 0 1vw 9vw 13vw;
+        margin: 0vw 1vw 9vw 13vw;
       }
     }
     .friend-widget:nth-child(8) {
-      margin: 3vw 13vw 6vw 1vw;
+      margin: 3vw 0vw 6vw 1vw;
       &:hover {
-        margin: 0 13vw 9vw 1vw;
+        margin: 0vw 0vw 9vw 1vw;
       }
     }
   }
@@ -491,7 +489,6 @@ body {
   .message-window {
     display: block;
     position: absolute;
-    // background: gray;
     width: 90%;
     left: 5%;
     height: 60%;

@@ -64,19 +64,40 @@ export default {
   }],
   emptyPage: [{
     title: 'But hey,',
-    phrase: 'Everyone is talking about you. And they\'re only saying nice things. Don\'t act so surprised.'
+    phrase: 'Everyone is talking about you. And they\'re only saying nice things. Don\'t act so surprised, or you\'ll lose some of your mystique.'
   }, {
-    title: 'But hey,',
-    phrase: 'You\'re great looking. And you\'ve got great intangible features as well. You\'re more than just a person, you\'re a force of nature.'
+    title: 'But you know what?',
+    phrase: 'You\'re great looking. And you\'ve got great intangibles as well. You\'re more than just a person, you\'re a force of nature. People would vote for you on important matters.'
   }, {
     title: 'Did you know?',
     phrase: 'This app was coded in pitch blackness underneath an industrial paper shredding operation. We\'re committed to excellence.'
+  }, {
+    title: 'But if you think about it,',
+    phrase: 'If you had a new message every time you logged on, it would be less special. Absence makes the heart grow fonder.'
+  }, {
+    title: 'Did you know?',
+    phrase: 'The more messages you send, the more points you get. The more messages you check, the more points you get. People can\'t stop talking about all of these points.'
+  }, {
+    title: 'Did you know?',
+    phrase: 'You can earn accessories for your avatar by getting more points. Points are earned by sending messages. There is a lot of buzz about this.'
+  }, {
+    title: 'Did you know?',
+    phrase: 'You can check your message before you send it and edit to make it more sing-songy. That is a real word.'
+  }, {
+    title: 'Calm down,',
+    phrase: 'We\'ve all been there. Maybe send some new messages and people will reply. Life is full of challenges, and we all believe in you.'
+  }, {
+    title: 'Did you know?',
+    phrase: 'You got a random profile picture when you signed up. The universe is full of random, uncontrollable events. But you can earn cool accessories. Take control.'
+  }, {
+    title: 'Did you know?',
+    phrase: 'Social media is the new regular media. Regular media is now old media, which means watching TV is basically like going to a museum.'
   }],
   profileBlurb: [{
     phrase: ' is new to the game. They haven\'t sent or received a lot of messages, but give them time. We are all rooting for them!',
     tag: 'Next Reward: Grasshopper Headband - 2000 points'
   }, {
-    phrase: ' is just getting started. You should see some of the notes they\'ve sent - A++++ would read again. Great intangibles.',
+    phrase: ' is just getting warmed up. Heated up. You should see some of the notes they\'ve sent - A++++ would read again. Great intangibles.',
     tag: 'Next Reward: Trucker Cap - 5000 points'
   }, {
     phrase: ' is hitting their stride. Look at that hat - are you jealous? A real hat? Acting like you\'re not jealous is worse than the act itself.',

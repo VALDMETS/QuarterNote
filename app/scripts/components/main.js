@@ -46,7 +46,7 @@ export default React.createClass({
     });
     let blankPage;
     if (!friendRequests.length && !newMessages.length && this.state.oneCheck) {
-      let randInt = Math.floor(Math.random()*3);
+      let randInt = Math.floor(Math.random()*10);
       blankPage = <div className="misc-message"><span>No New Messages</span><h6>{store.emptyPage[randInt].title}</h6><p>{store.emptyPage[randInt].phrase}</p></div>
       if (store.newUser) {
         blankPage = (
@@ -84,6 +84,7 @@ export default React.createClass({
           query: JSON.stringify({recipient_id: store.session.get('_id')})
         }
       }).then( () => {
+        // disables a 'no messages' prompt while messages load, also forces a re-render when returning to page
         this.setState({oneCheck: false});
         this.setState({oneCheck: true});
       });
