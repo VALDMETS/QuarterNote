@@ -384,7 +384,7 @@
     .login-page form input, .signup-page form input {
       outline: none;
       margin: 13px auto;
-      padding: 3% 0;
+      padding: 10px 0;
       display: block;
       background: rgba(0, 0, 0, 0.08);
       width: 90%;
@@ -989,6 +989,7 @@ body {
   position: relative;
   padding: 0 4px;
   width: 90%;
+  max-width: 400px;
   height: 57px;
   margin: 10px auto;
   box-sizing: border-box;
@@ -1102,7 +1103,7 @@ body {
 .search-friend {
   position: relative;
   background-color: #B6E6E3;
-  height: 50vh;
+  padding-bottom: 190px;
   overflow: scroll;
   margin-top: 90px; }
   .search-friend h4 {
@@ -1112,18 +1113,20 @@ body {
     position: fixed;
     width: 100%;
     height: 50vw;
+    max-height: 180px;
     left: 0;
     bottom: 0;
     background-color: #009F93; }
     .search-friend form input {
       outline: none;
       color: #03312E;
-      margin: 1vh auto;
-      padding: 1% 0;
+      margin: 10px auto;
       display: block;
       background: #B6E6E3;
       width: 90%;
-      height: 25%;
+      max-width: 500px;
+      height: 30%;
+      max-height: 52px;
       border: none;
       border-radius: 30px;
       text-align: center;
@@ -1131,8 +1134,7 @@ body {
       font-size: 20px;
       font-family: 'Exo', sans-serif; }
     .search-friend form [type="submit"] {
-      color: #03312E;
-      height: 30%; }
+      color: #03312E; }
     .search-friend form ::-webkit-input-placeholder {
       color: white; }
     .search-friend form ::-moz-placeholder {
@@ -1171,9 +1173,9 @@ body {
       display: block;
       margin: 0 auto;
       height: 44vw;
+      max-height: 250px;
       width: 44vw;
-      max-height: 500px;
-      max-width: 500px;
+      max-width: 250px;
       border-radius: 50%;
       box-sizing: border-box;
       object-fit: cover;
@@ -1188,7 +1190,9 @@ body {
         left: -.25vw;
         top: 1.5vw;
         width: 45vw;
+        max-width: 250px;
         height: auto;
+        max-height: 250px;
         z-index: 1; }
       .profile-page .left-side .profile-pic .profile-hat {
         z-index: 2; }
@@ -1226,6 +1230,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 28vh;
+    max-height: 250px;
     background-color: #009F93; }
     .profile-page .friend-list h5 {
       display: block;
@@ -1237,34 +1242,40 @@ body {
       text-align: center; }
     .profile-page .friend-list .friend-widget {
       width: 23vw;
+      max-width: 131px;
       height: 14vw;
-      margin: 2vw 1vw 6vw 1vw;
+      max-height: 80px;
+      margin: 5px 1vw 20px 1vw;
       float: left;
       transition: .3s; }
       .profile-page .friend-list .friend-widget:hover {
-        margin: 0vw 1vw 8vw 1vw; }
+        margin: -10px 1vw 35px 1vw; }
       .profile-page .friend-list .friend-widget .friend-pic {
         margin: 0 auto;
         width: 14vw;
+        max-width: 80px;
         height: 14vw;
+        max-height: 80px;
         border-radius: 50%;
         overflow: hidden;
         object-fit: cover; }
         .profile-page .friend-list .friend-widget .friend-pic img {
           width: 100%;
-          height: auto; }
+          max-width: 80px;
+          height: auto;
+          max-height: 80px; }
       .profile-page .friend-list .friend-widget h6 {
-        margin: 0;
+        margin: -6px 0 0 0;
         text-align: center;
         font-size: 14px; }
     .profile-page .friend-list .friend-widget:nth-child(6) {
-      margin: 2vw 1vw 6vw 13vw; }
+      margin: 5px 1vw 20px 13vw; }
       .profile-page .friend-list .friend-widget:nth-child(6):hover {
-        margin: 0vw 1vw 9vw 13vw; }
+        margin: -10px 1vw 35px 13vw; }
     .profile-page .friend-list .friend-widget:nth-child(8) {
-      margin: 2vw 0vw 6vw 1vw; }
+      margin: 5px 0vw 20px 1vw; }
       .profile-page .friend-list .friend-widget:nth-child(8):hover {
-        margin: 0vw 0vw 9vw 1vw; }
+        margin: -10px 0vw 35px 1vw; }
 
 .select-friend h4 {
   text-align: center; }
@@ -1281,11 +1292,11 @@ body {
     outline: none;
     color: #03312E;
     margin: 2vw auto;
-    padding: 1% 0;
+    padding: 5px 0;
     display: block;
     background: #B6E6E3;
     width: 90%;
-    height: 10vw;
+    height: 40px;
     border: none;
     border-radius: 30px;
     text-align: center;
@@ -1307,7 +1318,7 @@ body {
     height: 75vw;
     background-color: #B6E6E3;
     margin: 5vw auto;
-    padding: 5vw 0;
+    padding: 15px 0;
     border-top: 2px solid white;
     border-bottom: 2px solid white; }
     .new-message form .theme-list h6 {
@@ -1319,7 +1330,7 @@ body {
       background-color: #C5F9F6;
       font-size: 17px;
       width: 70%;
-      height: 10vw;
+      height: 40px;
       margin: 4vw 13% 4vw 17%;
       transition: .2s; }
     .new-message form .theme-list .active {
@@ -1394,5 +1405,30 @@ body {
 .missing {
   margin-top: 120px;
   text-align: center; }
+
+@media (min-width: 850px) {
+  .recipient-window {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px; }
+    .recipient-window h4 {
+      width: 100%; }
+    .recipient-window .friend-selector {
+      width: 40%;
+      max-width: 400px; }
+
+  .list-window {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px; }
+    .list-window h4 {
+      width: 100%; }
+    .list-window .friend-listing {
+      width: 40%;
+      max-width: 400px; } }
 
 /*# sourceMappingURL=main.css.map */
