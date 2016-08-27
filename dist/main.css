@@ -662,11 +662,6 @@ header {
     padding: 5px 0;
     text-align: center;
     font-size: 33px; }
-  header .main-button {
-    display: block;
-    position: absolute;
-    right: 10px;
-    top: 30px; }
   header .invisible-escape {
     position: fixed;
     z-index: -1;
@@ -975,6 +970,9 @@ body {
 
 .alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend {
   margin-top: 70px; }
+
+.main-page {
+  margin-top: 90px; }
 
 .alert-notifications {
   width: 100%; }
@@ -1374,13 +1372,13 @@ body {
     position: absolute;
     width: 90%;
     left: 5%;
-    height: 60%;
+    height: 70%;
     top: 10%; }
   .message-placemat .left-button, .message-placemat .right-button {
     z-index: 3;
     position: fixed;
     width: 50%;
-    bottom: 10%;
+    bottom: 5%;
     color: #C5F9F6; }
     .message-placemat .left-button [type="button"], .message-placemat .right-button [type="button"] {
       width: 74%;

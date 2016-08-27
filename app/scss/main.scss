@@ -13,8 +13,12 @@ body {
   color: $dark;
 }
 
-.alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend {
+.alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend, {
   margin-top: 70px;
+}
+
+.main-page {
+  margin-top: 90px;
 }
 
 .alert-notifications {
@@ -503,14 +507,14 @@ body {
     position: absolute;
     width: 90%;
     left: 5%;
-    height: 60%;
+    height: 70%;
     top: 10%;
   }
   .left-button, .right-button{
     z-index: 3;
     position: fixed;
     width: 50%;
-    bottom: 10%;
+    bottom: 5%;
     color: $white;
     [type="button"] {
       width: 74%;

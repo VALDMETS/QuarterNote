@@ -68,9 +68,7 @@ export default React.createClass({
     $('#blur').blur();
     //change one thing
     let content = store.messageToBeSent.syllabizer(this.refs.message.value);
-    console.log(content);
     if (content[0] != " " && content.length < 15) {
-      console.log(content);
       this.setState({error: false});
       store.messageToBeSent.set({
         sender: store.session.get('username'),

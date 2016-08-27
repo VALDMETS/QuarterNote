@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 
 import store from '../store';
 import settings from '../settings';
@@ -26,8 +26,7 @@ export default React.createClass({
             <div ref="escaper" onClick={this.escapeFunction}/>
           </ul>
         </div>
-        <h1>QuarterNote</h1>
-        <Link className="main-button" to="/selectfriend">Logo</Link>
+        <h1 onClick={this.homeFunction}>QuarterNote</h1>
       </header>
     )
   },
@@ -52,5 +51,8 @@ export default React.createClass({
   },
   escapeFunction: function () {
     this.expandFunction();
+  },
+  homeFunction: function() {
+    hashHistory.push('/main');
   }
 });
