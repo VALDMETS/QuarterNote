@@ -12,6 +12,7 @@ import Message from './message';
 import RequestConfirmation from './requestconfirmation';
 import FriendList from './friendlist';
 import About from './about';
+import Missing from './missing';
 
 const router = (
   <Router history={hashHistory}>
@@ -28,7 +29,7 @@ const router = (
     </Route>
     <Route path="/friends" component={FriendList}/>
     <Route path="/about" component={About}/>
-    <Route path="/*" component={Signup}/>
+    <Route path="/*" component={Missing}/>
   </Router>
 
 )

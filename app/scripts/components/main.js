@@ -1,4 +1,5 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
 import store from '../store';
 import NewMessages from '../collections/newmessages';
@@ -23,6 +24,11 @@ export default React.createClass({
           }
         });
       }, 2000)
+    }
+  },
+  componentWillMount: function() {
+    if(!store.session.get('authtoken')){
+      hashHistory.push('/login');
     }
   },
   render: function() {

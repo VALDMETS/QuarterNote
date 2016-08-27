@@ -15,6 +15,11 @@ export default React.createClass({
       syllableDisplay: []
     }
   },
+  componentWillMount: function() {
+    if(!store.session.get('authtoken')){
+      hashHistory.push('/login');
+    }
+  },
   render: function() {
     let themeClass = store.messageToBeSent.get('theme');
     let syllableAnimation = this.state.syllableDisplay.map((syllable, i) => {

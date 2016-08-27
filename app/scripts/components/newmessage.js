@@ -16,6 +16,11 @@ export default React.createClass({
       error: false
     }
   },
+  componentWillMount: function() {
+    if(!store.session.get('authtoken')){
+      hashHistory.push('/login');
+    }
+  },
   render: function() {
     let messageTitle = <h4>Messaging {this.state.currentFriend.username}</h4>
     if(this.state.error) {

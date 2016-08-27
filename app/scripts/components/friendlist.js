@@ -1,4 +1,5 @@
 import React from 'react';
+import {hasHistory} from 'react-router';
 import $ from 'jquery';
 
 import Header from './header'
@@ -12,6 +13,11 @@ export default React.createClass({
     return {
       title: 'Your Friends',
       friendList: []
+    }
+  },
+  componentWillMount: function() {
+    if(!store.session.get('authtoken')){
+      hashHistory.push('/login');
     }
   },
   render: function() {

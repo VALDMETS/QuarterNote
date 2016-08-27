@@ -12,6 +12,11 @@ export default React.createClass({
       friendList: []
     }
   },
+  componentWillMount: function() {
+    if(!store.session.get('authtoken')){
+      hashHistory.push('/login');
+    }
+  },
   render: function() {
     let friendList = this.state.friendList.map( (friend, i) => {
       return <FriendSelect info={friend} key={i}/>

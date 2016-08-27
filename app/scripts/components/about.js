@@ -1,9 +1,20 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
 
+import store from '../store';
 import Header from './header';
 
 export default React.createClass({
+  componentWillMount: function() {
+    if(!store.session.get('authtoken')){
+      hashHistory.push('/login');
+    }
+  },
   render: function() {
+    // if(!store.session.get('authtoken')){
+    //   hashHistory.push('/login');
+    //   return null;
+    // }
     return (
       <div className="about">
         <Header/>

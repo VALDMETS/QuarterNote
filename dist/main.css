@@ -1393,4 +1393,8 @@ body {
   .message-placemat .right-button {
     right: 0; }
 
+.missing {
+  margin-top: 120px;
+  text-align: center; }
+
 /*# sourceMappingURL=main.css.map */

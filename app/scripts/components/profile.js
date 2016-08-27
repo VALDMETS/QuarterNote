@@ -18,6 +18,11 @@ export default React.createClass({
       points: 0
     }
   },
+  componentWillMount: function() {
+    if(!store.session.get('authtoken')){
+      hashHistory.push('/login');
+    }
+  },
   render: function() {
     let profilePic;
     let friendPics;
