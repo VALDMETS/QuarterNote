@@ -662,7 +662,8 @@ header {
     margin-top: 3px;
     padding: 5px 0;
     text-align: center;
-    font-size: 33px; }
+    font-size: 33px;
+    cursor: pointer; }
   header .invisible-escape {
     position: fixed;
     z-index: -1;
@@ -1098,9 +1099,12 @@ body {
     margin: 80px 0 10px 0;
     font-size: 18px; }
   .misc-message p {
+    display: block;
+    margin: 0 auto;
     text-align: left;
     font-weight: 200;
-    font-style: italic; }
+    font-style: italic;
+    max-width: 600px; }
 
 .search-friend {
   position: relative;
@@ -1216,6 +1220,9 @@ body {
     width: 50%;
     float: right; }
     .profile-page .right-side p {
+      display: block;
+      margin: 0 auto;
+      max-width: 400px;
       font-size: 15px;
       font-weight: 200;
       font-style: italic; }
@@ -1409,9 +1416,12 @@ body {
   text-align: center; }
 
 @media (min-width: 750px) {
+  .alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend {
+    margin-top: 140px; }
+
   header {
-    height: 108.5px;
-    box-shadow: 0px 0px 5px #037171; }
+    height: 110px;
+    border-bottom: none; }
     header .menu-button {
       width: 100%;
       height: 0px; }
@@ -1422,6 +1432,7 @@ body {
         display: flex;
         margin: 33px auto 0 auto;
         width: 102%;
+        max-width: 1600px;
         height: 30px; }
         header .menu-button ul a {
           font-size: 15px;
@@ -1431,10 +1442,13 @@ body {
         header .menu-button ul li {
           padding: 4px 0 0 0;
           text-align: center;
+          transition: 1.2s;
           width: 20%;
           height: 30px;
           background: transparent;
           border-right: 1px solid white; }
+          header .menu-button ul li:hover {
+            background: rgba(0, 0, 0, 0.3); }
     header h1 {
       color: white;
       text-shadow: 1px 1px 8px #03312E;
@@ -1443,7 +1457,34 @@ body {
       text-align: center;
       font-size: 37px; }
     header .invisible-escape {
-      display: none; } }
+      display: none; }
+
+  #container .profile-page .friend-list {
+    overflow-y: scroll;
+    flex-wrap: nowrap; }
+    #container .profile-page .friend-list h5 {
+      font-size: 30px;
+      display: block;
+      position: fixed;
+      width: 50%;
+      left: 25%;
+      bottom: 200px; }
+    #container .profile-page .friend-list .friend-widget {
+      width: 160px;
+      max-width: 160px;
+      height: 160px;
+      max-height: 160px;
+      margin: 6px 2%; }
+      #container .profile-page .friend-list .friend-widget h6 {
+        font-size: 22px; }
+      #container .profile-page .friend-list .friend-widget .friend-pic {
+        width: 160px;
+        max-width: 160px;
+        height: 160px;
+        max-height: 160px; }
+        #container .profile-page .friend-list .friend-widget .friend-pic img {
+          max-width: 160px;
+          max-height: 160px; } }
 @media (min-width: 850px) {
   .recipient-window {
     display: flex;

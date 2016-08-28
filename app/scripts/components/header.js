@@ -31,16 +31,18 @@ export default React.createClass({
     )
   },
   expandFunction: function() {
-    if (this.state.menuToggle) {
-      this.refs.headermenu.className = "header-menu expanded";
-      this.refs.escaper.className = "invisible-escape";
-      this.refs.menuicon.style = "opacity: .2";
-    } else {
-      this.refs.headermenu.className = "header-menu";
-      this.refs.escaper.className = "";
-      this.refs.menuicon.style = "opacity: .7";
+    if (Math.max(document.documentElement.clientWidth, window.innerWidth || 0) < 750) {
+      if (this.state.menuToggle) {
+        this.refs.headermenu.className = "header-menu expanded";
+        this.refs.escaper.className = "invisible-escape";
+        this.refs.menuicon.style = "opacity: .2";
+      } else {
+        this.refs.headermenu.className = "header-menu";
+        this.refs.escaper.className = "";
+        this.refs.menuicon.style = "opacity: .7";
+      }
+      this.setState({menuToggle: !this.state.menuToggle});
     }
-    this.setState({menuToggle: !this.state.menuToggle});
   },
   logoutFunction: function () {
     store.session.save(null, {

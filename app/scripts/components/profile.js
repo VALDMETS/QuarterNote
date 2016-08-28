@@ -32,6 +32,8 @@ export default React.createClass({
     friendPics = this.state.friends.map( (friend,i) => {
       if (i < 7) {
         return <FriendWidget data={friend} key={i}/>
+      } else if (Math.max(document.documentElement.clientWidth, window.innerWidth) > 750) {
+        return <FriendWidget data={friend} key={i}/>
       }
     });
 
