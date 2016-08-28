@@ -35,6 +35,7 @@ body {
 }
 
 .new-message-alert, .friend-request, .friend-selector, .friend-listing {
+  cursor: pointer;
   position: relative;
   padding: 0 4px;
   width: 90%;
@@ -300,6 +301,8 @@ body {
       border: 2px solid rgba(0, 0, 0, .4);
       border-radius: 100px;
       background-color: rgba(0, 0, 0, .2);
+      outline: none;
+      cursor: pointer;
     }
   }
   .right-side {
@@ -329,6 +332,7 @@ body {
     position: fixed;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     bottom: 0;
     width: 100%;
     height: 28vh;
@@ -351,6 +355,7 @@ body {
       margin: 5px 1vw 20px 1vw;
       float: left;
       transition: .3s;
+      cursor: pointer;
 
       &:hover {
         margin: -10px 1vw 35px 1vw;
@@ -377,18 +382,18 @@ body {
         font-size: 14px;
       }
     }
-    .friend-widget:nth-child(6) {
-      margin: 5px 1vw 20px 13vw;
-      &:hover {
-        margin: -10px 1vw 35px 13vw;
-      }
-    }
-    .friend-widget:nth-child(8) {
-      margin: 5px 0vw 20px 1vw;
-      &:hover {
-        margin: -10px 0vw 35px 1vw;
-      }
-    }
+    // .friend-widget:nth-child(6) {
+    //   margin: 5px 1vw 20px 13vw;
+    //   &:hover {
+    //     margin: -10px 1vw 35px 13vw;
+    //   }
+    // }
+    // .friend-widget:nth-child(8) {
+    //   margin: 5px 0vw 20px 1vw;
+    //   &:hover {
+    //     margin: -10px 0vw 35px 1vw;
+    //   }
+    // }
   }
 }
 .select-friend {
@@ -397,6 +402,7 @@ body {
   }
 }
 .new-message {
+  position: relative;
   .error {
     color: red;
   }
@@ -406,12 +412,15 @@ body {
     margin: 10px;
   }
   form {
+    display: block;
     width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
     input {
       outline: none;
       color: $dark;
-      margin: 2vw auto;
-      padding: 5px 0;
+      margin: 10px auto;
+      padding: 0;
       display: block;
       background: $cruise;
       width: 90%;
@@ -435,15 +444,19 @@ body {
       color: white;
     }
     [type="submit"] {
+      cursor: pointer;
       color: $dark;
-      height: 12vw;
+      height: 40px;
+      position: fixed;
+      bottom: 0;
+      left: 5%;
+      margin-top: 20px;
     }
     .theme-list {
       width: 100%;
-      height: 75vw;
       background-color: $cruise;
-      margin: 5vw auto;
-      padding: 15px 0;
+      margin: 10px auto;
+      padding: 15px 0 60px 0;
       border-top: 2px solid white;
       border-bottom: 2px solid white;
       h6 {
@@ -452,17 +465,18 @@ body {
         margin: 0;
       }
       [type="button"] {
+        cursor: pointer;
         box-shadow: -4px 0 rgba(0,0,0,.1);
         background-color: $white;
         font-size: 17px;
         width: 70%;
         height: 40px;
-        margin: 4vw 13% 4vw 17%;
+        margin: 12px 14% 12px 16%;
         transition: .2s;
       }
       .active {
         box-shadow: 0px 0px rgba(0,0,0,.1);
-        margin: 4vw 15% 4vw 15.5%;
+        margin: 12px 15% 12px 15%;
       }
       .speak {
         font-family: 'Speak';
@@ -477,6 +491,7 @@ body {
       .know {
         font-family: 'Know';
         font-size: 20px;
+        line-height: 31px;
       }
       .know.active {
         background: url('assets/know.jpg');
@@ -535,6 +550,7 @@ body {
     bottom: 5%;
     color: $white;
     [type="button"] {
+      cursor: pointer;
       width: 74%;
       display: block;
       font: 28px;
@@ -607,36 +623,73 @@ body {
       display: none;
     }
   }
-  #container .profile-page .friend-list {
-    overflow-y: scroll;
-    h5 {
-      font-size: 30px;
-      display: block;
-      position: fixed;
-      width: 50%;
-      left: 25%;
-      bottom: 200px;
+  #container .profile-page {
+    h2 {
+      font-size: 38px;
+      margin: 6px;
     }
-    flex-wrap: nowrap;
-    .friend-widget {
-      width: 160px;
-      max-width: 160px;
-      height: 160px;
-      max-height: 160px;
-      // background: red;
-      margin: 6px 2%;
-      h6 {
-        font-size: 22px;
+    .left-side {
+      [type="button"] {
+        width: 250px;
+        font-size: 18px;
+        padding: 3px;
       }
-      .friend-pic {
+    }
+    .friend-list {
+      overflow-y: scroll;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      h5 {
+        font-size: 30px;
+        display: block;
+        position: fixed;
+        width: 50%;
+        left: 25%;
+        bottom: 28vh;
+      }
+      .friend-widget {
         width: 160px;
         max-width: 160px;
         height: 160px;
         max-height: 160px;
-        img {
-          max-width: 160px;
-          max-height: 160px;
+        margin: 6px 2%;
+        &:hover {
+          margin: -14px 2% 26px 2%;
         }
+        h6 {
+          font-size: 22px;
+        }
+        .friend-pic {
+          width: 160px;
+          max-width: 160px;
+          height: 160px;
+          max-height: 160px;
+          img {
+            max-width: 160px;
+            max-height: 160px;
+          }
+        }
+      }
+    }
+  }
+  .new-message form {
+    [type="submit"] {
+      width: 50%;
+      left: 25%;
+      bottom: 20px;
+    }
+    .theme-list {
+      position: fixed;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      left: 0;
+      top: 220px;
+      width: 100%;
+      [type="button"] {
+        width: 500px;
+        margin: 10px auto;
+        box-shadow: none;
       }
     }
   }
