@@ -59,12 +59,12 @@
     bottom: 0;
     input {
       outline: none;
-      // text-transform: uppercase;
       margin: 13px auto;
       padding: 10px 0;
       display: block;
       background: rgba(0, 0, 0, .08);
       width: 90%;
+      max-width: 550px;
       height: 40px;
       border: none;
       border-radius: 30px;

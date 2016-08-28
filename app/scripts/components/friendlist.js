@@ -1,5 +1,5 @@
 import React from 'react';
-import {hasHistory} from 'react-router';
+import {hashHistory} from 'react-router';
 import $ from 'jquery';
 
 import Header from './header'

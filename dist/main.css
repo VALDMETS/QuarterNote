@@ -388,6 +388,7 @@
       display: block;
       background: rgba(0, 0, 0, 0.08);
       width: 90%;
+      max-width: 550px;
       height: 40px;
       border: none;
       border-radius: 30px;
@@ -1006,7 +1007,7 @@ body {
     box-sizing: border-box;
     border: 2 px solid white;
     border-radius: 50%;
-    background-color: #037171;
+    background-color: #009F93;
     height: 49px;
     width: 49px;
     margin: 7px;
@@ -1039,6 +1040,7 @@ body {
   position: relative;
   padding: 0 4px;
   width: 90%;
+  max-width: 600px;
   margin: 10px auto;
   box-sizing: border-box;
   border-radius: 28px;
@@ -1406,6 +1408,42 @@ body {
   margin-top: 120px;
   text-align: center; }
 
+@media (min-width: 750px) {
+  header {
+    height: 108.5px;
+    box-shadow: 0px 0px 5px #037171; }
+    header .menu-button {
+      width: 100%;
+      height: 0px; }
+      header .menu-button img {
+        display: none; }
+      header .menu-button ul {
+        position: relative;
+        display: flex;
+        margin: 33px auto 0 auto;
+        width: 102%;
+        height: 30px; }
+        header .menu-button ul a {
+          font-size: 15px;
+          font-weight: 200;
+          font-style: italic;
+          color: white; }
+        header .menu-button ul li {
+          padding: 4px 0 0 0;
+          text-align: center;
+          width: 20%;
+          height: 30px;
+          background: transparent;
+          border-right: 1px solid white; }
+    header h1 {
+      color: white;
+      text-shadow: 1px 1px 8px #03312E;
+      margin-top: 11px;
+      padding: 5px 0;
+      text-align: center;
+      font-size: 37px; }
+    header .invisible-escape {
+      display: none; } }
 @media (min-width: 850px) {
   .recipient-window {
     display: flex;
