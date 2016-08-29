@@ -48,6 +48,7 @@ export default React.createClass({
         img_url: `assets/profile/tar${randInt}.png`
       }, {
         url: `https://baas.kinvey.com/user/${settings.appKey}`,
+        type: 'POST',
         success: (user, resp) => {
           store.session.unset('password');
           store.session.set({authtoken: resp._kmd.authtoken});

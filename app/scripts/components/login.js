@@ -39,6 +39,7 @@ export default React.createClass({
       username: this.refs.loginname.value.toUpperCase(),
       password: this.refs.loginpass.value,
     }, {
+      type: 'POST',
       success: (user, resp) => {
         store.session.unset('password');
         store.session.set({authtoken: resp._kmd.authtoken});
