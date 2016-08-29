@@ -1,5 +1,5 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {hashHistory, Link} from 'react-router';
 import store from '../store';
 import settings from '../settings'
 
@@ -13,7 +13,7 @@ export default React.createClass({
     }
   },
   render: function() {
-    let loginIntro = <p>I feel so lucky to sign up</p>;
+    let loginIntro = <p>Click <Link to="/login">here</Link> if you're already registered</p>;
     if(this.state.error) {
       loginIntro = <p className="loginerror">Username is already taken!</p>
       if(this.refs.signupname.value.length > 12) {
@@ -33,7 +33,7 @@ export default React.createClass({
           {loginIntro}
           <input type="text" ref="signupname" placeholder="Your Name"/>
           <input type="password" ref="signuppass" placeholder="Password"/>
-          <input type="submit" value="GO"/>
+          <input type="submit" value="I feel so lucky to sign up!"/>
         </form>
       </div>
     )

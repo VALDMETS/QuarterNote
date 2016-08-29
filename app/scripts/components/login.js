@@ -1,5 +1,5 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {hashHistory, Link} from 'react-router';
 import $ from 'jquery';
 import store from '../store';
 import settings from '../settings';
@@ -12,7 +12,7 @@ export default React.createClass({
   },
   render: function() {
     let randInt = Math.ceil(Math.random()*4);
-    let loginIntro = <p>Go ahead and log in</p>
+    let loginIntro = <p>Click <Link to="/signup">here</Link> if you need to sign up</p>
     if(this.state.error) {
       loginIntro = <p className="loginerror">Incorrect name/password</p>
       randInt = 0;
