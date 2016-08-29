@@ -12,10 +12,14 @@ export default React.createClass({
   },
   render: function() {
     let selfProfile = `/profile/${store.session.get('_id')}`;
+    let opacity = {opacity: .7};
+    if (!this.state.menuToggle) {
+      opacity = {opacity: .2};
+    }
     return (
       <header>
         <div className="menu-button" onClick={this.expandFunction}>
-          <img ref="menuicon" src="assets/menu.png"/>
+          <img ref="menuicon" src="assets/menu.png" style={opacity}/>
           <ul className="header-menu" ref="headermenu">
             <li><Link to="/main">Check Messages</Link></li>
             <li><Link to="/selectfriend">New Message</Link></li>
@@ -35,13 +39,11 @@ export default React.createClass({
       if (this.state.menuToggle) {
         this.refs.headermenu.className = "header-menu expanded";
         this.refs.escaper.className = "invisible-escape";
-        this.refs.menuicon.style = "opacity: .2";
       } else {
         this.refs.headermenu.className = "header-menu";
         this.refs.escaper.className = "";
-        this.refs.menuicon.style = "opacity: .7";
       }
-      this.setState({menuToggle: !this.state.menuToggle});
+      this.setState({menuToggle: !(this.state.menuToggle)});
     }
   },
   logoutFunction: function () {
