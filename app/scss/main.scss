@@ -208,6 +208,7 @@ body {
       font-family: 'Exo', sans-serif;
     }
     [type="submit"] {
+      cursor: pointer;
       color: $dark;
     }
     ::-webkit-input-placeholder {

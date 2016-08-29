@@ -1156,6 +1156,7 @@ body {
       font-size: 20px;
       font-family: 'Exo', sans-serif; }
     .search-friend form [type="submit"] {
+      cursor: pointer;
       color: #03312E; }
     .search-friend form ::-webkit-input-placeholder {
       color: white; }

@@ -40,7 +40,7 @@ export default {
   }, {
     key: 3,
     theme: 'fuji',
-    theme_id: '4444'
+    theme_id: '57c3be462aff92a136799b7a'
   }, {
     key: 4,
     theme: 'zarathustra',
