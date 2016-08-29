@@ -166,6 +166,21 @@
     background-position: 0% 100%; }
   100% {
     background-position: 0% 0%; } }
+@-webkit-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@-moz-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 100% 100%; } }
 @font-face {
   font-family: 'Speak';
   src: url("assets/speak.ttf") format("truetype"); }
@@ -334,6 +349,21 @@
     background-position: 0% 100%; }
   100% {
     background-position: 0% 0%; } }
+@-webkit-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@-moz-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 100% 100%; } }
 .login-page, .signup-page {
   position: relative; }
   .login-page [type="button"], .signup-page [type="button"] {
@@ -576,6 +606,21 @@
     background-position: 0% 100%; }
   100% {
     background-position: 0% 0%; } }
+@-webkit-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@-moz-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 100% 100%; } }
 header {
   z-index: 3;
   position: fixed;
@@ -840,6 +885,21 @@ header {
     background-position: 0% 100%; }
   100% {
     background-position: 0% 0%; } }
+@-webkit-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@-moz-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 100% 100%; } }
 .speak {
   box-sizing: border-box;
   display: block;
@@ -894,8 +954,8 @@ header {
   height: 100%;
   width: 100%;
   background: url("assets/neon.jpg");
-  border: 2px solid #ce1212;
-  color: #ce1212;
+  border: 2px solid #CE1212;
+  color: #CE1212;
   text-align: center;
   font-family: 'Neon', 'sans-serif';
   font-size: 44px;
@@ -905,20 +965,47 @@ header {
 @keyframes Neon {
   0% {
     color: white;
-    text-shadow: 0px 0px 100px #ce1212; }
+    text-shadow: 0px 0px 100px #CE1212; }
   50% {
     color: #F18383;
-    text-shadow: 0px 0px 30px #ce1212; }
+    text-shadow: 0px 0px 30px #CE1212; }
   100% {
-    color: #ce1212;
-    text-shadow: 0px 0px 0px #ce1212; } }
+    color: #CE1212;
+    text-shadow: 0px 0px 0px #CE1212; } }
   .neon .theme-object {
     height: 100%;
     width: 100%; }
   .neon .left-button [type="button"], .neon .right-button [type="button"] {
-    color: #ce1212;
-    border: 2px solid #ce1212;
+    color: #CE1212;
+    border: 2px solid #CE1212;
     background: url("assets/neon.jpg"); }
+
+.fuji {
+  text-transform: uppercase;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10% 10% 0 10%;
+  background-color: black;
+  background: url("assets/fuji.jpg");
+  background-size: 125% auto;
+  background-repeat: no-repeat;
+  -webkit-animation: Japan 10s ease forwards;
+  -moz-animatin: Japan 10s ease forwards;
+  animation: Japan 10s ease forwards;
+  color: white;
+  text-shadow: 2px 2px #A51D71;
+  font-family: 'Fuji', 'cursive';
+  font-size: 44px;
+  line-height: 44px; }
+  .fuji .theme-object {
+    height: 100%;
+    width: 100%; }
+  .fuji .left-button [type="button"], .fuji .right-button [type="button"] {
+    color: #e7dfda;
+    border: 2px solid #e7dfda;
+    background: #C39B99; }
 
 .zarathustra {
   position: relative;
@@ -976,21 +1063,196 @@ header {
   .neon {
     font-size: 80px; }
 
+  .fuji {
+    font-size: 70px;
+    line-height: 76px; }
+
   .zarathustra .theme-object span {
     font-size: 50px;
     line-height: 50px; } }
-body {
-  margin: 0;
-  font-family: 'Exo', sans-serif;
-  background: #C5F9F6;
-  color: #03312E; }
-
-.alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend {
-  margin-top: 70px; }
-
-.main-page {
-  margin-top: 90px; }
-
+@font-face {
+  font-family: 'Speak';
+  src: url("assets/speak.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Know';
+  src: url("assets/know.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Neon';
+  src: url("assets/neon.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Fuji';
+  src: url("assets/fuji.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Zara';
+  src: url("assets/zara.ttf") format("truetype"); }
+@-webkit-keyframes Hero {
+  0% {
+    background-position: 9% 0%; }
+  50% {
+    background-position: 92% 100%; }
+  100% {
+    background-position: 9% 0%; } }
+@-moz-keyframes Hero {
+  0% {
+    background-position: 9% 0%; }
+  50% {
+    background-position: 92% 100%; }
+  100% {
+    background-position: 9% 0%; } }
+@keyframes Hero {
+  0% {
+    background-position: 9% 0%; }
+  50% {
+    background-position: 92% 100%; }
+  100% {
+    background-position: 9% 0%; } }
+@-webkit-keyframes Module-Move {
+  0% {
+    margin: -5px auto; }
+  100% {
+    margin: 10px auto; } }
+@-moz-keyframes Module-Move {
+  0% {
+    margin: -5px auto; }
+  100% {
+    margin: 10px auto; } }
+@keyframes Module-Move {
+  0% {
+    margin: -5px auto; }
+  100% {
+    margin: 10px auto; } }
+@-webkit-keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
+@-moz-keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
+@keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes Space {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 0% 0%; } }
+@-moz-keyframes Space {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 0% 0%; } }
+@keyframes Space {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 0% 0%; } }
+@-webkit-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@-moz-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 100% 100%; } }
 .alert-notifications {
   width: 100%; }
   .alert-notifications h2 {
@@ -1122,12 +1384,26 @@ body {
     font-style: italic;
     max-width: 600px; }
 
+.select-friend h4 {
+  text-align: center; }
+
+body {
+  margin: 0;
+  font-family: 'Exo', sans-serif;
+  background: #C5F9F6;
+  color: #03312E; }
+
+.alert-notifications, .about, .new-message, .select-friend {
+  margin-top: 70px; }
+
+.main-page, .search-friend, .profile-page {
+  margin-top: 90px; }
+
 .search-friend {
   position: relative;
   background-color: #B6E6E3;
   padding-bottom: 190px;
-  overflow: scroll;
-  margin-top: 90px; }
+  overflow: scroll; }
   .search-friend h4 {
     margin: 12px;
     text-align: center; }
@@ -1168,8 +1444,7 @@ body {
       color: white; }
 
 .profile-page {
-  position: relative;
-  margin-top: 90px; }
+  position: relative; }
   .profile-page h2 {
     text-align: center;
     margin: 30px auto 10px auto; }
@@ -1220,6 +1495,9 @@ body {
       .profile-page .left-side .profile-pic .profile-hat {
         z-index: 2; }
     .profile-page .left-side [type="button"] {
+      font-family: 'Exo', 'sans-serif';
+      font-weight: 200;
+      font-style: italic;
       display: block;
       width: 90%;
       height: 38px;
@@ -1299,9 +1577,6 @@ body {
         text-align: center;
         font-size: 14px; }
 
-.select-friend h4 {
-  text-align: center; }
-
 .new-message {
   position: relative; }
   .new-message .error {
@@ -1338,18 +1613,17 @@ body {
     .new-message form :-moz-placeholder {
       color: white; }
     .new-message form [type="submit"] {
+      box-sizing: border-box;
+      border: 2px solid white;
       cursor: pointer;
       color: #03312E;
       height: 40px;
-      position: fixed;
-      bottom: 0;
-      left: 5%;
-      margin-top: 20px; }
+      margin: 20px auto; }
     .new-message form .theme-list {
       width: 100%;
       background-color: #B6E6E3;
       margin: 10px auto;
-      padding: 15px 0 60px 0;
+      padding: 15px 0;
       border-top: 2px solid white;
       border-bottom: 2px solid white; }
       .new-message form .theme-list h6 {
@@ -1357,7 +1631,6 @@ body {
         font-size: 20px;
         margin: 0; }
       .new-message form .theme-list [type="button"] {
-        cursor: pointer;
         box-shadow: -4px 0 rgba(0, 0, 0, 0.1);
         background-color: #C5F9F6;
         font-size: 17px;
@@ -1390,12 +1663,16 @@ body {
       .new-message form .theme-list .neon.active {
         background: url("assets/neon.jpg");
         color: #F18383;
-        text-shadow: 0px 0px 30px #ce1212; }
+        text-shadow: 0px 0px 30px #CE1212; }
       .new-message form .theme-list .fuji {
-        font-family: 'Fuji'; }
+        font-family: 'Fuji';
+        font-size: 22px;
+        line-height: 22px;
+        text-shadow: none; }
       .new-message form .theme-list .fuji.active {
-        background-color: brown;
-        color: white; }
+        background-color: #C39B99;
+        color: white;
+        text-shadow: 2px 2px #A51D71; }
       .new-message form .theme-list .zara {
         font-family: 'Zara'; }
       .new-message form .theme-list .zara.active {
@@ -1411,6 +1688,19 @@ body {
   right: 0;
   bottom: 0;
   left: 0; }
+  .message-placemat .x {
+    cursor: pointer;
+    font-size: 14px;
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    color: white;
+    outline: none;
+    background: none;
+    border: 1px solid white;
+    padding: 0 1px 1px 1px;
+    width: 20px;
+    height: 20px; }
   .message-placemat .message-window {
     display: block;
     position: absolute;
@@ -1522,6 +1812,7 @@ body {
           max-height: 160px; }
 
   .new-message form [type="submit"] {
+    position: fixed;
     width: 50%;
     left: 25%;
     bottom: 20px; }
@@ -1534,9 +1825,13 @@ body {
     top: 220px;
     width: 100%; }
     .new-message form .theme-list [type="button"] {
+      cursor: pointer;
       width: 500px;
       margin: 10px auto;
-      box-shadow: none; } }
+      box-shadow: none; }
+
+  .message-placemat .x {
+    display: none; } }
 @media (min-width: 850px) {
   .recipient-window {
     display: flex;

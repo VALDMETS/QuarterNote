@@ -28,7 +28,7 @@ export default React.createClass({
     });
     return (
       <div className="message-placemat">
-        <input type="button" value="X" onClick={this.escapeFunction}/>
+        <input className="x" type="button" value="X" onClick={this.goBackFunction}/>
         <div className="message-window">
           <div className={themeClass}>
             <div className="theme-object">
@@ -89,9 +89,5 @@ export default React.createClass({
     store.newMessages.trigger('update');
     store.currentAudio.fade(1,0,500);
     hashHistory.push(`/newmessage/${replyTarget._id}`);
-  },
-  escapeFunction: function() {
-    store.currentAudio.fade(1,0,500);
-    hashHistory.push('/main')
-  },
+  }
 });

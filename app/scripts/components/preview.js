@@ -28,6 +28,7 @@ export default React.createClass({
     return (
       <div className="message-placemat" ref="preview">
         <audio src="https://www.dropbox.com/s/fhe3n1y1n7z7i5m/speak1.mp3?dl=1" ref="audio" onPlay={this.playAnimation}/>
+        <input className="x" type="button" value="X" onClick={this.goBackFunction}/>
         <div className="message-window">
           <div className={themeClass}>
             <div className="theme-object">

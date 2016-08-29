@@ -72,7 +72,6 @@
   width: 100%;
   background: url('assets/neon.jpg');
   border: 2px solid $menace;
-  // border-radius: 40px;
 
   color: $menace;
   text-align: center;
@@ -110,7 +109,40 @@
     }
   }
 }
+.fuji {
+  text-transform: uppercase;
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10% 10% 0 10%;
+  background-color: black;
+  background: url('assets/fuji.jpg');
+  background-size: 125% auto;
+  background-repeat: no-repeat;
 
+  -webkit-animation: Japan 10s ease forwards;
+  -moz-animatin: Japan 10s ease forwards;
+  animation: Japan 10s ease forwards;
+
+  color: white;
+  text-shadow: 2px 2px $flower;
+  font-family: 'Fuji', 'cursive';
+  font-size: 44px;
+  line-height: 44px;
+
+  .theme-object {
+    height: 100%;
+    width: 100%;
+  }
+  .left-button, .right-button {
+    [type="button"] {
+      color: $sky;
+      border: 2px solid $sky;
+      background: $mountain;
+    }
+  }
+}
 .zarathustra {
   position: relative;
   box-sizing: border-box;
@@ -177,6 +209,10 @@
   }
   .neon {
     font-size: 80px;
+  }
+  .fuji {
+    font-size: 70px;
+    line-height: 76px;
   }
   .zarathustra .theme-object span {
     font-size: 50px;

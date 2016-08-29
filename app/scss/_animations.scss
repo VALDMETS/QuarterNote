@@ -159,3 +159,16 @@
   0%{background-position:0% 100%}
   100%{background-position:0% 0%}
 }
+
+@-webkit-keyframes Japan {
+    0%{background-position:0% 100%}
+    100%{background-position:50% 100%}
+}
+@-moz-keyframes Japan{
+  0%{background-position:0% 100%}
+  100%{background-position:50% 100%}
+}
+@keyframes Japan {
+  0%{background-position:0% 100%}
+  100%{background-position:100% 100%}
+}

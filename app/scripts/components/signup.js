@@ -64,7 +64,7 @@ export default React.createClass({
           let initialMessage = new Message({
             sender: 'VALDMETS',
             recipient_id: store.session.get('_id'),
-            content: ['thanks ','for ','join','ing ','quar','ter ','note!'],
+            content: ['wel','come ','to ', 'quar','ter ','note!'],
             theme: 'know',
             theme_id: '57bca116bfc43b0e64e144c1',
             points: 100,

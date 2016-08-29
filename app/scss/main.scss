@@ -5,6 +5,7 @@
 @import 'intropages';
 @import 'header';
 @import 'themes';
+@import 'notifications';
 
 body {
   margin: 0;
@@ -13,171 +14,20 @@ body {
   color: $dark;
 }
 
-.alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend, {
+.alert-notifications, .about, .new-message, .select-friend {
   margin-top: 70px;
 }
 
-.main-page {
+.main-page, .search-friend, .profile-page {
   margin-top: 90px;
 }
 
-.alert-notifications {
-  width: 100%;
-  h2 {
-    text-align: center;
-    margin: 0;
-    padding: 0 0 30px 0;
-    border-bottom: 2px solid white;
-  }
-}
-.alert-box {
-  width: 100%;
-}
 
-.new-message-alert, .friend-request, .friend-selector, .friend-listing {
-  cursor: pointer;
-  position: relative;
-  padding: 0 4px;
-  width: 90%;
-  max-width: 400px;
-  height: 57px;
-  margin: 10px auto;
-  box-sizing: border-box;
-  border: 2px solid white;
-  border-radius: 28px;
-  background-color: rgba(256, 256, 256, .2);
-
-  -webkit-animation: Module-Move .4s;
-  -moz-animation: Module-Move .4s;
-  animation: Module-Move .4s;
-
-  .alert-color, .selector-pic, .search-pic {
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    box-sizing: border-box;
-    border: 2 px solid white;
-    border-radius: 50%;
-    background-color: $green;
-    height: 49px;
-    width: 49px;
-    margin: 7px;
-
-    object-fit: cover;
-    overflow: hidden;
-    img {
-      width: 49px;
-      height: auto;
-    }
-  }
-  p {
-    margin: 3px 0;
-    padding-left: 56px;
-    font-size: 15px;
-  }
-  span {
-    margin: 0;
-    display: block;
-    color: $turq;
-    float: right;
-    padding-right: 10px;
-    text-align: left;
-    width: 140px;
-    font-size: 13px;
-    font-style: italic;
-    font-weight: 200;
-  }
-  h5 {
-    margin: 6px;
-    text-align: center;
-    font-size: 18px;
-  }
-}
-.message-sent {
-  position: relative;
-  padding: 0 4px;
-  width: 90%;
-  max-width: 600px;
-  margin: 10px auto;
-  box-sizing: border-box;
-  border-radius: 28px;
-  background-color: rgba(256, 256, 256, .2);
-  text-align: center;
-
-  //final state after animation
-
-  height: 0px;
-  opacity: 0;
-  border: 0px solid transparent;
-  color: transparent;
-  font-size: 0px;
-  margin: 0;
-  padding: 0;
-
-  -webkit-animation: Module-Move .4s;
-  -moz-animation: Module-Move .4s;
-  animation: Module-Move .4s;
-
-  -webkit-animation: AlertDisappear 4s forwards;
-  -moz-animation: AlertDisappear 4s forwards;
-  animation: AlertDisappear 4s forwards;
-}
-.confirmation-window {
-  display: block;
-  position: absolute;
-  background: $white;
-  width: 90%;
-  left: 5%;
-  height: 60%;
-  top: 10%;
-  h3 {
-    text-align: center;
-    font-size: 32px;
-    color: $dark;
-  }
-  input {
-    outline: none;
-    box-sizing: border-box;
-    display: block;
-    float: left;
-    margin: 10% 0 0 20%;
-    padding: 5px;
-    border: 2px solid black;
-    width: 20%;
-    background: none;
-  }
-}
-.misc-message {
-  display: block;
-  width: 86%;
-  margin: 40px auto 0 auto;
-  text-align: center;
-  -webkit-animation: FadeIn .5s;
-  -moz-animation: FadeIn .5s;
-  animation: FadeIn .5s;
-  span {
-    font-weight: 200;
-    font-style: italic;
-  }
-  h6 {
-    margin: 80px 0 10px 0;
-    font-size: 18px;
-  }
-  p {
-    display: block;
-    margin: 0 auto;
-    text-align: left;
-    font-weight: 200;
-    font-style: italic;
-    max-width: 600px;
-  }
-}
 .search-friend {
   position: relative;
   background-color: $cruise;
   padding-bottom: 190px;
   overflow: scroll;
-  margin-top: 90px;
   h4 {
     margin: 12px;
     text-align: center;
@@ -228,7 +78,6 @@ body {
 
 .profile-page {
   position: relative;
-  margin-top: 90px;
   h2 {
     text-align: center;
     margin: 30px auto 10px auto;
@@ -240,15 +89,11 @@ body {
     width: 10%;
     height: 50px;
     text-align: center;
-    // background: orange;
     h5 {
       margin: 0;
       font-style: italic;
       font-weight: 200;
       font-size: 13px;
-    }
-    span {
-
     }
   }
   .left-side {
@@ -292,6 +137,9 @@ body {
       }
     }
     [type="button"] {
+      font-family: 'Exo', 'sans-serif';
+      font-weight: 200;
+      font-style: italic;
       display: block;
       width: 90%;
       height: 38px;
@@ -383,23 +231,6 @@ body {
         font-size: 14px;
       }
     }
-    // .friend-widget:nth-child(6) {
-    //   margin: 5px 1vw 20px 13vw;
-    //   &:hover {
-    //     margin: -10px 1vw 35px 13vw;
-    //   }
-    // }
-    // .friend-widget:nth-child(8) {
-    //   margin: 5px 0vw 20px 1vw;
-    //   &:hover {
-    //     margin: -10px 0vw 35px 1vw;
-    //   }
-    // }
-  }
-}
-.select-friend {
-  h4 {
-    text-align: center;
   }
 }
 .new-message {
@@ -445,19 +276,18 @@ body {
       color: white;
     }
     [type="submit"] {
+      box-sizing: border-box;
+      border: 2px solid white;
       cursor: pointer;
       color: $dark;
       height: 40px;
-      position: fixed;
-      bottom: 0;
-      left: 5%;
-      margin-top: 20px;
+      margin: 20px auto;
     }
     .theme-list {
       width: 100%;
       background-color: $cruise;
       margin: 10px auto;
-      padding: 15px 0 60px 0;
+      padding: 15px 0;
       border-top: 2px solid white;
       border-bottom: 2px solid white;
       h6 {
@@ -466,7 +296,6 @@ body {
         margin: 0;
       }
       [type="button"] {
-        cursor: pointer;
         box-shadow: -4px 0 rgba(0,0,0,.1);
         background-color: $white;
         font-size: 17px;
@@ -511,10 +340,14 @@ body {
       }
       .fuji {
         font-family: 'Fuji';
+        font-size: 22px;
+        line-height: 22px;
+        text-shadow: none;
       }
       .fuji.active {
-        background-color: brown;
+        background-color: $mountain;
         color: white;
+        text-shadow: 2px 2px $flower;
       }
       .zara {
         font-family: 'Zara';
@@ -525,7 +358,6 @@ body {
         color: white;
       }
     }
-
   }
 }
 .message-placemat {
@@ -536,6 +368,21 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
+  .x {
+    cursor: pointer;
+    font-size: 14px;
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    color: white;
+    outline: none;
+    background: none;
+    border: 1px solid white;
+    padding: 0 1px 1px 1px;
+    // border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
   .message-window {
     display: block;
     position: absolute;
@@ -675,6 +522,7 @@ body {
   }
   .new-message form {
     [type="submit"] {
+      position: fixed;
       width: 50%;
       left: 25%;
       bottom: 20px;
@@ -688,11 +536,15 @@ body {
       top: 220px;
       width: 100%;
       [type="button"] {
+        cursor: pointer;
         width: 500px;
         margin: 10px auto;
         box-shadow: none;
       }
     }
+  }
+  .message-placemat .x {
+    display: none;
   }
 }
 

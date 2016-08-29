@@ -46,7 +46,7 @@ export default React.createClass({
             <input type="button" ref="fuji" className="fuji" onClick={this.fujiFunction} value="FUJI"/>
             <input type="button" ref="zara" className="zara" onClick={this.zaraFunction} value="ZARATHUSTRA"/>
           </section>
-          <input type="submit" value="Send it!"/>
+          <input type="submit" value="See it!"/>
         </form>
         {this.props.children}
       </div>

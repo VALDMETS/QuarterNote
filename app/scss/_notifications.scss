@@ -1,0 +1,160 @@
+@import 'variables';
+@import 'fonts';
+@import 'animations';
+
+.alert-notifications {
+  width: 100%;
+  h2 {
+    text-align: center;
+    margin: 0;
+    padding: 0 0 30px 0;
+    border-bottom: 2px solid white;
+  }
+}
+.alert-box {
+  width: 100%;
+}
+
+.new-message-alert, .friend-request, .friend-selector, .friend-listing {
+  cursor: pointer;
+  position: relative;
+  padding: 0 4px;
+  width: 90%;
+  max-width: 400px;
+  height: 57px;
+  margin: 10px auto;
+  box-sizing: border-box;
+  border: 2px solid white;
+  border-radius: 28px;
+  background-color: rgba(256, 256, 256, .2);
+
+  -webkit-animation: Module-Move .4s;
+  -moz-animation: Module-Move .4s;
+  animation: Module-Move .4s;
+
+  .alert-color, .selector-pic, .search-pic {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    box-sizing: border-box;
+    border: 2 px solid white;
+    border-radius: 50%;
+    background-color: $green;
+    height: 49px;
+    width: 49px;
+    margin: 7px;
+
+    object-fit: cover;
+    overflow: hidden;
+    img {
+      width: 49px;
+      height: auto;
+    }
+  }
+  p {
+    margin: 3px 0;
+    padding-left: 56px;
+    font-size: 15px;
+  }
+  span {
+    margin: 0;
+    display: block;
+    color: $turq;
+    float: right;
+    padding-right: 10px;
+    text-align: left;
+    width: 140px;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 200;
+  }
+  h5 {
+    margin: 6px;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+.message-sent {
+  position: relative;
+  padding: 0 4px;
+  width: 90%;
+  max-width: 600px;
+  margin: 10px auto;
+  box-sizing: border-box;
+  border-radius: 28px;
+  background-color: rgba(256, 256, 256, .2);
+  text-align: center;
+
+  //final state after animation
+
+  height: 0px;
+  opacity: 0;
+  border: 0px solid transparent;
+  color: transparent;
+  font-size: 0px;
+  margin: 0;
+  padding: 0;
+
+  -webkit-animation: Module-Move .4s;
+  -moz-animation: Module-Move .4s;
+  animation: Module-Move .4s;
+
+  -webkit-animation: AlertDisappear 4s forwards;
+  -moz-animation: AlertDisappear 4s forwards;
+  animation: AlertDisappear 4s forwards;
+}
+.confirmation-window {
+  display: block;
+  position: absolute;
+  background: $white;
+  width: 90%;
+  left: 5%;
+  height: 60%;
+  top: 10%;
+  h3 {
+    text-align: center;
+    font-size: 32px;
+    color: $dark;
+  }
+  input {
+    outline: none;
+    box-sizing: border-box;
+    display: block;
+    float: left;
+    margin: 10% 0 0 20%;
+    padding: 5px;
+    border: 2px solid black;
+    width: 20%;
+    background: none;
+  }
+}
+.misc-message {
+  display: block;
+  width: 86%;
+  margin: 40px auto 0 auto;
+  text-align: center;
+  -webkit-animation: FadeIn .5s;
+  -moz-animation: FadeIn .5s;
+  animation: FadeIn .5s;
+  span {
+    font-weight: 200;
+    font-style: italic;
+  }
+  h6 {
+    margin: 80px 0 10px 0;
+    font-size: 18px;
+  }
+  p {
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+    font-weight: 200;
+    font-style: italic;
+    max-width: 600px;
+  }
+}
+.select-friend {
+  h4 {
+    text-align: center;
+  }
+}
