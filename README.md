@@ -1,6 +1,6 @@
 # QuarterNote
 
-[QuarterNote Live On The Web!](https://quarternote.chat)
+[QuarterNote Live On The Web!](http://quarternote.chat)
 
 QuarterNote is a musical messaging web platform. Users can type snarky messages that then play for their friends. This is my final project at the Iron Yard coding academy.
 
