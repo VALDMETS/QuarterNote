@@ -59,11 +59,15 @@ export default React.createClass({
   submitFunction: function(e) {
     e.preventDefault();
     let friendSearch = new FriendList();
+    console.log(this.refs.searchname.value);
+    let upperCaseString = this.refs.searchname.value.toUpperCase();
+    console.log(upperCaseString);
     friendSearch.fetch({
       data: {
-        query: JSON.stringify({"username":{"$regex":("^.+"+this.refs.searchname.value)+"|"+("^"+this.refs.searchname.value)}})
+        query: JSON.stringify({"username":{"$regex":("^.+"+upperCaseString)+"|"+("^"+upperCaseString)}})
       },
-      success: () => {
+      success: (resp) => {
+        console.log(resp);
         let results = friendSearch.toJSON();
         let hiddenIds = store.hiddenRequests.map( (request) => {
           return request.get('recipient_id')
