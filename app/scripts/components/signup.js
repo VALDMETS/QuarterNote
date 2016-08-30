@@ -17,7 +17,7 @@ export default React.createClass({
     if(this.state.error) {
       loginIntro = <p className="loginerror">Username is already taken!</p>
       if(this.refs.signupname.value.length > 12) {
-        loginIntro = <p className="loginerror">Username is too long!</p>
+        loginIntro = <p className="loginerror">Username is too long! (12 characters or less)</p>
       }
     }
     return (

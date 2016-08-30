@@ -367,6 +367,7 @@
 .login-page, .signup-page {
   position: relative; }
   .login-page [type="button"], .signup-page [type="button"] {
+    cursor: pointer;
     position: absolute;
     top: 6px;
     right: 6px;
@@ -434,6 +435,7 @@
     .login-page form :-moz-placeholder, .signup-page form :-moz-placeholder {
       color: white; }
     .login-page form [type="submit"], .signup-page form [type="submit"] {
+      cursor: pointer;
       font-size: 22px;
       height: 60px;
       background: #009F93; }
@@ -716,6 +718,526 @@ header {
     right: 0;
     bottom: 0;
     left: 0; }
+
+@font-face {
+  font-family: 'Speak';
+  src: url("assets/speak.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Know';
+  src: url("assets/know.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Neon';
+  src: url("assets/neon.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Fuji';
+  src: url("assets/fuji.ttf") format("truetype"); }
+@font-face {
+  font-family: 'Zara';
+  src: url("assets/zara.ttf") format("truetype"); }
+@-webkit-keyframes Hero {
+  0% {
+    background-position: 9% 0%; }
+  50% {
+    background-position: 92% 100%; }
+  100% {
+    background-position: 9% 0%; } }
+@-moz-keyframes Hero {
+  0% {
+    background-position: 9% 0%; }
+  50% {
+    background-position: 92% 100%; }
+  100% {
+    background-position: 9% 0%; } }
+@keyframes Hero {
+  0% {
+    background-position: 9% 0%; }
+  50% {
+    background-position: 92% 100%; }
+  100% {
+    background-position: 9% 0%; } }
+@-webkit-keyframes Module-Move {
+  0% {
+    margin: -5px auto; }
+  100% {
+    margin: 10px auto; } }
+@-moz-keyframes Module-Move {
+  0% {
+    margin: -5px auto; }
+  100% {
+    margin: 10px auto; } }
+@keyframes Module-Move {
+  0% {
+    margin: -5px auto; }
+  100% {
+    margin: 10px auto; } }
+@-webkit-keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
+@-moz-keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
+@keyframes AlertDisappear {
+  0% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  85% {
+    height: 57px;
+    opacity: 1;
+    border: 2px solid green;
+    color: green;
+    margin: 10px auto;
+    font-size: 15px; }
+  99% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; }
+  100% {
+    height: 0px;
+    opacity: 0;
+    border: 0px solid transparent;
+    color: transparent;
+    margin: 0;
+    font-size: 0px; } }
+@-webkit-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes FadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-webkit-keyframes Space {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 0% 0%; } }
+@-moz-keyframes Space {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 0% 0%; } }
+@keyframes Space {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 0% 0%; } }
+@-webkit-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@-moz-keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 50% 100%; } }
+@keyframes Japan {
+  0% {
+    background-position: 0% 100%; }
+  100% {
+    background-position: 100% 100%; } }
+.alert-notifications, .about, .new-message, .select-friend {
+  margin-top: 70px; }
+
+.main-page, .search-friend, .profile-page {
+  margin-top: 90px; }
+
+.search-friend {
+  position: relative;
+  background-color: #B6E6E3;
+  padding-bottom: 190px;
+  overflow: scroll; }
+  .search-friend h4 {
+    margin: 12px;
+    text-align: center; }
+  .search-friend form {
+    position: fixed;
+    width: 100%;
+    height: 50vw;
+    max-height: 180px;
+    left: 0;
+    bottom: 0;
+    background-color: #009F93; }
+    .search-friend form input {
+      outline: none;
+      color: #03312E;
+      margin: 10px auto;
+      display: block;
+      background: #B6E6E3;
+      width: 90%;
+      max-width: 500px;
+      height: 30%;
+      max-height: 52px;
+      border: none;
+      border-radius: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-family: 'Exo', sans-serif; }
+    .search-friend form [type="submit"] {
+      cursor: pointer;
+      color: #03312E; }
+    .search-friend form ::-webkit-input-placeholder {
+      color: white; }
+    .search-friend form ::-moz-placeholder {
+      color: white; }
+    .search-friend form :-ms-input-placeholder {
+      color: white; }
+    .search-friend form :-moz-placeholder {
+      color: white; }
+
+.profile-page {
+  position: relative; }
+  .profile-page h2 {
+    text-align: center;
+    margin: 30px auto 10px auto; }
+  .profile-page .point-container {
+    position: absolute;
+    top: -20px;
+    right: 20%;
+    width: 10%;
+    height: 50px;
+    text-align: center; }
+    .profile-page .point-container h5 {
+      margin: 0;
+      font-style: italic;
+      font-weight: 200;
+      font-size: 13px; }
+  .profile-page .left-side {
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 50%;
+    float: left; }
+    .profile-page .left-side .profile-pic {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      height: 44vw;
+      max-height: 250px;
+      width: 44vw;
+      max-width: 250px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      object-fit: cover;
+      overflow: hidden;
+      background: linear-gradient(141deg, #037171, #02C3BD, #009F93);
+      background-size: 600% 600%;
+      -webkit-animation: Hero 8s ease infinite;
+      -moz-animation: Hero 8s ease infinite;
+      animation: Hero 8s ease infinite; }
+      .profile-page .left-side .profile-pic img {
+        position: absolute;
+        left: -.25vw;
+        top: 1.5vw;
+        width: 45vw;
+        max-width: 250px;
+        height: auto;
+        max-height: 250px;
+        z-index: 1; }
+      .profile-page .left-side .profile-pic .profile-hat {
+        z-index: 2; }
+    .profile-page .left-side [type="button"] {
+      font-family: 'Exo', 'sans-serif';
+      font-weight: 200;
+      font-style: italic;
+      display: block;
+      width: 90%;
+      height: 38px;
+      margin: 10px auto;
+      padding: 1vw;
+      font-size: 3.2vw;
+      text-align: center;
+      border: 2px solid rgba(0, 0, 0, 0.4);
+      border-radius: 100px;
+      background-color: rgba(0, 0, 0, 0.2);
+      outline: none;
+      cursor: pointer; }
+  .profile-page .right-side {
+    padding: 33px 0 0 0;
+    margin: 0;
+    display: block;
+    width: 50%;
+    float: right; }
+    .profile-page .right-side p {
+      display: block;
+      margin: 0 auto;
+      max-width: 400px;
+      font-size: 15px;
+      font-weight: 200;
+      font-style: italic; }
+    .profile-page .right-side .sect1 {
+      width: 87%;
+      margin: 0 5% 0 8%; }
+    .profile-page .right-side .sect2 {
+      width: 87%;
+      margin: 28px 5% 0 8%; }
+  .profile-page .friend-list {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 28vh;
+    max-height: 250px;
+    background-color: #009F93; }
+    .profile-page .friend-list h5 {
+      display: block;
+      position: absolute;
+      width: 50%;
+      left: 25%;
+      margin: -30px 0 0 0;
+      font-size: 20px;
+      text-align: center; }
+    .profile-page .friend-list .friend-widget {
+      width: 23vw;
+      max-width: 131px;
+      height: 14vw;
+      max-height: 80px;
+      margin: 5px 1vw 20px 1vw;
+      float: left;
+      transition: .3s;
+      cursor: pointer; }
+      .profile-page .friend-list .friend-widget:hover {
+        margin: -10px 1vw 35px 1vw; }
+      .profile-page .friend-list .friend-widget .friend-pic {
+        margin: 0 auto;
+        width: 14vw;
+        max-width: 80px;
+        height: 14vw;
+        max-height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+        object-fit: cover; }
+        .profile-page .friend-list .friend-widget .friend-pic img {
+          width: 100%;
+          max-width: 80px;
+          height: auto;
+          max-height: 80px; }
+      .profile-page .friend-list .friend-widget h6 {
+        margin: -6px 0 0 0;
+        text-align: center;
+        font-size: 14px; }
+
+.new-message {
+  position: relative; }
+  .new-message .error {
+    color: red; }
+  .new-message h4 {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px; }
+  .new-message form {
+    display: block;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto; }
+    .new-message form input {
+      outline: none;
+      color: #03312E;
+      margin: 10px auto;
+      padding: 0;
+      display: block;
+      background: #B6E6E3;
+      width: 90%;
+      height: 40px;
+      border: none;
+      border-radius: 30px;
+      text-align: center;
+      font-size: 20px;
+      font-family: 'Exo', sans-serif; }
+    .new-message form ::-webkit-input-placeholder {
+      color: white; }
+    .new-message form ::-moz-placeholder {
+      color: white; }
+    .new-message form :-ms-input-placeholder {
+      color: white; }
+    .new-message form :-moz-placeholder {
+      color: white; }
+    .new-message form [type="submit"] {
+      box-sizing: border-box;
+      border: 2px solid white;
+      cursor: pointer;
+      color: #03312E;
+      height: 40px;
+      margin: 20px auto; }
+    .new-message form .theme-list {
+      width: 100%;
+      background-color: #B6E6E3;
+      margin: 10px auto;
+      padding: 15px 0;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white; }
+      .new-message form .theme-list h6 {
+        text-align: center;
+        font-size: 20px;
+        margin: 0; }
+      .new-message form .theme-list [type="button"] {
+        box-shadow: -4px 0 rgba(0, 0, 0, 0.1);
+        background-color: #C5F9F6;
+        font-size: 17px;
+        width: 70%;
+        height: 40px;
+        margin: 12px 14% 12px 16%;
+        transition: .2s; }
+      .new-message form .theme-list .active {
+        box-shadow: 0px 0px rgba(0, 0, 0, 0.1);
+        margin: 12px 15% 12px 15%; }
+      .new-message form .theme-list .speak {
+        font-family: 'Speak';
+        font-size: 20px;
+        line-height: 20px;
+        letter-spacing: .1rem; }
+      .new-message form .theme-list .speak.active {
+        background-color: #0B2310;
+        color: #1EE646; }
+      .new-message form .theme-list .know {
+        font-family: 'Know';
+        font-size: 20px;
+        line-height: 31px; }
+      .new-message form .theme-list .know.active {
+        background: url("assets/know.jpg");
+        color: white; }
+      .new-message form .theme-list .neon {
+        font-family: 'Neon';
+        letter-spacing: .1rem;
+        font-size: 22px; }
+      .new-message form .theme-list .neon.active {
+        background: url("assets/neon.jpg");
+        color: #F18383;
+        text-shadow: 0px 0px 30px #CE1212; }
+      .new-message form .theme-list .fuji {
+        font-family: 'Fuji';
+        font-size: 22px;
+        line-height: 22px;
+        text-shadow: none; }
+      .new-message form .theme-list .fuji.active {
+        background-color: #C39B99;
+        color: white;
+        text-shadow: 2px 2px #A51D71; }
+      .new-message form .theme-list .zara {
+        font-family: 'Zara'; }
+      .new-message form .theme-list .zara.active {
+        background: url("assets/zara.jpg");
+        object-fit: cover;
+        color: white; }
+
+.message-placemat {
+  z-index: 2;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  top: 60px;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+  .message-placemat .x {
+    cursor: pointer;
+    font-size: 14px;
+    position: fixed;
+    top: 70px;
+    right: 10px;
+    color: white;
+    outline: none;
+    background: none;
+    border: 1px solid white;
+    padding: 0 1px 1px 1px;
+    width: 20px;
+    height: 20px; }
+  .message-placemat .message-window {
+    display: block;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    height: 70%;
+    top: 10%; }
+  .message-placemat .left-button, .message-placemat .right-button {
+    z-index: 3;
+    position: fixed;
+    width: 50%;
+    bottom: 5%;
+    color: #C5F9F6; }
+    .message-placemat .left-button [type="button"], .message-placemat .right-button [type="button"] {
+      cursor: pointer;
+      width: 74%;
+      display: block;
+      font: 28px;
+      padding: 8px;
+      margin: 20px auto; }
+  .message-placemat .left-button {
+    left: 0; }
+  .message-placemat .right-button {
+    right: 0; }
+
+.missing {
+  margin-top: 120px;
+  text-align: center; }
 
 @font-face {
   font-family: 'Speak';
@@ -1393,343 +1915,6 @@ body {
   background: #C5F9F6;
   color: #03312E; }
 
-.alert-notifications, .about, .new-message, .select-friend {
-  margin-top: 70px; }
-
-.main-page, .search-friend, .profile-page {
-  margin-top: 90px; }
-
-.search-friend {
-  position: relative;
-  background-color: #B6E6E3;
-  padding-bottom: 190px;
-  overflow: scroll; }
-  .search-friend h4 {
-    margin: 12px;
-    text-align: center; }
-  .search-friend form {
-    position: fixed;
-    width: 100%;
-    height: 50vw;
-    max-height: 180px;
-    left: 0;
-    bottom: 0;
-    background-color: #009F93; }
-    .search-friend form input {
-      outline: none;
-      color: #03312E;
-      margin: 10px auto;
-      display: block;
-      background: #B6E6E3;
-      width: 90%;
-      max-width: 500px;
-      height: 30%;
-      max-height: 52px;
-      border: none;
-      border-radius: 30px;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 20px;
-      font-family: 'Exo', sans-serif; }
-    .search-friend form [type="submit"] {
-      cursor: pointer;
-      color: #03312E; }
-    .search-friend form ::-webkit-input-placeholder {
-      color: white; }
-    .search-friend form ::-moz-placeholder {
-      color: white; }
-    .search-friend form :-ms-input-placeholder {
-      color: white; }
-    .search-friend form :-moz-placeholder {
-      color: white; }
-
-.profile-page {
-  position: relative; }
-  .profile-page h2 {
-    text-align: center;
-    margin: 30px auto 10px auto; }
-  .profile-page .point-container {
-    position: absolute;
-    top: -20px;
-    right: 20%;
-    width: 10%;
-    height: 50px;
-    text-align: center; }
-    .profile-page .point-container h5 {
-      margin: 0;
-      font-style: italic;
-      font-weight: 200;
-      font-size: 13px; }
-  .profile-page .left-side {
-    padding: 0;
-    margin: 0;
-    display: block;
-    width: 50%;
-    float: left; }
-    .profile-page .left-side .profile-pic {
-      position: relative;
-      display: block;
-      margin: 0 auto;
-      height: 44vw;
-      max-height: 250px;
-      width: 44vw;
-      max-width: 250px;
-      border-radius: 50%;
-      box-sizing: border-box;
-      object-fit: cover;
-      overflow: hidden;
-      background: linear-gradient(141deg, #037171, #02C3BD, #009F93);
-      background-size: 600% 600%;
-      -webkit-animation: Hero 8s ease infinite;
-      -moz-animation: Hero 8s ease infinite;
-      animation: Hero 8s ease infinite; }
-      .profile-page .left-side .profile-pic img {
-        position: absolute;
-        left: -.25vw;
-        top: 1.5vw;
-        width: 45vw;
-        max-width: 250px;
-        height: auto;
-        max-height: 250px;
-        z-index: 1; }
-      .profile-page .left-side .profile-pic .profile-hat {
-        z-index: 2; }
-    .profile-page .left-side [type="button"] {
-      font-family: 'Exo', 'sans-serif';
-      font-weight: 200;
-      font-style: italic;
-      display: block;
-      width: 90%;
-      height: 38px;
-      margin: 10px auto;
-      padding: 1vw;
-      font-size: 3.2vw;
-      text-align: center;
-      border: 2px solid rgba(0, 0, 0, 0.4);
-      border-radius: 100px;
-      background-color: rgba(0, 0, 0, 0.2);
-      outline: none;
-      cursor: pointer; }
-  .profile-page .right-side {
-    padding: 33px 0 0 0;
-    margin: 0;
-    display: block;
-    width: 50%;
-    float: right; }
-    .profile-page .right-side p {
-      display: block;
-      margin: 0 auto;
-      max-width: 400px;
-      font-size: 15px;
-      font-weight: 200;
-      font-style: italic; }
-    .profile-page .right-side .sect1 {
-      width: 87%;
-      margin: 0 5% 0 8%; }
-    .profile-page .right-side .sect2 {
-      width: 87%;
-      margin: 28px 5% 0 8%; }
-  .profile-page .friend-list {
-    position: fixed;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    bottom: 0;
-    width: 100%;
-    height: 28vh;
-    max-height: 250px;
-    background-color: #009F93; }
-    .profile-page .friend-list h5 {
-      display: block;
-      position: absolute;
-      width: 50%;
-      left: 25%;
-      margin: -30px 0 0 0;
-      font-size: 20px;
-      text-align: center; }
-    .profile-page .friend-list .friend-widget {
-      width: 23vw;
-      max-width: 131px;
-      height: 14vw;
-      max-height: 80px;
-      margin: 5px 1vw 20px 1vw;
-      float: left;
-      transition: .3s;
-      cursor: pointer; }
-      .profile-page .friend-list .friend-widget:hover {
-        margin: -10px 1vw 35px 1vw; }
-      .profile-page .friend-list .friend-widget .friend-pic {
-        margin: 0 auto;
-        width: 14vw;
-        max-width: 80px;
-        height: 14vw;
-        max-height: 80px;
-        border-radius: 50%;
-        overflow: hidden;
-        object-fit: cover; }
-        .profile-page .friend-list .friend-widget .friend-pic img {
-          width: 100%;
-          max-width: 80px;
-          height: auto;
-          max-height: 80px; }
-      .profile-page .friend-list .friend-widget h6 {
-        margin: -6px 0 0 0;
-        text-align: center;
-        font-size: 14px; }
-
-.new-message {
-  position: relative; }
-  .new-message .error {
-    color: red; }
-  .new-message h4 {
-    text-align: center;
-    font-size: 18px;
-    margin: 10px; }
-  .new-message form {
-    display: block;
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto; }
-    .new-message form input {
-      outline: none;
-      color: #03312E;
-      margin: 10px auto;
-      padding: 0;
-      display: block;
-      background: #B6E6E3;
-      width: 90%;
-      height: 40px;
-      border: none;
-      border-radius: 30px;
-      text-align: center;
-      font-size: 20px;
-      font-family: 'Exo', sans-serif; }
-    .new-message form ::-webkit-input-placeholder {
-      color: white; }
-    .new-message form ::-moz-placeholder {
-      color: white; }
-    .new-message form :-ms-input-placeholder {
-      color: white; }
-    .new-message form :-moz-placeholder {
-      color: white; }
-    .new-message form [type="submit"] {
-      box-sizing: border-box;
-      border: 2px solid white;
-      cursor: pointer;
-      color: #03312E;
-      height: 40px;
-      margin: 20px auto; }
-    .new-message form .theme-list {
-      width: 100%;
-      background-color: #B6E6E3;
-      margin: 10px auto;
-      padding: 15px 0;
-      border-top: 2px solid white;
-      border-bottom: 2px solid white; }
-      .new-message form .theme-list h6 {
-        text-align: center;
-        font-size: 20px;
-        margin: 0; }
-      .new-message form .theme-list [type="button"] {
-        box-shadow: -4px 0 rgba(0, 0, 0, 0.1);
-        background-color: #C5F9F6;
-        font-size: 17px;
-        width: 70%;
-        height: 40px;
-        margin: 12px 14% 12px 16%;
-        transition: .2s; }
-      .new-message form .theme-list .active {
-        box-shadow: 0px 0px rgba(0, 0, 0, 0.1);
-        margin: 12px 15% 12px 15%; }
-      .new-message form .theme-list .speak {
-        font-family: 'Speak';
-        font-size: 20px;
-        line-height: 20px;
-        letter-spacing: .1rem; }
-      .new-message form .theme-list .speak.active {
-        background-color: #0B2310;
-        color: #1EE646; }
-      .new-message form .theme-list .know {
-        font-family: 'Know';
-        font-size: 20px;
-        line-height: 31px; }
-      .new-message form .theme-list .know.active {
-        background: url("assets/know.jpg");
-        color: white; }
-      .new-message form .theme-list .neon {
-        font-family: 'Neon';
-        letter-spacing: .1rem;
-        font-size: 22px; }
-      .new-message form .theme-list .neon.active {
-        background: url("assets/neon.jpg");
-        color: #F18383;
-        text-shadow: 0px 0px 30px #CE1212; }
-      .new-message form .theme-list .fuji {
-        font-family: 'Fuji';
-        font-size: 22px;
-        line-height: 22px;
-        text-shadow: none; }
-      .new-message form .theme-list .fuji.active {
-        background-color: #C39B99;
-        color: white;
-        text-shadow: 2px 2px #A51D71; }
-      .new-message form .theme-list .zara {
-        font-family: 'Zara'; }
-      .new-message form .theme-list .zara.active {
-        background: url("assets/zara.jpg");
-        object-fit: cover;
-        color: white; }
-
-.message-placemat {
-  z-index: 2;
-  position: fixed;
-  background: rgba(0, 0, 0, 0.8);
-  top: 60px;
-  right: 0;
-  bottom: 0;
-  left: 0; }
-  .message-placemat .x {
-    cursor: pointer;
-    font-size: 14px;
-    position: fixed;
-    top: 70px;
-    right: 10px;
-    color: white;
-    outline: none;
-    background: none;
-    border: 1px solid white;
-    padding: 0 1px 1px 1px;
-    width: 20px;
-    height: 20px; }
-  .message-placemat .message-window {
-    display: block;
-    position: absolute;
-    width: 90%;
-    left: 5%;
-    height: 70%;
-    top: 10%; }
-  .message-placemat .left-button, .message-placemat .right-button {
-    z-index: 3;
-    position: fixed;
-    width: 50%;
-    bottom: 5%;
-    color: #C5F9F6; }
-    .message-placemat .left-button [type="button"], .message-placemat .right-button [type="button"] {
-      cursor: pointer;
-      width: 74%;
-      display: block;
-      font: 28px;
-      padding: 8px;
-      margin: 20px auto; }
-  .message-placemat .left-button {
-    left: 0; }
-  .message-placemat .right-button {
-    right: 0; }
-
-.missing {
-  margin-top: 120px;
-  text-align: center; }
-
 @media (min-width: 750px) {
   .alert-notifications, .about, .new-message, .select-friend, .profile-page, .search-friend {
     margin-top: 140px; }
@@ -1812,10 +1997,7 @@ body {
           max-height: 160px; }
 
   .new-message form [type="submit"] {
-    position: fixed;
-    width: 50%;
-    left: 25%;
-    bottom: 20px; }
+    margin-top: 390px; }
   .new-message form .theme-list {
     position: fixed;
     display: flex;

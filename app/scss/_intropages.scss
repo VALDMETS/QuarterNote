@@ -5,6 +5,7 @@
 .login-page, .signup-page {
   position: relative;
   [type="button"] {
+    cursor: pointer;
     position: absolute;
     top: 6px;
     right: 6px;
@@ -85,10 +86,9 @@
       color: white;
     }
     [type="submit"] {
-      // margin: 30px auto 0 auto;
+      cursor: pointer;
       font-size: 22px;
       height: 60px;
-      // width: 94%;
       background: $green;
     }
   }

@@ -11,10 +11,6 @@ export default React.createClass({
     }
   },
   render: function() {
-    // if(!store.session.get('authtoken')){
-    //   hashHistory.push('/login');
-    //   return null;
-    // }
     return (
       <div className="about">
         <Header/>
