@@ -18,6 +18,8 @@ export default React.createClass({
       loginIntro = <p className="loginerror">Username is already taken!</p>
       if(this.refs.signupname.value.length > 12) {
         loginIntro = <p className="loginerror">Username is too long! (12 characters or less)</p>
+      } else if(this.refs.signupname.value.length === 0) {
+        loginIntro = <p className="loginerror">Username is too short!</p>
       }
     }
     return (
@@ -41,7 +43,7 @@ export default React.createClass({
   submitFunction: function(e) {
     e.preventDefault();
     let randInt = Math.floor(Math.random()*10);
-    if (this.refs.signupname.value.length <= 12) {
+    if (this.refs.signupname.value.length <= 12 && this.refs.signupname.value.length != 0) {
       store.session.save({
         username: this.refs.signupname.value.toUpperCase(),
         password: this.refs.signuppass.value,

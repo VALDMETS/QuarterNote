@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
+import store from '../store';
 
 export default React.createClass({
   render: function() {
@@ -9,5 +10,8 @@ export default React.createClass({
         <p>Sorry! You ended up in a place that doesn't exist. <Link to="/login">Click here</Link> to get back to the Login page</p>
       </div>
     )
+  },
+  componentDidMount: function() {
+    store.session.logoutFunction();
   }
 });
